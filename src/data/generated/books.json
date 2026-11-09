@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T13:26:02.314Z",
+    "fetchedAt": "2026-11-09T13:33:14.351Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -703,7 +703,7 @@
         "birth": "1882. január 25.",
         "birthPlace": "London",
         "death": "1941. március 28.",
-        "deathPlace": "Lewes",
+        "deathPlace": "Lewes, East Sussex",
         "nationality": [
           "Egyesült Királyság"
         ],
@@ -732,7 +732,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T13:26:09.617Z",
+    "fetchedAt": "2026-11-09T13:33:22.366Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -1245,7 +1245,7 @@
       ],
       "facts": {
         "birth": "1932. október 27.",
-        "birthPlace": "Jamaica Plain",
+        "birthPlace": "Boston (Jamaica Plain)",
         "death": "1963. február 11.",
         "deathPlace": "London",
         "nationality": [

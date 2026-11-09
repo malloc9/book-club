@@ -641,6 +641,7 @@ async function fetchBook(book) {
   const originalTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle ?? null;
   const published = formatWdTime(claimValues(bookEnt, 'P577').sort((a, b) => a.time.localeCompare(b.time))[0]);
 
+  const authorText = blocksText(authorArticle?.intro);
   const birth = formatWdTime(claimValues(authorEnt, 'P569')[0]);
   const death = formatWdTime(claimValues(authorEnt, 'P570')[0]);
 
@@ -673,9 +674,9 @@ async function fetchBook(book) {
       works: await authorWorks(authorQid),
       facts: {
         birth,
-        birthPlace: (await itemLabels(authorEnt, 'P19', 1))[0] ?? null,
+        birthPlace: await placeMatchingText(itemIds(authorEnt, 'P19')[0], authorText),
         death,
-        deathPlace: (await itemLabels(authorEnt, 'P20', 1))[0] ?? null,
+        deathPlace: await placeMatchingText(itemIds(authorEnt, 'P20')[0], authorText),
         nationality: await itemLabels(authorEnt, 'P27', 1),
         occupations: await itemLabels(authorEnt, 'P106', 4),
       },
@@ -817,6 +818,40 @@ function linkifyArticle(article) {
     plot: linkifyBlocks(article.plot, link),
     biography: article.biography?.map((s) => ({ ...s, paras: linkifyBlocks(s.paras, link) })) ?? null,
   };
+}
+
+// Plain text of (rich) blocks, for consistency checks.
+function blocksText(blocks) {
+  return (blocks ?? [])
+    .map((b) =>
+      typeof b === 'string' ? b
+      : b.type === 'rich' ? b.parts.map((p) => (typeof p === 'string' ? p : p.text)).join('')
+      : b.type === 'list' ? b.items.map((i) => (typeof i === 'string' ? i : i.map((p) => (typeof p === 'string' ? p : p.text)).join(''))).join(' ')
+      : b.text ?? '')
+    .join(' ');
+}
+
+// Wikidata often has a finer place (e.g. the Boston neighbourhood "Jamaica Plain") than the
+// Wikipedia text ("Boston"). If the place isn't mentioned in the text but one of its
+// "located in" (P131) ancestors is, show "Ancestor (Place)" so facts and text agree.
+async function placeMatchingText(qid, text) {
+  if (!qid) return null;
+  const [place] = await getEntities([qid]);
+  const name = label(place);
+  if (!name || !text || text.includes(name)) return name;
+  let current = place;
+  let region = null; // first ancestor with a different name, used as context if nothing matches
+  for (let depth = 0; depth < 4; depth++) {
+    const parentId = itemIds(current, 'P131')[0];
+    if (!parentId) break;
+    const [parent] = await getEntities([parentId]);
+    const parentName = label(parent);
+    if (parentName && text.includes(parentName)) return `${parentName} (${name})`;
+    if (!region && parentName && parentName !== name) region = parentName;
+    current = parent;
+  }
+  // No match in the text: add the larger region so a small town/neighbourhood is placeable.
+  return region ? `${name}, ${region}` : name;
 }
 
 async function main() {
