@@ -54,7 +54,7 @@ const died = place(af?.death, af?.deathPlace);
     {
       book && book.intro.length > 0 ? (
         <section class="prose">
-          <h2>A könyvről <EnBadge lang={book.article?.lang} /></h2>
+          <h2>A könyvről <EnBadge article={book.article} /></h2>
           <Blocks blocks={book.intro} />
           {book.plot && (
             <details class="spoiler">
@@ -74,7 +74,7 @@ const died = place(af?.death, af?.deathPlace);
     {
       author && (
         <section class="author">
-          <h2>A szerzőről <EnBadge lang={author.article?.lang} /></h2>
+          <h2>A szerzőről <EnBadge article={author.article} /></h2>
           <div class="author-grid">
             <figure class="portrait-fig">
               {author.portrait ? (

@@ -1,15 +1,21 @@
 ---
 import type { ArticleRef } from '../data/types';
+import { langName } from '../data/books';
 
 interface Props {
   article: ArticleRef | null | undefined;
 }
 const { article } = Astro.props;
+const foreign = article && article.lang !== 'hu';
 ---
 {
   article && (
     <p class="source">
-      Forrás: <a href={article.url}>{article.lang === 'en' ? 'Wikipedia (angol)' : 'Wikipédia'} – {article.title}</a>
+      Forrás:{' '}
+      <a href={article.url}>
+        {foreign ? `Wikipedia (${langName(article.lang)})` : 'Wikipédia'} – {article.title}
+      </a>
+      {foreign && article.translated && ', gépi fordítással (Google Fordító)'}
       {' · '}
       <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.hu">CC BY-SA 4.0</a>
     </p>

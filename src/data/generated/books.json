@@ -3,13 +3,14 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T13:03:13.717Z",
+    "fetchedAt": "2026-11-09T13:15:03.518Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
         "lang": "hu",
         "title": "A világítótorony (regény)",
-        "url": "https://hu.wikipedia.org/wiki/A_vil%C3%A1g%C3%ADt%C3%B3torony_(reg%C3%A9ny)"
+        "url": "https://hu.wikipedia.org/wiki/A_vil%C3%A1g%C3%ADt%C3%B3torony_(reg%C3%A9ny)",
+        "translated": false
       },
       "intro": [
         "A világítótorony (To the Lighthouse) Virginia Woolf regénye. Az érett modernizmus (high modernism) irányadó műve. Középpontjában a Ramsay család áll és látogatásaik a Skócia északnyugati partja közelében található Skye szigetre, 1910 és 1920 között.",
@@ -68,7 +69,8 @@
       "article": {
         "lang": "hu",
         "title": "Virginia Woolf",
-        "url": "https://hu.wikipedia.org/wiki/Virginia_Woolf"
+        "url": "https://hu.wikipedia.org/wiki/Virginia_Woolf",
+        "translated": false
       },
       "intro": [
         "Virginia Woolf (London, 1882. január 25. – Sussex, Rodmell, 1941. március 28.) angol regényíró, esszéista, novellista, kritikus, könyvkiadó, feminista, és a 20. századi modern irodalom egyik vezető alakjaként tartják számon."
@@ -243,7 +245,7 @@
           "title": "Mrs. Dalloway",
           "originalTitle": "Mrs Dalloway",
           "year": 1925,
-          "type": "regény",
+          "type": "irodalmi mű",
           "url": "https://hu.wikipedia.org/wiki/Mrs._Dalloway_(reg%C3%A9ny)",
           "urlLang": "hu"
         },
@@ -425,33 +427,34 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T13:03:20.192Z",
+    "fetchedAt": "2026-11-09T13:15:12.079Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
         "lang": "en",
         "title": "The Bell Jar",
-        "url": "https://en.wikipedia.org/wiki/The_Bell_Jar"
+        "url": "https://en.wikipedia.org/wiki/The_Bell_Jar",
+        "translated": true
       },
       "intro": [
-        "The Bell Jar is the only novel written by the American writer and poet Sylvia Plath. Originally published under the pseudonym \"Victoria Lucas\" in 1963, the novel is supposedly semi-autobiographical, with the names of places and people changed. The book is often regarded as a roman à clef because the protagonist's descent into mental illness parallels Plath's own experiences with what may have been clinical depression. Plath died by suicide a month after its first UK publication.",
-        "The novel was published under Plath's name for the first time in 1966. It was not published in the United States until 1971, in accordance with the wishes of both Plath's husband Ted Hughes and her mother Aurelia Plath. In the United States, the book became an instant best-seller, and has since been translated into more than forty languages."
+        "Az üvegbúra Sylvia Plath amerikai író és költő egyetlen regénye. Az eredetileg „Victoria Lucas” álnéven 1963-ban megjelent regény állítólag félig önéletrajzi jellegű, a helyek és személyek nevei megváltoztak. A könyvet gyakran kulcsregénynek tekintik, mert a főszereplő mentális betegségbe süllyedése Plath saját tapasztalatait párhuzamba állítja a klinikai depresszióval. Plath egy hónappal az első brit publikáció után öngyilkos lett.",
+        "A regény Plath nevén jelent meg először 1966-ban. Csak 1971-ben jelent meg az Egyesült Államokban, Plath férje, Ted Hughes és anyja, Aurelia Plath kívánsága szerint. Az Egyesült Államokban a könyv azonnali bestseller lett, és azóta több mint negyven nyelvre lefordították."
       ],
       "plot": [
-        "In 1953, Esther Greenwood, a 19-year-old undergraduate student from the suburbs of Boston, is awarded a summer internship at the fictional Ladies' Day magazine in New York City. During the internship, Esther feels neither stimulated nor excited by the work, fashion, and big-city lifestyle that her peers in the program seem to adore. She finds herself struggling to feel anything at all aside from anxiety and disorientation.",
-        "Esther appreciates the witty sarcasm and adventurousness of Doreen, another intern, but she identifies with the piety of Betsy, an old-fashioned and naïve young woman. Esther has a benefactor in Philomena Guinea, a formerly successful writer of women's fiction, who funds the scholarship through which Esther – from a working-class family – is enrolled at her college.",
-        "Esther describes in detail several seriocomic incidents that occur during her internship. In the beginning, she and Doreen meet Lenny, a gallant radio host who tries to seduce them, and who eventually dates Doreen. Another incident occurs with a mass food poisoning during a lunch thrown by the staff of a women's culinary magazine.",
-        "Much of the story is spent in flashbacks, where Esther reminisces about her boyfriend Buddy, whom she has dated more or less seriously, and who considers himself her fiancé. Esther's internal monologue often lingers on musings of death, violence, and the roles of women in her society.",
-        "Shortly before the internship ends, she attends a country club party with Doreen, and she is set up with a wealthy Peruvian man named Marco who treats her roughly. Later, Marco takes her outside and tries to rape her; she breaks his nose and leaves. That night, after returning to the hotel, she impulsively throws all of her new and fashionable clothing off the roof.",
-        "Esther returns to her Massachusetts home that she shares with her widowed mother. She has been hoping for another scholarly opportunity once she is back in Massachusetts, a writing course taught by a world-famous author, but on her return, she immediately is told by her mother that she was not accepted for the course and finds her plans derailed.",
-        "She decides to spend the summer potentially writing a novel, but she feels she lacks enough life experience to write convincingly. All of her identity has been centered upon doing well academically; she is unsure of what to make of her life once she leaves school, and none of the choices presented to her (motherhood, as exemplified by the prolific child-bearer Dodo Conway, Esther's neighbor, or stereotypical female careers such as stenography) appeal to her.",
-        "Esther increasingly becomes depressed, and she finds herself unable to sleep. Teresa, her aunt's sister-in-law, instructs her to see Dr. Gordon, a psychiatrist, whom Esther mistrusts because he is attractive and does not seem to listen to her. He prescribes electroconvulsive therapy (ECT); she is left awake during the procedure, and left fearful of ECT in the aftermath. Afterward, she tells her mother that she will not go back.",
-        "The ECT is ineffective, and Esther's mental state worsens. She makes several half-hearted attempts at suicide, including swimming far out to sea, and then she makes a serious attempt. Esther writes a note for her mother that she \"will go out on a long walk\", crawls into a well-hidden hole in the cellar, and swallows many of her mother's pills. The newspapers presume her kidnapping and death, but she is discovered alive under her house after an indeterminate amount of time.",
-        "Esther is sent to several different mental hospitals, where she is treated poorly as she resists their cold and heavy-handed treatment methods, until Philomena Guinea, her college benefactor, supports her stay at an elite treatment center where she meets Dr. Nolan, a female therapist. Along with regular psychotherapy sessions, Esther is given huge amounts of insulin to produce a \"reaction\" (a common – and later disproven – psychiatric treatment of the time) and, though initially promised that she would avoid the treatment, again receives a schedule of ECT. Dr. Nolan ensures that they are properly administered.",
-        "While there, she describes her depression as a feeling of being trapped under a bell jar, struggling for breath. Eventually, Esther describes the ECT as beneficial in that it has a sort of antidepressant effect; it lifts the metaphorical bell jar in which she has felt trapped and stifled. While there, she becomes reacquainted with Joan Gilling, who also used to date Buddy. The novel heavily implies that Joan is a lesbian and that she is attracted to, or interested in, Esther, who finds her strange.",
-        "Esther tells Dr. Nolan how she envies the freedom that men have and how she, as a woman, worries about getting pregnant. Dr. Nolan refers her to a doctor who fits her with a diaphragm. Esther is freed from her fears about the consequences of sex; free from previous pressures to get married, potentially to the wrong man. Under Dr. Nolan, Esther improves.",
-        "Various significant events, such as having sex for the first time, being hospitalized as a result, and Joan's suicide, provide her with a new perspective. Esther interacts with Buddy again toward the end of the novel when he visits her to ask if it was something about him that drove women to insanity, given that he dated both Joan and Esther. Buddy later wonders out loud who will marry Esther now that she has been hospitalized, effectively ending their commitment to get engaged. Esther feels relief at having been freed from many of her previous confines.",
-        "The novel ends with Esther entering a conference with her doctors, who will decide whether she can leave the hospital and return to school."
+        "1953-ban Esther Greenwood, egy 19 éves egyetemi hallgató Boston külvárosából nyári szakmai gyakorlatot nyer a New York-i Ladies' Day magazinnál. A gyakorlat során Esztert nem érzi sem serkentőnek, sem izgalomnak a munka, a divat és a nagyvárosi életforma, amelyet a programban résztvevő társai imádni látszanak. Azon kapja magát, hogy a szorongáson és a tájékozódási zavaron kívül bármit is érezni próbál.",
+        "Esther értékeli Doreen, egy másik gyakornok szellemes szarkazmusát és kalandvágyát, de azonosul Betsy, egy régimódi és naiv fiatal nő jámborságával. Eszternek van egy jótevője Philomena Guineában, egy korábban sikeres női regényíró, aki finanszírozza azt az ösztöndíjat, amelyen keresztül a munkáscsaládból származó Eszter beiratkozik a főiskolára.",
+        "Eszter részletesen leír több, a gyakorlata során előforduló szeriokomikus eseményt. Az elején ő és Doreen találkoznak Lennyvel, a gáláns rádiós műsorvezetővel, aki megpróbálja elcsábítani őket, és aki végül Doreennel randevúzik. Egy másik eset egy női kulináris magazin munkatársai által felszolgált ebéd közben történt tömeges ételmérgezés.",
+        "A történet nagy része visszaemlékezésekben telik, ahol Esther barátjára, Buddyra emlékezik, akivel többé-kevésbé komolyan randevúztak, és aki a vőlegényének tartja magát. Eszter belső monológja gyakran a halálról, az erőszakról és a nők társadalmában betöltött szerepéről elmélkedik.",
+        "Nem sokkal a gyakorlat vége előtt részt vesz egy vidéki klubbulin Doreennel, és összejön egy Marco nevű gazdag perui férfival, aki durván bánik vele. Később Marco kiviszi a szabadba, és megpróbálja megerőszakolni; betöri az orrát és elmegy. Aznap este, miután visszatért a szállodába, impulzívan ledobja az összes új és divatos ruháját a tetőről.",
+        "Esther visszatér massachusettsi otthonába, amelyet özvegy édesanyjával oszt meg. Újabb tudományos lehetőségben reménykedett, amint visszatér Massachusettsbe, egy világhírű író által tartott írótanfolyamra, de hazatérve édesanyja azonnal közli vele, hogy nem vették fel a tanfolyamra, és tervei csúsznak.",
+        "Úgy dönt, hogy a nyarat esetleg regényírással tölti, de úgy érzi, nincs elég élettapasztalata ahhoz, hogy meggyőzően írjon. Minden identitása arra összpontosult, hogy jól tanuljon; nem tudja, mit kezdjen az életével, miután elhagyja az iskolát, és a választási lehetőségek egyike sem tetszik neki (anyaság, mint például a termékeny gyermekszülő Dodo Conway, Esther szomszédja, vagy olyan sztereotip női karrierek, mint a gyorsírás).",
+        "Eszter egyre depressziósabb lesz, és nem tud aludni. Teresa, a nagynénje sógornője utasítja, hogy keresse fel Dr. Gordon pszichiátert, akiben Esther nem bízik, mert vonzó, és úgy tűnik, nem hallgat rá. Elektrokonvulzív terápiát (ECT) ír elő; ébren marad az eljárás során, és fél az ECT-től. Utána azt mondja az anyjának, hogy nem megy vissza.",
+        "Az ECT hatástalan, Esther mentális állapota romlik. Több féleszű öngyilkossági kísérletet is elkövet, köztük messzire kiúszik a tengerbe, majd komoly kísérletet tesz. Eszter feljegyzést ír édesanyjának, hogy „kimegy egy hosszú sétára”, bemászik egy jól elrejtett lyukba a pincében, és lenyeli anyja sok tablettáját. Az újságok elrablását és halálát feltételezik, de meghatározatlan idő után életben fedezik fel a háza alatt.",
+        "Esztert több különböző elmegyógyintézetbe küldik, ahol rosszul kezelik, mivel ellenáll a hideg és kemény kezelési módszereiknek, mígnem Philomena Guinea, főiskolai jótevője nem támogatja egy elit kezelőközpontban való tartózkodását, ahol találkozik Dr. Nolan-nal, egy női terapeutával. A rendszeres pszichoterápiás kezelések mellett Esther hatalmas mennyiségű inzulint kap, hogy „reakciót” idézzen elő (amely akkoriban általános – és később cáfolt – pszichiátriai kezelés volt), és bár kezdetben megígérték, hogy elkerüli a kezelést, ismét kap egy ütemtervet ECT-re. Dr. Nolan gondoskodik a megfelelő beadásról.",
+        "Amíg ott tartózkodik, depresszióját úgy írja le, mint azt az érzést, amikor egy csengő alatt van, és nehezen kap levegőt. Végül Esther az ECT-t előnyösnek írja le, mivel egyfajta antidepresszáns hatása van; felemeli a metaforikus csengőkorsót, amelyben csapdába esett és elfojtottnak érezte magát. Ottléte közben újra megismerkedik Joan Gillinggel, aki korábban Buddyval is járt. A regény erősen sugallja, hogy Joan leszbikus, és vonzódik Estherhez vagy érdeklődik iránta, aki furcsának találja.",
+        "Esther elmondja Dr. Nolannek, hogy irigyli a férfiak szabadságát, és hogy nőként mennyire aggódik a teherbeesés miatt. Dr. Nolan orvoshoz utalja, aki rekeszizommal látja el. Eszter megszabadul a szex következményeitől való félelmeitől; mentes a korábbi nyomástól, hogy férjhez menjen, esetleg nem megfelelő férfihoz. Dr. Nolan alatt Esther fejlődik.",
+        "Különféle jelentős események, mint például az első szex, ennek következtében kórházba kerülés és Joan öngyilkossága új perspektívát adnak neki. Esther ismét kapcsolatba lép Buddyval a regény vége felé, amikor az felkeresi őt, hogy megkérdezze, nem volt-e benne valami, ami az őrületbe kergette a nőket, tekintettel arra, hogy Joannel és Estherrel is járt. Buddy később hangosan azon töpreng, ki veszi feleségül Esthert most, hogy kórházba került, és ezzel gyakorlatilag véget vet az eljegyzés iránti elkötelezettségüknek. Eszter megkönnyebbülést érez, amiért megszabadult korábbi korlátai közül.",
+        "A regény azzal ér véget, hogy Esther konferencián vesz részt orvosaival, akik eldöntik, hogy elhagyhatja-e a kórházat és visszatérhet-e az iskolába."
       ],
       "facts": {
         "originalTitle": "The Bell Jar",
@@ -482,7 +485,8 @@
       "article": {
         "lang": "hu",
         "title": "Sylvia Plath",
-        "url": "https://hu.wikipedia.org/wiki/Sylvia_Plath"
+        "url": "https://hu.wikipedia.org/wiki/Sylvia_Plath",
+        "translated": false
       },
       "intro": [
         "Sylvia Plath (Boston, Massachusetts, 1932. október 27. – London, 1963. február 11.) amerikai költő, író, novellista, gyerekkönyvíró."

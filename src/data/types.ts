@@ -12,9 +12,10 @@ export interface Image {
   credit: Credit | null;
 }
 export interface ArticleRef {
-  lang: 'hu' | 'en';
+  lang: string;
   title: string;
   url: string;
+  translated?: boolean;
 }
 export type Block =
   | string

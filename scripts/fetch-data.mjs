@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
 import sharp from 'sharp';
 import { parse } from 'node-html-parser';
+import { createHash } from 'node:crypto';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BOOKS_YAML = path.join(ROOT, 'src/data/books.yaml');
@@ -566,8 +567,11 @@ async function fetchBook(book) {
   const bookQid = book.wiki ? await resolveWikiOverride(book.wiki) : await findBook(book, authorQid);
   const [bookEnt, authorEnt] = await getEntities([bookQid, authorQid]);
 
-  const bookArticle = await getArticle(bookEnt, { kind: 'book' });
-  const authorArticle = await getArticle(authorEnt, { kind: 'author' });
+  // Keep titles consistent in machine translation: original title → Hungarian title.
+  const origTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle;
+  const glossary = [...(origTitle && origTitle !== book.title ? [[origTitle, book.title]] : []), ...GLOBAL_GLOSSARY];
+  const bookArticle = await translateArticle(await getArticle(bookEnt, { kind: 'book' }), glossary);
+  const authorArticle = await translateArticle(await getArticle(authorEnt, { kind: 'author' }), glossary);
 
   const originalTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle ?? null;
   const published = formatWdTime(claimValues(bookEnt, 'P577').sort((a, b) => a.time.localeCompare(b.time))[0]);
@@ -582,7 +586,7 @@ async function fetchBook(book) {
     fetchedAt: new Date().toISOString(),
     book: {
       wikidataId: bookQid,
-      article: bookArticle && { lang: bookArticle.lang, title: bookArticle.title, url: bookArticle.url },
+      article: bookArticle && { lang: bookArticle.lang, title: bookArticle.title, url: bookArticle.url, translated: !!bookArticle.translated },
       intro: bookArticle?.intro ?? [],
       plot: bookArticle?.plot ?? null,
       facts: {
@@ -597,7 +601,7 @@ async function fetchBook(book) {
     author: {
       wikidataId: authorQid,
       name: label(authorEnt) ?? book.author,
-      article: authorArticle && { lang: authorArticle.lang, title: authorArticle.title, url: authorArticle.url },
+      article: authorArticle && { lang: authorArticle.lang, title: authorArticle.title, url: authorArticle.url, translated: !!authorArticle.translated },
       intro: authorArticle?.intro ?? [],
       biography: authorArticle?.biography ?? [],
       huEditions: authorArticle?.huEditions ?? null,
@@ -615,7 +619,95 @@ async function fetchBook(book) {
   };
 }
 
+// ---------- Machine translation (non-Hungarian articles → Hungarian) ----------
+// Free Google Translate endpoint; results are cached in the repo keyed by source text hash,
+// so only new/changed paragraphs are sent and CI works from the cache.
+const TRANSLATIONS_JSON = path.join(ROOT, 'src/data/generated/translations.json');
+let translationCache = {};
+let translationFailures = 0;
+const hashText = (lang, t) => createHash('sha1').update(`${lang}\n${t}`).digest('hex').slice(0, 16);
+
+async function translate(text, from, glossary = []) {
+  let src = text;
+  for (const [orig, hu] of glossary) src = src.split(orig).join(hu);
+  const key = hashText(from, src);
+  if (translationCache[key]) return translationCache[key];
+  if (translationFailures >= 3) return null; // endpoint looks down/blocked: stop trying this run
+  try {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from}&tl=hu&dt=t`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: new URLSearchParams({ q: src }),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    const out = (data[0] ?? []).map((seg) => seg[0] ?? '').join('').trim();
+    if (!out) throw new Error('üres válasz');
+    translationCache[key] = out.replace(/"([^"]+)"/g, '„$1”');
+    await new Promise((r) => setTimeout(r, 250));
+    return translationCache[key];
+  } catch (err) {
+    translationFailures++;
+    console.warn(`  ! fordítási hiba: ${err.message}`);
+    return null;
+  }
+}
+
+// Terms Google translates literally; replaced with the Hungarian term before translation.
+const GLOBAL_GLOSSARY = [
+  ['roman à clef', 'kulcsregény'],
+  ['roman a clef', 'kulcsregény'],
+  ['Bildungsroman', 'fejlődésregény'],
+  ['bildungsroman', 'fejlődésregény'],
+];
+
+// Translates every text in the blocks; returns null if anything failed (caller keeps the original).
+async function translateBlocks(blocks, from, glossary) {
+  if (!blocks) return blocks;
+  const out = [];
+  for (const b of blocks) {
+    if (typeof b === 'string') out.push(await translate(b, from, glossary));
+    else if (b.type === 'list') {
+      const items = [];
+      for (const i of b.items) items.push(await translate(i, from, glossary));
+      out.push(items.includes(null) ? null : { ...b, items });
+    } else {
+      const text = await translate(b.text, from, glossary);
+      out.push(text ? { ...b, text } : null);
+    }
+  }
+  return out.includes(null) ? null : out;
+}
+
+// Translates a non-Hungarian article in place. Marks article.translated = true only if all parts succeeded.
+async function translateArticle(article, glossary) {
+  if (!article || article.lang === 'hu') return article;
+  const from = article.lang;
+  const intro = await translateBlocks(article.intro, from, glossary);
+  const plot = await translateBlocks(article.plot, from, glossary);
+  let biography = article.biography;
+  if (biography) {
+    const tr = [];
+    for (const s of biography) {
+      const heading = await translate(s.heading, from, glossary);
+      const paras = await translateBlocks(s.paras, from, glossary);
+      tr.push(heading && paras ? { ...s, heading, paras } : null);
+    }
+    biography = tr.includes(null) ? null : tr;
+  }
+  const ok = intro && (article.plot ? plot : true) && (article.biography ? biography : true);
+  if (!ok) {
+    console.warn(`  ! ${article.title}: a fordítás nem sikerült, az eredeti (${from}) szöveg marad`);
+    return { ...article, translated: false };
+  }
+  return { ...article, intro, plot, biography, translated: true };
+}
+
 async function main() {
+  try {
+    translationCache = JSON.parse(await fs.readFile(TRANSLATIONS_JSON, 'utf8'));
+  } catch {}
   const books = YAML.parse(await fs.readFile(BOOKS_YAML, 'utf8')) ?? [];
   let previous = [];
   try {
@@ -650,6 +742,7 @@ async function main() {
   }
   await fs.mkdir(path.dirname(OUT_JSON), { recursive: true });
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2) + '\n');
+  await fs.writeFile(TRANSLATIONS_JSON, JSON.stringify(translationCache, null, 2) + '\n');
   if (missingTerms.size) {
     console.warn(`\nMagyar fordítás nélküli címkék (add hozzá a HU_TERMS táblához): ${[...missingTerms].join(', ')}`);
   }

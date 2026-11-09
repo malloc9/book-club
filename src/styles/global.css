@@ -294,3 +294,5 @@ a.w-title:hover { color: var(--accent); text-decoration: underline; }
 .blist li { margin-bottom: 0.3rem; }
 .blist li::marker { color: var(--accent); }
 .plot-h { font-size: 1.1rem; margin: 1.4rem 0 0.5rem; }
+
+.badge-mt { background: transparent; border: 1px solid var(--accent); cursor: help; }

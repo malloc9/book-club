@@ -1,12 +1,24 @@
 ---
+import type { ArticleRef } from '../data/types';
+import { langName } from '../data/books';
+
 interface Props {
-  lang: string | undefined;
+  article: ArticleRef | null | undefined;
 }
+const a = Astro.props.article;
+const from = a ? langName(a.lang) : '';
 ---
 {
-  Astro.props.lang === 'en' && (
-    <span class="badge" title="Ehhez nincs magyar Wikipédia-szócikk, ezért az angol változatot mutatjuk.">
-      angol nyelvű forrás
+  a && a.lang !== 'hu' && (a.translated ? (
+    <span
+      class="badge badge-mt"
+      title={`Ehhez nincs magyar Wikipédia-szócikk: a szöveg a(z) ${from} nyelvű változat automatikus (gépi) fordítása, pontatlanságokat tartalmazhat.`}
+    >
+      gépi fordítás – {from} forrásból
     </span>
-  )
+  ) : (
+    <span class="badge" title="Ehhez nincs magyar Wikipédia-szócikk, ezért az eredeti nyelvű változatot mutatjuk.">
+      {from} nyelvű forrás
+    </span>
+  ))
 }
