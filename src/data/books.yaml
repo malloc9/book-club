@@ -146,6 +146,9 @@
     "Schlaflos": "Álmatlanság"
     "Olavs Träume": "Olav álma"
     "Abendmattigkeit": "Esti dal"
+    "Wakefulness": "Álmatlanság"
+    "Olav's Dreams": "Olav álma"
+    "Weariness": "Esti dal"
   # The Wikipedia article is German only and machine-translates badly, so the summary is our own.
   description:
     - >-

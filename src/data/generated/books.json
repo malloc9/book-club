@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T17:34:38.000Z",
+    "fetchedAt": "2026-11-09T17:39:46.755Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -925,7 +925,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T17:34:47.647Z",
+    "fetchedAt": "2026-11-09T17:40:01.128Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -1589,7 +1589,7 @@
     "slug": "a-kedves",
     "title": "A kedves",
     "authorName": "Toni Morrison",
-    "fetchedAt": "2026-11-09T17:35:01.211Z",
+    "fetchedAt": "2026-11-09T17:40:23.157Z",
     "book": {
       "wikidataId": "Q971767",
       "article": {
@@ -3018,7 +3018,7 @@
     "slug": "ne-bantsatok-a-feketerigot",
     "title": "Ne bántsátok a feketerigót!",
     "authorName": "Harper Lee",
-    "fetchedAt": "2026-11-09T17:35:07.823Z",
+    "fetchedAt": "2026-11-09T17:40:33.119Z",
     "book": {
       "wikidataId": "Q212340",
       "article": {
@@ -3608,7 +3608,7 @@
     "slug": "evek",
     "title": "Évek",
     "authorName": "Annie Ernaux",
-    "fetchedAt": "2026-11-09T17:35:15.723Z",
+    "fetchedAt": "2026-11-09T17:40:49.377Z",
     "book": {
       "wikidataId": "Q3230588",
       "article": {
@@ -4285,7 +4285,7 @@
     "slug": "hangyaboly",
     "title": "Hangyaboly",
     "authorName": "Kaffka Margit",
-    "fetchedAt": "2026-11-09T17:35:23.696Z",
+    "fetchedAt": "2026-11-09T17:41:02.309Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -4883,7 +4883,7 @@
     "slug": "zsomle-odavan",
     "title": "Zsömle odavan",
     "authorName": "Krasznahorkai László",
-    "fetchedAt": "2026-11-09T17:35:32.906Z",
+    "fetchedAt": "2026-11-09T17:41:28.760Z",
     "book": {
       "wikidataId": "Q139899382",
       "article": null,
@@ -5593,7 +5593,7 @@
     "slug": "edentol-keletre",
     "title": "Édentől keletre",
     "authorName": "John Steinbeck",
-    "fetchedAt": "2026-11-09T17:35:38.080Z",
+    "fetchedAt": "2026-11-09T17:41:43.162Z",
     "book": {
       "wikidataId": "Q849701",
       "article": {
@@ -6588,7 +6588,7 @@
     "slug": "egy-no",
     "title": "Egy nő",
     "authorName": "Esterházy Péter",
-    "fetchedAt": "2026-11-09T17:35:41.675Z",
+    "fetchedAt": "2026-11-09T17:42:01.706Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -7464,7 +7464,7 @@
     "slug": "vad-lovak",
     "title": "Vad lovak",
     "authorName": "Cormac McCarthy",
-    "fetchedAt": "2026-11-09T17:35:49.315Z",
+    "fetchedAt": "2026-11-09T17:42:12.681Z",
     "book": {
       "wikidataId": "Q264519",
       "article": {
@@ -8181,7 +8181,7 @@
     "slug": "trilogia",
     "title": "Trilógia",
     "authorName": "Jon Fosse",
-    "fetchedAt": "2026-11-09T17:35:59.642Z",
+    "fetchedAt": "2026-11-09T17:42:28.661Z",
     "book": {
       "wikidataId": "Q131179124",
       "article": {
@@ -8516,22 +8516,22 @@
                   "text": "Bibel 2011",
                   "href": "https://en.wikipedia.org/wiki/Bible_translations_in_Norway"
                 },
-                " norvég bibliafordítás irodalmi tanácsadói között szerepelt. 2015-ben megkapta az Északi Tanács Irodalmi Díját az ",
+                " norvég bibliafordítás irodalmi tanácsadói között szerepelt. Az ",
                 {
                   "text": "Andvake",
                   "href": "https://en.wikipedia.org/wiki/Wakefulness_(novella)"
                 },
-                " (Ébrenlét), az ",
+                " (Álmatlanság), ",
                 {
                   "text": "Olavs draumar",
                   "href": "https://en.wikipedia.org/wiki/Olav's_Dreams"
                 },
-                " (Olav álmai) és a ",
+                " (Olav álma) és ",
                 {
                   "text": "Kveldsvævd",
                   "href": "https://en.wikipedia.org/wiki/Weariness_(novella)"
                 },
-                " című trilógiáért."
+                " (Esti dalvd) című trilógiáért 2015-ben megkapta az Északi Tanács Irodalmi Díját is."
               ]
             },
             {
@@ -9124,7 +9124,7 @@
     "slug": "remtortenetek",
     "title": "Rémtörténetek",
     "authorName": "Nádas Péter",
-    "fetchedAt": "2026-11-09T17:36:09.134Z",
+    "fetchedAt": "2026-11-09T17:42:41.066Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -9872,7 +9872,7 @@
     "slug": "az-otos-szamu-vagohid",
     "title": "Az ötös számú vágóhíd",
     "authorName": "Kurt Vonnegut",
-    "fetchedAt": "2026-11-09T17:36:14.360Z",
+    "fetchedAt": "2026-11-09T17:42:47.037Z",
     "book": {
       "wikidataId": "Q265954",
       "article": {
@@ -11142,7 +11142,7 @@
     "slug": "a-feher-kiraly",
     "title": "A fehér király",
     "authorName": "Dragomán György",
-    "fetchedAt": "2026-11-09T17:36:20.076Z",
+    "fetchedAt": "2026-11-09T17:42:58.064Z",
     "book": {
       "wikidataId": "Q56641079",
       "article": {
@@ -11537,7 +11537,7 @@
     "slug": "sinistra-korzet",
     "title": "Sinistra körzet",
     "authorName": "Bodor Ádám",
-    "fetchedAt": "2026-11-09T17:36:28.840Z",
+    "fetchedAt": "2026-11-09T17:43:08.177Z",
     "book": {
       "wikidataId": "Q16522756",
       "article": {
