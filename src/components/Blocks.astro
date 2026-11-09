@@ -1,0 +1,24 @@
+---
+import type { Block } from '../data/types';
+
+interface Props {
+  blocks: Block[] | null | undefined;
+}
+const { blocks = [] } = Astro.props;
+---
+{
+  (blocks ?? []).map((b) =>
+    typeof b === 'string' ? (
+      <p>{b}</p>
+    ) : b.type === 'quote' ? (
+      <blockquote class="quote">
+        <p>{b.text}</p>
+        {b.source && <footer>— {b.source}</footer>}
+      </blockquote>
+    ) : b.type === 'list' ? (
+      <ul class="blist">{b.items.map((i) => <li>{i}</li>)}</ul>
+    ) : (
+      <h4 class="plot-h">{b.text}</h4>
+    ),
+  )
+}

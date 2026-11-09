@@ -16,10 +16,15 @@ export interface ArticleRef {
   title: string;
   url: string;
 }
+export type Block =
+  | string
+  | { type: 'quote'; text: string; source: string | null }
+  | { type: 'list'; items: string[] }
+  | { type: 'heading'; text: string };
 export interface BioSection {
   level: number;
   heading: string;
-  paras: string[];
+  paras: Block[];
 }
 export interface Work {
   wikidataId: string;
@@ -38,8 +43,8 @@ export interface BookData {
   book: {
     wikidataId: string;
     article: ArticleRef | null;
-    intro: string[];
-    plot: string[] | null;
+    intro: Block[];
+    plot: Block[] | null;
     facts: {
       originalTitle: string | null;
       published: string | null;
@@ -53,7 +58,7 @@ export interface BookData {
     wikidataId: string;
     name: string;
     article: ArticleRef | null;
-    intro: string[];
+    intro: Block[];
     biography: BioSection[];
     huEditions: string[] | null;
     works: Work[];

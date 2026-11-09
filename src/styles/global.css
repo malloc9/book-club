@@ -265,7 +265,8 @@ a.w-title:hover { color: var(--accent); text-decoration: underline; }
   color: var(--muted);
   white-space: nowrap;
 }
-.tag-ours { background: var(--accent); border-color: var(--accent); color: var(--surface); font-weight: 600; }
+.works li.ours .w-title { color: var(--accent); }
+.works li.ours .tag { border-color: var(--accent); }
 @media (max-width: 30rem) {
   .works li { grid-template-columns: 2.8rem 1fr; }
   .w-tags { grid-column: 2; justify-content: flex-start; }
@@ -275,3 +276,21 @@ a.w-title:hover { color: var(--accent); text-decoration: underline; }
 .editions { max-width: 46rem; margin: 0; padding-left: 1.2rem; font-size: 0.95rem; }
 .editions li { margin: 0 0 0.45rem; }
 .editions li::marker { color: var(--accent); }
+
+/* quotes, lists, plot subheadings */
+.quote {
+  margin: 1.4rem 0;
+  padding: 0.9rem 1.2rem 0.9rem 1.4rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 10px 10px 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.02rem;
+}
+.quote p { margin: 0; }
+.quote footer { margin-top: 0.5rem; font-family: var(--sans); font-style: normal; font-size: 0.85rem; color: var(--muted); }
+.blist { margin: 0 0 1em; padding-left: 1.2rem; }
+.blist li { margin-bottom: 0.3rem; }
+.blist li::marker { color: var(--accent); }
+.plot-h { font-size: 1.1rem; margin: 1.4rem 0 0.5rem; }

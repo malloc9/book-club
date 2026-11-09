@@ -4,6 +4,7 @@ import Cover from '../../components/Cover.astro';
 import Credit from '../../components/Credit.astro';
 import Source from '../../components/Source.astro';
 import EnBadge from '../../components/EnBadge.astro';
+import Blocks from '../../components/Blocks.astro';
 import { books, asset, bookUrl } from '../../data/books';
 import type { BookData } from '../../data/types';
 
@@ -20,10 +21,11 @@ const place = (when: string | null | undefined, where: string | null | undefined
   [when, where].filter(Boolean).join(', ');
 // Works the club has read link to our own book page.
 const clubBooks = new Map(books.filter((x) => x.book).map((x) => [x.book!.wikidataId, x.slug]));
+const description = (book?.intro.find((x) => typeof x === 'string') as string | undefined)?.slice(0, 160);
 const born = place(af?.birth, af?.birthPlace);
 const died = place(af?.death, af?.deathPlace);
 ---
-<Base title={b.title} description={book?.intro[0]?.slice(0, 160)}>
+<Base title={b.title} description={description}>
   <a class="back" href={asset('')}>← Vissza a könyvekhez</a>
 
   <article class="book">
@@ -53,11 +55,11 @@ const died = place(af?.death, af?.deathPlace);
       book && book.intro.length > 0 ? (
         <section class="prose">
           <h2>A könyvről <EnBadge lang={book.article?.lang} /></h2>
-          {book.intro.map((p) => <p>{p}</p>)}
+          <Blocks blocks={book.intro} />
           {book.plot && (
             <details class="spoiler">
               <summary>Cselekmény – <strong>spoilert tartalmaz</strong>, kattints a megjelenítéshez</summary>
-              <div class="spoiler-body">{book.plot.map((p) => <p>{p}</p>)}</div>
+              <div class="spoiler-body"><Blocks blocks={book.plot} /></div>
             </details>
           )}
           <Source article={book.article} />
@@ -98,7 +100,7 @@ const died = place(af?.death, af?.deathPlace);
                 {af && af.nationality.length > 0 && (<div><dt>Állampolgárság</dt><dd>{af.nationality.join(', ')}</dd></div>)}
                 {af && af.occupations.length > 0 && (<div><dt>Foglalkozás</dt><dd>{af.occupations.join(', ')}</dd></div>)}
               </dl>
-              <div class="prose">{author.intro.map((p) => <p>{p}</p>)}</div>
+              <div class="prose"><Blocks blocks={author.intro} /></div>
             </div>
           </div>
 
@@ -108,7 +110,7 @@ const died = place(af?.death, af?.deathPlace);
               {author.biography.map((s) => (
                 <>
                   {s.level <= 1 ? <h4>{s.heading}</h4> : <h5>{s.heading}</h5>}
-                  {s.paras.map((p) => <p>{p}</p>)}
+                  <Blocks blocks={s.paras} />
                 </>
               ))}
             </div>
@@ -121,7 +123,7 @@ const died = place(af?.death, af?.deathPlace);
                 {author.works.map((w) => {
                   const ours = clubBooks.get(w.wikidataId);
                   return (
-                    <li class:list={{ ours: !!ours }}>
+                    <li class:list={{ ours: !!ours }} title={ours ? 'Ezt a könyvet olvastuk' : undefined}>
                       <span class="w-year">{w.year ?? '–'}</span>
                       <span class="w-main">
                         {ours ? (
@@ -135,7 +137,6 @@ const died = place(af?.death, af?.deathPlace);
                       </span>
                       <span class="w-tags">
                         {w.type && <span class="tag">{w.type}</span>}
-                        {ours && <span class="tag tag-ours">olvastuk</span>}
                       </span>
                     </li>
                   );

@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T12:53:23.029Z",
+    "fetchedAt": "2026-11-09T13:03:13.717Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -16,14 +16,36 @@
         "A világítótorony követi és kiterjeszti a modernista regényírók – mint Marcel Proust és James Joyce – hagyományait, mely szerint a cselekmény csak másodlagos eszköze a filozofikus szemlélődésnek, a gondolatisága pedig szövevényes, nehezen követhető lehet. A regény kis dialógusokat tartalmaz, cselekményt viszont alig; a legtöbbje a szereplők gondolatai, észrevételei, megfigyeléseiként jelenik meg. A regény hangsúlyozza a gyerekkori érzelmek meghatározó mivoltát és a felnőtt kapcsolatok változékonyságát.",
         "1998-ban a Modern Library rangsorában, a 20. század 100 legjobb angol nyelvű regénye között a 15. helyre került, 2005-ben pedig a TIME magazin beválasztotta A 100 legjobb angol nyelvű regény 1923-tól napjainkig c. listájába."
       ],
-      "plot": null,
+      "plot": [
+        {
+          "type": "heading",
+          "text": "I. Az ablak"
+        },
+        "Mr. és Mrs. Ramsay nyolc gyerekükkel a Skye szigeten található (Hebridák) nyári lakukban töltik a nyarat. A házuktól nem messze, az öblön túl áll egy nagy világítótorony. A 6 éves James Ramsay leghőbb vágya meglátogatni a világítótornyot, és Mrs. Ramsay ígéretet tesz, ha az idő engedi, következő nap elmennek. De James öröme nem tart sokáig, mert apja, Mr. Ramsay távolságtartó ridegséggel kijelenti, hogy másnap nem lesz jó idő. Megjegyzése nem csak Mr. és Mrs. Ramsay között, hanem James és Mr. Ramsay között is feszültséget kelt. Ez a bizonyos incidens a fejezet során többször is felidéződik, elsősorban Mr. és Mrs. Ramsay kapcsolatának szempontjából. Ramsayék több barátot és kollégát vendégül látnak, például Charles Tansleyt, aki nagy rajongója Mr. Ramsay metafizikus filozófiai munkáinak.",
+        "Lily Briscoe egy fiatal festőnő, aki Mrs. Ramsayről próbál portrét készíteni. Mrs. Ramsay feltett szándéka, hogy Lilyt hozzáadja egy régi családi barátjukhoz, William Bankeshez, de Lily nem gondolkozik házasságban. Mrs. Ramsay ezen kívül Paul Rayley és Minta Doyle kapcsolatát is menedzseli, szintén házasságot remélve. A délután folyamán Paul megkéri Minta kezét, Lily elkezdi a festményét, Mrs. Ramsay vigasztalja a megbántott Jamest, Mr. Ramsay pedig a hiányosságai miatt emészti magát, mint gondolkodó ember, mint filozófus.",
+        "Ezen az estén Ramsayék vacsorapartit tartanak, ami látszólag egy kicsit balsorsúan alakul: Paul és Minta és a két Ramsay gyerek késnek a tengerparti sétából visszajövet. Mindenki feszeng, csak udvariaskodik, felszínes társalgás folyik. Lily gondolatban neheztel Charles Tansleyre, mert Charles szerint a nők nem tudnak sem írni, sem festeni. Mr. Ramsay udvariatlanul reagál, amikor a költő Augustus Carmichael még egy tányér levest kér. (Nem szerette, ha mások még esznek, mikor ő már végzett.) De mire az este éjszakába fordul ezek a ballépések elmosódnak, és a vendégek egymásra hangolódnak.",
+        {
+          "type": "heading",
+          "text": "II. Múlik az idő"
+        },
+        "A második részben az idő múlása felgyorsul, 10 év telik el. Az első világháború végigsöpör Európán. Mrs. Ramsay egyik éjjel váratlanul meghal. Andrew Ramsay, a legidősebb fiú elesik a harcmezőn; Andrew egyik húga, Prue pedig szülési komplikációba hal bele.",
+        "A család nem vakációzik többet a nyári lakban, amit az idő sem kímél: a kertet az elburjánzott gyomok, a házat pókhálók lepik el. A család 10 év múlva látogatja meg újra a nyaralót. Mrs. McNab, a házvezető, néhány alkalmazott segítségével rendbe teszi a házat, ami így megmenekül az enyészettől, és amikor Lily Briscoe visszatér, már újra minden rendben.",
+        {
+          "type": "heading",
+          "text": "III. A világítótorony"
+        },
+        "Az utolsó részben, a család maradék tagja visszatér a nyári lakba, - 10 éve jártak itt utoljára. Mr. Ramsay megkésett vitorlás kirándulást tervez a világítótoronyhoz, fiával Jamessel és lányával Cammel, ami ismét majdnem elmarad, amikor a gyerekek nem készülnek el időben, de végül útnak indulnak.",
+        "Mialatt ők a világítótorony felé vitorláznak, Lily elfoglalja helyét a pázsiton, hogy megkísérelje befejezni rég félbehagyott festményét.",
+        "A hajóban feszült csend és feszült párbeszédek, James és Cam tehetetlen haragot éreznek apjuk iránt, elegük van önsajnálkozó viselkedéséből, zsarnokoskodásából, megközelíthetetlenségéből, mégis, amikor a hajó kiköt, valamiféle elfogult szeretettel figyelik őt. Még James is, akit apja megdicsér, amiért ügyesen kormányoz, és ezzel egy pillanatra megszűnik köztük a távolság.",
+        "A parton Lily elvégzi a festményén az utolsó simításokat: egy végső vonás a vásznon és leteszi az ecsetet – végül sikerült megfestenie úgy, ahogy ő látta."
+      ],
       "facts": {
         "originalTitle": "To the Lighthouse",
         "published": "1927",
         "language": "brit angol",
         "genres": [
-          "modernist literature",
-          "psychological fiction"
+          "modernista irodalom",
+          "lélektani próza"
         ],
         "country": "Egyesült Királyság"
       },
@@ -62,7 +84,7 @@
             "Irodalmi légkörben töltötte gyermekkorát: iskolába nem járt, nevelői és szülei tanították, kivételes műveltségét pedig apja könyvtárában szerezte. Nagyon korán eldöntötte, hogy író akar lenni.",
             "1882-től 1894-ig a család a nyári szüneteket egy cornwalli tengerparti kisvárosban, St. Ivesban töltötte. 1895-ben, az anyja halála után a St. Ives-i házat eladták, de Virginia sokszor visszatért még ide. A kisváros is megjelenik műveiben, például A világítótorony és a Jacob szobája című regényében. Legtöbb művének London, illetve St. Ives a helyszíne.",
             "1895-ben, 13 éves korában vesztette el váratlanul az édesanyját; ekkor volt az első idegösszeomlása. Későbbi vallomásában beismeri, hogy 44 éves koráig nem hagyta nyugodni anyja emléke. A féltestvére, Stella vette át a háztartási feladatokat, de hamarosan, 1897-ben férjhez ment, és a nászútjukról visszatérve ő is meghalt.",
-            "Apja, aki sokak szerint elnyomta Virginiát, 1904-ben hunyt el, ami összetörte a különösen érzékeny írónőt, holott nem volt jó véleménnyel róla: \"minden művészi érzék nélkülinek\" titulálta évekkel később.1912-ben ment feleségül Leonard Woolf-hoz.",
+            "Apja, aki sokak szerint elnyomta Virginiát, 1904-ben hunyt el, ami összetörte a különösen érzékeny írónőt, holott nem volt jó véleménnyel róla: \"minden művészi érzék nélkülinek\" titulálta évekkel később. 1912-ben ment feleségül Leonard Woolf-hoz.",
             "Idegösszeroppanásainak és visszatérő depressziós periódusainak gyökere, a pszichoanalitikusok és életrajzkutatók feltételezése szerint annak a következménye, hogy Virginiát és Vanessát a féltestvéreik, George és Gerald Duckworth szexuálisan molesztálták.",
             "Mentális betegsége és hangulatingadozásai egész életére hatással voltak, de irodalmi termékenysége kisebb szünetekkel bár, de töretlen volt egészen a haláláig."
           ]
@@ -71,8 +93,17 @@
           "level": 1,
           "heading": "Halála",
           "paras": [
-            "1940-ben bombatalálat érte londoni lakásukat és rodmelli kertjüket egyaránt. Gyenge idegrendszerét a történtek annyira megviselték, hogy öngyilkos lett: 1941. március 28-án kövekkel megrakva zsebeit a sussexi birtokuk közelében lévő Ouse folyóba ölte magát. A holttestét április 18-áig nem találták. Férje Virginia hamvait a rodmelli kertjükben egy fa alá temette el.",
-            "Férjének hagyott utolsó levelében ezt írja:"
+            "1940-ben bombatalálat érte londoni lakásukat és rodmelli kertjüket egyaránt. Gyenge idegrendszerét a történtek annyira megviselték, hogy öngyilkos lett: 1941. március 28-án kövekkel megrakva zsebeit a sussexi birtokuk közelében lévő Ouse folyóba ölte magát. A holttestét április 18-áig nem találták. Férje Virginia hamvait a rodmelli kertjükben egy fa alá temette el. Férjének hagyott utolsó levelében ezt írja:",
+            {
+              "type": "quote",
+              "text": "I feel certain that I am going mad again. I feel we can't go through another of those terrible times. And I cant recover this time. I begin to hear voices, and I can't concentrate. So I am doing what seems the best thing to do. You have given me the greatest possible happiness. You have been in every way all that anyone could be. I don't think two people could have been happier 'til this terrible disease came. I can't fight any longer. I know that I am spoiling your life, that without me you could work. And you will I know. You see I can't even write this properly. I can't read. What I want to say is I owe all the happiness of my life to you. You have been entirely patient with me and incredibly good. I want to say that – everybody knows it. If anybody could have saved me it would have been you. Everything has gone from me but the certainty of your goodness. I can't go on spoiling your life any longer. I don't think two people could have been happier than we have been. V.",
+              "source": null
+            },
+            {
+              "type": "quote",
+              "text": "Úgy érzem, újra kezd elhatalmasodni rajtam az őrület. És érzem, hogy nem tudnánk átvészelni még egy olyan rémes időszakot. Nem heverném ki többé. Újra hangokat hallok, és képtelen vagyok koncentrálni. Így azt teszem, ami a legjobb megoldásnak tűnik. Te a lehető legnagyobb boldogságot adtad nekem. Többet jelentettél számomra, mint bárki más. Nem hiszem, hogy két ember boldogabb lehetett volna, 'míg el nem ért ez a rémes kór. Nem tudok tovább harcolni. Tudom, hogy tönkreteszem az életed, és hogy nélkülem újra képes lennél dolgozni. És tudom, hogy fogsz is. Látod, még ezt sem tudom rendesen megírni. Olvasni sem tudok már. Szeretném, ha tudnád, hogy minden boldogságomat neked köszönhetem. Olyan türelmes voltál velem és hihetetlenül jó. Ezt ki akartam mondani - mindenki tudja. Ha lett volna bárki, aki megmenthetett volna, az te lennél. Számomra minden elveszett, kivéve a te jóságodat. Nem akarom tovább rombolni az életedet. Nem hiszem, hogy két ember boldogabb lehetett volna annál, mint mi voltunk. V.",
+              "source": null
+            }
           ]
         },
         {
@@ -105,12 +136,14 @@
       "huEditions": [
         "Évek. 1-2. köt.; ford. Hevesi András, bev. Schöpflin Aladár; Franklin, Bp., 1940",
         "Orlando. Regény; ford. Gyergyai Albert, Szávai Nándor; Révai, Bp., 1945",
-        "Clarissa; ford. Nagypál István; Franklin, Bp., 1946 (Külföldi regényírók) (Mrs. Dalloway címen is)",
+        "Clarissa; ford. Nagypál István; Franklin, Bp., 1946 (Külföldi regényírók)",
+        "– (Mrs. Dalloway címen is)",
         "Flush. Regény; ford. Rónay György; Révai, Bp., 1947 (Révai könyvtár)",
         "Orlando; ford. Szávai Nándor, utószó Gyergyai Albert; Európa, Bp., 1966 (5 világrész könyvei)",
         "Az orosz látásmód; ford. Szegedy-Maszák Mihály; in: Hagyomány és egyéniség. Az angol esszé klasszikusai; vál. Európa Könyvkiadó munkaközössége, közrem. Ruttkay Kálmán, Ungvári Tamás, utószó Abody Béla, jegyz. Abádi Nagy Zoltán; Európa, Bp., 1967",
         "A világítótorony. Regény; ford., bev. Mátyás Sándor; Magvető, Bp., 1971 (Világkönyvtár)",
-        "Mrs. Dalloway; ford. Tandori Dezső; Magyar Helikon–Európa, Bp., 1971 (Helikon kiskönyvtár) (Clarissa címen is)",
+        "Mrs. Dalloway; ford. Tandori Dezső; Magyar Helikon–Európa, Bp., 1971 (Helikon kiskönyvtár)",
+        "– (Clarissa címen is)",
         "Hullámok; ford. Mátyás Sándor; Európa, Bp., 1978",
         "A pille halála. Esszék; ford. Bécsy Ágnes et al., vál., utószó, jegyz. Bécsy Ágnes; Európa, Bp., 1980",
         "Saját szoba; ford. Bécsy Ágnes; Európa, Bp., 1986 (Mérleg)",
@@ -392,7 +425,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T12:53:43.862Z",
+    "fetchedAt": "2026-11-09T13:03:20.192Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -425,7 +458,8 @@
         "published": "1963. január 14.",
         "language": "amerikai angol",
         "genres": [
-          "kulcsregény"
+          "kulcsregény",
+          "autofikció"
         ],
         "country": "Amerikai Egyesült Államok"
       },
@@ -463,8 +497,7 @@
           "level": 2,
           "heading": "Gyermekkora",
           "paras": [
-            "Sylvia Plath 1932. október 27-én, a nagy gazdasági világválság idején született Bostonban, Aurelia Schober Plath és Otto Emile Plath első gyermekeként. Apja Németországból települt be, főiskolai tanárként dolgozott, és a méhek ismert szakértője volt. Embóliában halt meg egy műtétet követően, fel nem ismert cukorbetegsége következményeként 1940. november 5-én. Ekkor Sylvia nyolcéves volt. Állítólag apja halálakor azt mondta: „Soha többé nem beszélek Istenhez”. Emléke egész életén végigkísérte és kísértette. Verseiben gyakran megjelenik az életén uralkodó apafigura, többek között méhekhez kapcsolódó motívumok használatán keresztül. Anyja elsőgenerációs amerikai volt, osztrák felmenőkkel; csaknem 20 évvel volt fiatalabb férjénél. Öccse 1935 áprilisában született.",
-            "Első verse nyolcéves korában jelent meg a Boston Herald c. napilapban."
+            "Sylvia Plath 1932. október 27-én, a nagy gazdasági világválság idején született Bostonban, Aurelia Schober Plath és Otto Emile Plath első gyermekeként. Apja Németországból települt be, főiskolai tanárként dolgozott, és a méhek ismert szakértője volt. Embóliában halt meg egy műtétet követően, fel nem ismert cukorbetegsége következményeként 1940. november 5-én. Ekkor Sylvia nyolcéves volt. Állítólag apja halálakor azt mondta: „Soha többé nem beszélek Istenhez”. Emléke egész életén végigkísérte és kísértette. Verseiben gyakran megjelenik az életén uralkodó apafigura, többek között méhekhez kapcsolódó motívumok használatán keresztül. Anyja elsőgenerációs amerikai volt, osztrák felmenőkkel; csaknem 20 évvel volt fiatalabb férjénél. Öccse 1935 áprilisában született. Első verse nyolcéves korában jelent meg a Boston Herald c. napilapban."
           ]
         },
         {
@@ -473,8 +506,7 @@
           "paras": [
             "Tanulmányait a northamptoni Smith College-ban, majd 1955-től 1957-ig az angliai Cambridge-i Egyetemen végezte. A Smith College-os évek alatt kezdett el randizgatni egy Dick Norton nevű yale-es hallgatóval. Nortonról mintázta Buddy karakterét Az üvegbura c. önéletrajzi regényében. Amikor Nortont tuberkulózissal kezelték egy New York állambeli szanatóriumban, Sylvia meglátogatta őt, és síelés közben eltörte a lábát. Akkor úgy nyilatkozott az epizódról, hogy csak egy baleset volt; a regényben viszont öngyilkossági célzatot kap. (Feltehetőleg ez az aspektus csak fikció volt a regényben.)",
             "„Belső hang sürgetett – ne legyek hülye, mentsem a bőröm, csatoljam le a léceket, s úgy ballagjak le a lesiklópályát szegélyező sűrű fenyők védelmében –, de aztán elhalt a zümmögése, mint egy bánatos moszkító. Hűvösen, mint egy fa vagy virág, kisarjadt a fejemben a gondolat, hogy esetleg a halálba rohanok.\" (Az üvegbura, részlet)",
-            "A főiskola harmadik évét követő nyáron vendégszerkesztői állást ajánlottak neki a Mademoiselle magazinnál, így egy hónapot töltött New Yorkban. Az ott szerzett tapasztalatait sokszor negatív élményként élte meg; kilátásai saját magával és az élettel kapcsolatban meglehetősen pesszimista tónusba fordultak. Ezek után követte el az első orvosilag dokumentált öngyilkossági kísérletét: a házuk pincéjében elbújt, és altatóval túladagolta magát. Ebből az időszakból később sok mindent megörökít Az üvegburában is. Az öngyilkossági kísérlet után rövid ideig egy elmegyógyintézetbe vonult, ahol többek között elektrosokk-terápiával kezelték. Az ott-tartózkodását Olive Higgins Prouty finanszírozta, akinek egyébként az ösztöndíját is köszönhette korábban. (Prouty maga is sikeresen talpra állt egy idegösszeomlás után.)",
-            "Úgy tűnt, a kezelések után Sylvia nagyjából helyrejött, 1955 júniusában sikeresen lediplomázott a Smith College-ban.",
+            "A főiskola harmadik évét követő nyáron vendégszerkesztői állást ajánlottak neki a Mademoiselle magazinnál, így egy hónapot töltött New Yorkban. Az ott szerzett tapasztalatait sokszor negatív élményként élte meg; kilátásai saját magával és az élettel kapcsolatban meglehetősen pesszimista tónusba fordultak. Ezek után követte el az első orvosilag dokumentált öngyilkossági kísérletét: a házuk pincéjében elbújt, és altatóval túladagolta magát. Ebből az időszakból később sok mindent megörökít Az üvegburában is. Az öngyilkossági kísérlet után rövid ideig egy elmegyógyintézetbe vonult, ahol többek között elektrosokk-terápiával kezelték. Az ott-tartózkodását Olive Higgins Prouty finanszírozta, akinek egyébként az ösztöndíját is köszönhette korábban. (Prouty maga is sikeresen talpra állt egy idegösszeomlás után.) Úgy tűnt, a kezelések után Sylvia nagyjából helyrejött, 1955 júniusában sikeresen lediplomázott a Smith College-ban.",
             "Ezek után a Fulbright-program ösztöndíjasaként a Cambridge-i Egyetemen folytatta tovább tanulmányait, ahol továbbra is aktívan írta költeményeit, amiket alkalmanként publikált az iskolaújságban. Egy cambridge-i partin ismerkedett meg az angol költővel, Ted Hughes-sal. Rövid udvarlás után, 1956. június 16-án házasodtak össze."
           ]
         },
@@ -493,11 +525,7 @@
           "heading": "Halála",
           "paras": [
             "„Keresztre feszítenek a saját korlátaid. Amit vakon választottál, megváltoztathatatlan; vissza nem vonható. Voltak esélyeid; nem kaptál rajtuk, az eredendő bűnben dagonyázol; a korlátaid közé szorítva. Még azt sem vagy képes eldönteni, hogy sétálj-e egyet a szabadban: nem vagy biztos benne, menekülés-e ez is, vagy puszta felfrissülés az egész napi szobafogság után. Elveszítettél minden életörömöt. Előtted sehová sem vezető ösvények egész sora.”",
-            "Öngyilkosságot követett el, miután teljesen elszigetelte a szobát közte és az alvó gyerekei között „nedves törölközőkkel és ruhákkal”. Kinyitotta a gázt és a fejét a sütőbe tette. A következő napon a vizsgálat megállapította, hogy öngyilkosság történt.",
-            "Felvetették, hogy Plath öngyilkossága túl precíz, túl körültekintő volt, nem lehetett öngyilkosság.",
-            "Mindenesetre Jilian Becker, Sylvia legjobb barátnője, a Giving Up: The Last Days of Sylvia Plath című könyvben azt mondja: „Mr. Goodchild szerint – aki a kórboncnokhoz rendelt rendőrtiszt volt –, Plath teljesen betette a fejét a sütőbe. Ő tényleg komolyan gondolta.”",
-            "Sírköve egy angliai faluban, Heptonstallban áll, a következő felirattal: „Even amidst fierce flames the golden lotus can be planted.” (szabad fordításban: Arany lótuszt még a legmardosóbb lángok közé is ültethetünk.)",
-            "Férje, Ted Hughes, Plath halála után újranősült és házasságukról több mint harminc évig nem nyilatkozott. Hughes végül 1998-ban publikálta halott feleségéhez írt vallomásos levélszerű verseinek gyűjteményét Születésnapi levelek c. kötetében, ezzel 35 évnyi hallgatást megtörve, majd ugyanezen évben maga is meghalt."
+            "Öngyilkosságot követett el, miután teljesen elszigetelte a szobát közte és az alvó gyerekei között „nedves törölközőkkel és ruhákkal”. Kinyitotta a gázt és a fejét a sütőbe tette. A következő napon a vizsgálat megállapította, hogy öngyilkosság történt. Felvetették, hogy Plath öngyilkossága túl precíz, túl körültekintő volt, nem lehetett öngyilkosság. Mindenesetre Jilian Becker, Sylvia legjobb barátnője, a Giving Up: The Last Days of Sylvia Plath című könyvben azt mondja: „Mr. Goodchild szerint – aki a kórboncnokhoz rendelt rendőrtiszt volt –, Plath teljesen betette a fejét a sütőbe. Ő tényleg komolyan gondolta.” Sírköve egy angliai faluban, Heptonstallban áll, a következő felirattal: „Even amidst fierce flames the golden lotus can be planted.” (szabad fordításban: Arany lótuszt még a legmardosóbb lángok közé is ültethetünk.) Férje, Ted Hughes, Plath halála után újranősült és házasságukról több mint harminc évig nem nyilatkozott. Hughes végül 1998-ban publikálta halott feleségéhez írt vallomásos levélszerű verseinek gyűjteményét Születésnapi levelek c. kötetében, ezzel 35 évnyi hallgatást megtörve, majd ugyanezen évben maga is meghalt."
           ]
         },
         {
@@ -509,10 +537,12 @@
           "level": 1,
           "heading": "Kötetei, költészete",
           "paras": [
-            "R. Lowell vallomásos költészete nagy hatással volt rá; ugyanúgy ahogy Ted is, verseinek tömörségével, nyers, éles képiségével. Ezek az elemek Sylvia-nál finom árnyaltsággal, egyensúllyal párosultak. Ugyanakkor felfedezhetőek benne hasonló vonások Anne Sexton és W. D. Snodgrass költészetével is.",
-            "Első kötete, a The Colossus, bár kedvező kritikákat kapott, de későbbi munkáihoz képest ezek a versek sokkal konvencionálisabbak.",
-            "Az 1965-ben posztumusz kiadott Ariel c. kötet verseit már a letisztult, szikár formavilág, dísztelen nyelvezet jellemzi.",
-            "Verseiben számos témát feszeget; foglalkoztatják például gyermekkora rossz emlékei, apja halála, az életét körülvevő tárgyak idegensége, de vall fiatalkori lelki válságáról is, az 1963-ban – első ízben Victoria Lucas álnéven, majd halála előtt a saját nevén – kiadott önéletrajzi regényében, Az üvegburában."
+            "R. Lowell vallomásos költészete nagy hatással volt rá; ugyanúgy ahogy Ted is, verseinek tömörségével, nyers, éles képiségével. Ezek az elemek Sylvia-nál finom árnyaltsággal, egyensúllyal párosultak. Ugyanakkor felfedezhetőek benne hasonló vonások Anne Sexton és W. D. Snodgrass költészetével is. Első kötete, a The Colossus, bár kedvező kritikákat kapott, de későbbi munkáihoz képest ezek a versek sokkal konvencionálisabbak. Az 1965-ben posztumusz kiadott Ariel c. kötet verseit már a letisztult, szikár formavilág, dísztelen nyelvezet jellemzi. Verseiben számos témát feszeget; foglalkoztatják például gyermekkora rossz emlékei, apja halála, az életét körülvevő tárgyak idegensége, de vall fiatalkori lelki válságáról is, az 1963-ban – első ízben Victoria Lucas álnéven, majd halála előtt a saját nevén – kiadott önéletrajzi regényében, Az üvegburában.",
+            {
+              "type": "quote",
+              "text": "„A tulipánok túl nyugtalanok, itt tél van. Nézd, milyen fehér minden, csöndes, hófödte. Tanulom a békém, fekszem egyedül, csöndben, Mint a fény e fehér falakon, az ágyon, e kézen. Nem vagyok senki; robbanásokhoz semmi közöm.[...]” – (Ariel c. kötet: Tulipánok, részlet)",
+              "source": null
+            }
           ]
         }
       ],
@@ -646,7 +676,7 @@
       ],
       "facts": {
         "birth": "1932. október 27.",
-        "birthPlace": "Boston",
+        "birthPlace": "Jamaica Plain",
         "death": "1963. február 11.",
         "deathPlace": "London",
         "nationality": [

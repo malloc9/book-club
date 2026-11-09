@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
 import sharp from 'sharp';
+import { parse } from 'node-html-parser';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BOOKS_YAML = path.join(ROOT, 'src/data/books.yaml');
@@ -97,14 +98,94 @@ const claimValues = (e, p) =>
     .sort((a, b) => (b.rank === 'preferred') - (a.rank === 'preferred'))
     .map((c) => c.mainsnak.datavalue.value);
 const itemIds = (e, p) => claimValues(e, p).map((v) => v.id).filter(Boolean);
-// Prefer Hungarian labels; fall back to English only if none of the values has a Hungarian label.
+// Hungarian names for common literary terms that often lack a Hungarian label on Wikidata.
+// Keys are the lowercase English labels. Missing ones are reported during the fetch.
+const HU_TERMS = {
+  'modernist literature': 'modernista irodalom',
+  modernism: 'modernizmus',
+  'psychological fiction': 'lélektani próza',
+  'psychological novel': 'lélektani regény',
+  autofiction: 'autofikció',
+  'roman à clef': 'kulcsregény',
+  'autobiographical novel': 'önéletrajzi regény',
+  'semi-autobiographical novel': 'önéletrajzi ihletésű regény',
+  novel: 'regény',
+  novella: 'kisregény',
+  'short story': 'novella',
+  'short story collection': 'novellagyűjtemény',
+  poem: 'vers',
+  poetry: 'költészet',
+  'poetry collection': 'verseskötet',
+  essay: 'esszé',
+  'essay collection': 'esszégyűjtemény',
+  play: 'színmű',
+  drama: 'dráma',
+  memoir: 'memoár',
+  biography: 'életrajz',
+  autobiography: 'önéletrajz',
+  diary: 'napló',
+  'literary fiction': 'szépirodalom',
+  fiction: 'fikció',
+  'stream of consciousness': 'tudatfolyam',
+  'feminist literature': 'feminista irodalom',
+  bildungsroman: 'fejlődésregény',
+  'coming-of-age story': 'felnövéstörténet',
+  'coming-of-age fiction': 'felnövéstörténet',
+  'historical novel': 'történelmi regény',
+  'historical fiction': 'történelmi regény',
+  'war novel': 'háborús regény',
+  'philosophical fiction': 'filozófiai regény',
+  'philosophical novel': 'filozófiai regény',
+  'adventure novel': 'kalandregény',
+  'epistolary novel': 'levélregény',
+  'gothic novel': 'gótikus regény',
+  'gothic fiction': 'gótikus irodalom',
+  'romance novel': 'romantikus regény',
+  'crime novel': 'bűnügyi regény',
+  'crime fiction': 'bűnügyi irodalom',
+  'detective fiction': 'detektívtörténet',
+  'mystery fiction': 'rejtélyes történet',
+  'science fiction': 'sci-fi',
+  'fantasy': 'fantasy',
+  'dystopian novel': 'disztópia',
+  'dystopian fiction': 'disztópia',
+  'utopian and dystopian fiction': 'utópia és disztópia',
+  satire: 'szatíra',
+  'satirical novel': 'szatirikus regény',
+  'magic realism': 'mágikus realizmus',
+  'magical realism': 'mágikus realizmus',
+  "children's literature": 'gyermekirodalom',
+  "children's book": 'gyermekkönyv',
+  'family saga': 'családregény',
+  'campus novel': 'egyetemi regény',
+  tragedy: 'tragédia',
+  comedy: 'komédia',
+  realism: 'realizmus',
+  'literary realism': 'irodalmi realizmus',
+  'social novel': 'társadalmi regény',
+  'existentialist novel': 'egzisztencialista regény',
+  'confessional poetry': 'konfesszionális költészet',
+};
+const missingTerms = new Set();
+function huLabel(e, report = true) {
+  const hu = e?.labels?.hu?.value;
+  if (hu) return hu;
+  const en = e?.labels?.en?.value;
+  if (!en) return null;
+  const t = HU_TERMS[en.toLowerCase()];
+  if (t) return t;
+  if (report) missingTerms.add(en);
+  return en;
+}
+
+// Hungarian label per value (Wikidata hu label → HU_TERMS → English), deduplicated.
+// Only genre-like properties report missing translations (places, countries are proper names).
 async function itemLabels(e, p, max = 3) {
   const ids = [...new Set(itemIds(e, p))].slice(0, 8);
   if (!ids.length) return [];
   const ents = await getEntities(ids);
-  const hu = ents.map((x) => x?.labels?.hu?.value).filter(Boolean);
-  const labels = hu.length ? hu : ents.map(label).filter(Boolean);
-  return [...new Set(labels)].slice(0, max);
+  const report = p === 'P136' || p === 'P106';
+  return [...new Set(ents.map((x) => huLabel(x, report)).filter(Boolean))].slice(0, max);
 }
 
 async function findHuman(name) {
@@ -150,23 +231,81 @@ const BIO_STOP_RE =
 const HU_EDITIONS_RE = /^magyarul/i;
 const MAX_BIO_PARAS = 40;
 
-// explaintext + exsectionformat=wiki → "== Heading ==" markers. Level 1 = "==", 2 = "===", ...
-function parseExtract(text) {
+// Article HTML (action=parse) → sections of blocks. Level 1 = <h2>, 2 = <h3>, ...
+// A block is a paragraph string, { type: 'quote', text, source } or { type: 'list', items }.
+// HTML is used instead of TextExtracts because extracts drop quote templates and tables.
+const SKIP_SEL = [
+  'style', 'script', 'sup.reference', 'sup.noprint', '.mw-editsection', '.mw-cite-backlink',
+  '.noprint', '.navbox', '.infobox', '.metadata', '.ambox', '.hatnote', '.dablink', '.mw-empty-elt',
+  'figure', '.thumb', '.reflist', '.references', '.mbox-small', '.sistersitebox', 'table.wikitable',
+].join(',');
+
+const cleanText = (el) =>
+  el.textContent
+    .replace(/\[\d+\]|\[[a-z]\]|\[forrás\?\]|\[citation needed\]/gi, '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([,.;:!?”])/g, '$1')
+    .replace(/([„(])\s+/g, '$1')
+    .trim();
+
+function listItems(listEl) {
+  const items = [];
+  for (const li of listEl.childNodes.filter((n) => n.tagName === 'LI')) {
+    const nested = li.querySelectorAll(':scope > ul, :scope > ol');
+    nested.forEach((n) => n.remove());
+    const t = cleanText(li);
+    if (t) items.push(t);
+    for (const n of nested) items.push(...listItems(n).map((x) => `– ${x}`));
+  }
+  return items;
+}
+
+function quoteBlock(el) {
+  const sourceEl = el.querySelector('.idezet-2-forras, cite, .templatequotecite, .cquotecite');
+  const source = sourceEl ? cleanText(sourceEl).replace(/^[—–-]\s*/, '') : null;
+  sourceEl?.remove();
+  const text = cleanText(el.querySelector('blockquote') ?? el);
+  return text ? { type: 'quote', text, source: source || null } : null;
+}
+
+function parseArticleHtml(html) {
+  const root = parse(html);
+  root.querySelectorAll(SKIP_SEL).forEach((n) => n.remove());
+  const container = root.querySelector('.mw-parser-output') ?? root;
   const sections = [];
   let current = { level: 0, heading: null, paras: [] };
-  for (const raw of text.split('\n')) {
-    const line = raw.trim();
-    if (!line) continue;
-    const h = /^(={2,})\s*(.+?)\s*\1$/.exec(line);
-    if (h) {
+  const push = (b) => b && current.paras.push(b);
+  for (const el of container.childNodes) {
+    if (!el.tagName) continue;
+    const tag = el.tagName;
+    const heading = el.classList?.contains('mw-heading') ? el.querySelector('h2,h3,h4,h5,h6') : /^H[2-6]$/.test(tag) ? el : null;
+    if (heading) {
       sections.push(current);
-      current = { level: h[1].length - 1, heading: h[2], paras: [] };
-    } else {
-      current.paras.push(line);
+      current = { level: Number(heading.tagName[1]) - 1, heading: cleanText(heading), paras: [] };
+    } else if (tag === 'P') {
+      const t = cleanText(el);
+      if (t) push(t);
+    } else if (tag === 'UL' || tag === 'OL') {
+      const items = listItems(el);
+      if (items.length) push({ type: 'list', items });
+    } else if (tag === 'DL') {
+      const t = cleanText(el);
+      if (t) push(t);
+    } else if (tag === 'BLOCKQUOTE' || el.querySelector?.('blockquote') || /cquote|quotebox|idezet/.test(el.classNames ?? '')) {
+      push(quoteBlock(el));
     }
   }
   sections.push(current);
   return { intro: sections[0].paras, sections: sections.slice(1) };
+}
+
+// Warn when a paragraph announces something (ends with ':') but nothing follows it.
+function checkDanglingColons(label, blocks) {
+  blocks.forEach((b, i) => {
+    if (typeof b === 'string' && b.endsWith(':') && (i === blocks.length - 1 || typeof blocks[i + 1] === 'string')) {
+      console.warn(`  ! ${label}: kettősponttal végződő bekezdés után hiányzik a tartalom: "…${b.slice(-60)}"`);
+    }
+  });
 }
 
 // Top-level section matching `re`, plus its subsections.
@@ -181,10 +320,18 @@ function sectionGroup(sections, re) {
   return out;
 }
 
+// Plot section including its subsections; subheadings become { type: 'heading' } blocks.
 function plotOf(sections) {
-  const s = sections.find((x) => x.level <= 2 && PLOT_RE.test(x.heading));
-  return s?.paras.length ? s.paras : null;
+  const i = sections.findIndex((x) => x.level <= 2 && PLOT_RE.test(x.heading));
+  if (i < 0) return null;
+  const blocks = [...sections[i].paras];
+  for (const sub of sections.slice(i + 1)) {
+    if (sub.level <= sections[i].level) break;
+    blocks.push({ type: 'heading', text: sub.heading }, ...sub.paras);
+  }
+  return blocks.some((b) => b.type !== 'heading') ? blocks : null;
 }
+const blockSize = (b) => (typeof b === 'string' ? 1 : b.type === 'list' ? Math.ceil(b.items.length / 3) : 1);
 
 function biographyOf(sections) {
   const out = [];
@@ -192,8 +339,12 @@ function biographyOf(sections) {
   for (const s of sections) {
     if (s.level === 1 && BIO_STOP_RE.test(s.heading)) break;
     if (count >= MAX_BIO_PARAS) break;
-    const paras = s.paras.slice(0, MAX_BIO_PARAS - count);
-    count += paras.length;
+    const paras = [];
+    for (const b of s.paras) {
+      if (count >= MAX_BIO_PARAS) break;
+      paras.push(b);
+      count += blockSize(b);
+    }
     out.push({ level: s.level, heading: s.heading, paras });
   }
   // Drop trailing headings with no content of their own or below them.
@@ -204,7 +355,8 @@ function biographyOf(sections) {
 function huEditionsOf(sections) {
   const group = sectionGroup(sections, HU_EDITIONS_RE);
   if (!group) return null;
-  const lines = group.flatMap((s, i) => (i === 0 ? s.paras : [`${s.heading}:`, ...s.paras]));
+  const flat = (blocks) => blocks.flatMap((b) => (typeof b === 'string' ? [b] : b.type === 'list' ? b.items : [b.text]));
+  const lines = group.flatMap((s, i) => (i === 0 ? flat(s.paras) : [`${s.heading}:`, ...flat(s.paras)]));
   // Parenthetical continuation lines ("(Mrs. Dalloway címen is)") belong to the previous entry.
   const items = [];
   for (const l of lines) {
@@ -220,17 +372,25 @@ async function getArticle(entity, { kind }) {
     if (!title) continue;
     const data = await wp(lang, {
       action: 'query',
-      prop: 'extracts|pageimages|info',
-      explaintext: '1',
-      exsectionformat: 'wiki',
+      prop: 'pageimages|info',
       piprop: 'name',
       inprop: 'url',
       titles: title,
       redirects: '1',
     });
     const page = data.query?.pages?.[0];
-    if (!page?.extract) continue;
-    const { intro, sections } = parseExtract(page.extract);
+    if (!page || page.missing) continue;
+    const parsed = await wp(lang, {
+      action: 'parse',
+      page: page.title,
+      prop: 'text',
+      disableeditsection: '1',
+      disablelimitreport: '1',
+      disabletoc: '1',
+    });
+    if (!parsed.parse?.text) continue;
+    const { intro, sections } = parseArticleHtml(parsed.parse.text);
+    for (const sec of [{ heading: 'bevezető', paras: intro }, ...sections]) checkDanglingColons(`${page.title} / ${sec.heading}`, sec.paras);
     return {
       lang,
       title: page.title,
@@ -277,7 +437,7 @@ async function imageInfo(lang, file) {
 async function authorWorks(authorQid) {
   const query = `
 SELECT ?w (SAMPLE(?huL) AS ?hu) (SAMPLE(?enL) AS ?en) (SAMPLE(?origT) AS ?orig) (MIN(?date) AS ?d)
-       (SAMPLE(?typeHu) AS ?type) (SAMPLE(?huWiki) AS ?huUrl) (SAMPLE(?enWiki) AS ?enUrl) (MAX(?links) AS ?n)
+       (SAMPLE(?typeHu) AS ?type) (SAMPLE(?typeEn) AS ?typeEnL) (SAMPLE(?huWiki) AS ?huUrl) (SAMPLE(?enWiki) AS ?enUrl) (MAX(?links) AS ?n)
 WHERE {
   ?w wdt:P50 wd:${authorQid};
      wdt:P31/wdt:P279* wd:Q7725634;
@@ -288,7 +448,11 @@ WHERE {
   OPTIONAL { ?w rdfs:label ?enL FILTER(LANG(?enL) = "en") }
   OPTIONAL { ?w wdt:P1476 ?origT }
   FILTER NOT EXISTS { ?w wdt:P31 wd:Q3331189 }
-  OPTIONAL { ?w wdt:P7937 ?form. ?form rdfs:label ?typeHu FILTER(LANG(?typeHu) = "hu") }
+  OPTIONAL {
+    ?w wdt:P7937 ?form.
+    OPTIONAL { ?form rdfs:label ?typeHu FILTER(LANG(?typeHu) = "hu") }
+    OPTIONAL { ?form rdfs:label ?typeEn FILTER(LANG(?typeEn) = "en") }
+  }
   OPTIONAL { ?huWiki schema:about ?w; schema:isPartOf <https://hu.wikipedia.org/> }
   OPTIONAL { ?enWiki schema:about ?w; schema:isPartOf <https://en.wikipedia.org/> }
 }
@@ -304,7 +468,7 @@ GROUP BY ?w`;
           title: hu ?? original,
           originalTitle: hu && original && original !== hu ? original : null,
           year: b.d?.value ? Number(b.d.value.slice(0, 4)) || null : null,
-          type: b.type?.value ?? null,
+          type: b.type?.value ?? (b.typeEnL ? huLabel({ labels: { en: { value: b.typeEnL.value } } }) : null),
           url: b.huUrl?.value ?? b.enUrl?.value ?? null,
           urlLang: b.huUrl ? 'hu' : b.enUrl ? 'en' : null,
         };
@@ -486,6 +650,9 @@ async function main() {
   }
   await fs.mkdir(path.dirname(OUT_JSON), { recursive: true });
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2) + '\n');
+  if (missingTerms.size) {
+    console.warn(`\nMagyar fordítás nélküli címkék (add hozzá a HU_TERMS táblához): ${[...missingTerms].join(', ')}`);
+  }
   console.log(`\nKész: ${out.length} könyv${failures ? `, ${failures} hibával (figyelmeztetés)` : ''}.`);
 }
 
