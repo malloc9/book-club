@@ -21,7 +21,13 @@ const place = (when: string | null | undefined, where: string | null | undefined
   [when, where].filter(Boolean).join(', ');
 // Works the club has read link to our own book page.
 const clubBooks = new Map(books.filter((x) => x.book).map((x) => [x.book!.wikidataId, x.slug]));
-const description = (book?.intro.find((x) => typeof x === 'string') as string | undefined)?.slice(0, 160);
+const firstPara = book?.intro.find((x) => typeof x === 'string' || x.type === 'rich');
+const description = (typeof firstPara === 'string'
+  ? firstPara
+  : firstPara?.type === 'rich'
+    ? firstPara.parts.map((p) => (typeof p === 'string' ? p : p.text)).join('')
+    : undefined
+)?.slice(0, 160);
 const born = place(af?.birth, af?.birthPlace);
 const died = place(af?.death, af?.deathPlace);
 ---

@@ -273,6 +273,7 @@ function parseArticleHtml(html) {
   const root = parse(html);
   root.querySelectorAll(SKIP_SEL).forEach((n) => n.remove());
   const container = root.querySelector('.mw-parser-output') ?? root;
+  const links = collectLinks(container);
   const sections = [];
   let current = { level: 0, heading: null, paras: [] };
   const push = (b) => b && current.paras.push(b);
@@ -297,7 +298,27 @@ function parseArticleHtml(html) {
     }
   }
   sections.push(current);
-  return { intro: sections[0].paras, sections: sections.slice(1) };
+  return { intro: sections[0].paras, sections: sections.slice(1), links };
+}
+
+// Editor-placed article links: [{ text, title }]. Skips red links, other namespaces
+// (File:, Category:...), anchors and pure dates/years ("1940", "március 28.").
+const DATE_RE = /^(\d{1,4}(\.|-ban|-ben|-as|-es|-os|-ös)?|\d{1,4}-?\w{0,4}|(január|február|március|április|május|június|július|augusztus|szeptember|október|november|december)\s+\d{1,2}\.?|(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}|\d{1,2}\.?\s+(January|February|March|April|May|June|July|August|September|October|November|December)|\d{4}s?|\d{1,2}(st|nd|rd|th) century)$/i;
+function collectLinks(container) {
+  const out = [];
+  for (const a of container.querySelectorAll('a[href^="/wiki/"]')) {
+    if (a.classList.contains('new') || a.classList.contains('mw-selflink')) continue;
+    const href = a.getAttribute('href');
+    let title = decodeURIComponent(href.slice(6).split('#')[0]).replace(/_/g, ' ');
+    if (!title || title.includes(':')) continue;
+    const text = a.textContent.replace(/\s+/g, ' ').trim();
+    if (text.length < 3 || DATE_RE.test(text) || DATE_RE.test(title)) continue;
+    // Keep the important ones: names, places, works, events. Drop decades/centuries ("1910-es évek",
+    // "20. század") and single lowercase common words ("költő", "méhek", "depressziós").
+    if (/^\d/.test(text) || /^\p{Ll}[\p{L}-]*$/u.test(text)) continue;
+    out.push({ text, title });
+  }
+  return out;
 }
 
 // Warn when a paragraph announces something (ends with ':') but nothing follows it.
@@ -390,7 +411,7 @@ async function getArticle(entity, { kind }) {
       disabletoc: '1',
     });
     if (!parsed.parse?.text) continue;
-    const { intro, sections } = parseArticleHtml(parsed.parse.text);
+    const { intro, sections, links } = parseArticleHtml(parsed.parse.text);
     for (const sec of [{ heading: 'bevezető', paras: intro }, ...sections]) checkDanglingColons(`${page.title} / ${sec.heading}`, sec.paras);
     return {
       lang,
@@ -401,9 +422,53 @@ async function getArticle(entity, { kind }) {
       biography: kind === 'author' ? biographyOf(sections) : null,
       huEditions: kind === 'author' ? huEditionsOf(sections) : null,
       pageImage: page.pageimage ? { lang, file: page.pageimage } : null,
+      links: await resolveLinks(lang, links, page.title),
     };
   }
   return null;
+}
+
+// Link targets → [{ match: [anchor texts], url }]. For non-Hungarian articles the Hungarian
+// Wikipedia page is preferred when it exists (its title is also matched in translated text).
+async function resolveLinks(lang, links, selfTitle) {
+  const byTitle = new Map();
+  for (const l of links) {
+    if (l.title === selfTitle) continue;
+    const e = byTitle.get(l.title) ?? { title: l.title, texts: new Set() };
+    e.texts.add(l.text);
+    byTitle.set(l.title, e);
+  }
+  const wikiUrl = (lg, t) => `https://${lg}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_')).replace(/%2F/g, '/')}`;
+  const huTitles = new Map();
+  if (lang !== 'hu') {
+    const titles = [...byTitle.keys()];
+    for (let i = 0; i < titles.length; i += 50) {
+      try {
+        const data = await wp(lang, {
+          action: 'query', prop: 'langlinks', lllang: 'hu', lllimit: 'max', redirects: '1',
+          titles: titles.slice(i, i + 50).join('|'),
+        });
+        const redirect = new Map((data.query?.redirects ?? []).map((r) => [r.to, r.from]));
+        const normalized = new Map((data.query?.normalized ?? []).map((r) => [r.to, r.from]));
+        for (const p of data.query?.pages ?? []) {
+          const hu = p.langlinks?.[0]?.title;
+          if (!hu) continue;
+          let orig = p.title;
+          orig = redirect.get(orig) ?? orig;
+          orig = normalized.get(orig) ?? orig;
+          huTitles.set(orig, hu);
+        }
+      } catch (err) {
+        console.warn(`  ! magyar megfelelők lekérése sikertelen: ${err.message}`);
+      }
+    }
+  }
+  return [...byTitle.values()].map(({ title, texts }) => {
+    const hu = huTitles.get(title);
+    const match = [...texts];
+    if (hu) match.push(hu.replace(/\s*\(.*\)$/, ''));
+    return { match: [...new Set(match)].filter((m) => m.length >= 3), url: hu ? wikiUrl('hu', hu) : wikiUrl(lang, title) };
+  });
 }
 
 async function imageInfo(lang, file) {
@@ -570,8 +635,8 @@ async function fetchBook(book) {
   // Keep titles consistent in machine translation: original title → Hungarian title.
   const origTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle;
   const glossary = [...(origTitle && origTitle !== book.title ? [[origTitle, book.title]] : []), ...GLOBAL_GLOSSARY];
-  const bookArticle = await translateArticle(await getArticle(bookEnt, { kind: 'book' }), glossary);
-  const authorArticle = await translateArticle(await getArticle(authorEnt, { kind: 'author' }), glossary);
+  const bookArticle = linkifyArticle(await translateArticle(await getArticle(bookEnt, { kind: 'book' }), glossary));
+  const authorArticle = linkifyArticle(await translateArticle(await getArticle(authorEnt, { kind: 'author' }), glossary));
 
   const originalTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle ?? null;
   const published = formatWdTime(claimValues(bookEnt, 'P577').sort((a, b) => a.time.localeCompare(b.time))[0]);
@@ -702,6 +767,56 @@ async function translateArticle(article, glossary) {
     return { ...article, translated: false };
   }
   return { ...article, intro, plot, biography, translated: true };
+}
+
+// ---------- Linkify: plain text → rich text with Wikipedia links ----------
+// A paragraph becomes { type: 'rich', parts: [string | { text, href }] }; list items become part arrays.
+// Each target is linked at its first occurrence per section (like Wikipedia itself).
+const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function makeLinker(links) {
+  // Longer anchors first so "Ted Hughes" wins over "Hughes".
+  const entries = links.flatMap((l) => l.match.map((m) => ({ m, url: l.url }))).sort((a, b) => b.m.length - a.m.length);
+  if (!entries.length) return null;
+  // Left word boundary; on the right Hungarian suffixes may follow ("Bostonban" → link "Bostonban").
+  const re = new RegExp(`(?<![\\p{L}\\p{N}])(${entries.map((e) => escRe(e.m)).join('|')})(\\p{Ll}{0,6})(?![\\p{L}\\p{N}])`, 'gu');
+  const urlOf = new Map(entries.map((e) => [e.m, e.url]));
+  return (text, used) => {
+    const parts = [];
+    let last = 0;
+    for (const m of text.matchAll(re)) {
+      const url = urlOf.get(m[1]);
+      if (used.has(url)) continue;
+      used.add(url);
+      if (m.index > last) parts.push(text.slice(last, m.index));
+      parts.push({ text: m[0], href: url });
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) parts.push(text.slice(last));
+    return parts;
+  };
+}
+
+function linkifyBlocks(blocks, link) {
+  if (!blocks) return blocks;
+  const used = new Set();
+  return blocks.map((b) => {
+    if (typeof b === 'string') return { type: 'rich', parts: link(b, used) };
+    if (b.type === 'list') return { ...b, items: b.items.map((i) => link(i, used)) };
+    if (b.type === 'heading') used.clear(); // plot subsections link afresh
+    return b;
+  });
+}
+
+function linkifyArticle(article) {
+  if (!article) return article;
+  const link = makeLinker(article.links ?? []);
+  if (!link) return article;
+  return {
+    ...article,
+    intro: linkifyBlocks(article.intro, link),
+    plot: linkifyBlocks(article.plot, link),
+    biography: article.biography?.map((s) => ({ ...s, paras: linkifyBlocks(s.paras, link) })) ?? null,
+  };
 }
 
 async function main() {

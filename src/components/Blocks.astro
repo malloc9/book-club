@@ -1,22 +1,45 @@
 ---
-import type { Block } from '../data/types';
+import type { Block, Inline } from '../data/types';
+import { books, bookUrl } from '../data/books';
 
 interface Props {
   blocks: Block[] | null | undefined;
 }
 const { blocks = [] } = Astro.props;
+const parts = (x: string | Inline[]) => (typeof x === 'string' ? [x] : x);
+// Links to a book the club has read go to our own page instead of Wikipedia.
+const norm = (u: string) => decodeURIComponent(u).replace(/_/g, ' ');
+const clubPages = new Map(books.filter((b) => b.book?.article).map((b) => [norm(b.book!.article!.url), bookUrl(b.slug)]));
+const link = (p: { text: string; href: string }) => {
+  const own = clubPages.get(norm(p.href));
+  return own ? { href: own, external: false } : { href: p.href, external: true };
+};
 ---
 {
   (blocks ?? []).map((b) =>
     typeof b === 'string' ? (
       <p>{b}</p>
+    ) : b.type === 'rich' ? (
+      <p>
+        {b.parts.map((p) =>
+          typeof p === 'string' ? p : <a class="wl" href={link(p).href} target={link(p).external ? '_blank' : undefined} rel={link(p).external ? 'noopener' : undefined}>{p.text}</a>,
+        )}
+      </p>
     ) : b.type === 'quote' ? (
       <blockquote class="quote">
         <p>{b.text}</p>
         {b.source && <footer>— {b.source}</footer>}
       </blockquote>
     ) : b.type === 'list' ? (
-      <ul class="blist">{b.items.map((i) => <li>{i}</li>)}</ul>
+      <ul class="blist">
+        {b.items.map((i) => (
+          <li>
+            {parts(i).map((p) =>
+              typeof p === 'string' ? p : <a class="wl" href={link(p).href} target={link(p).external ? '_blank' : undefined} rel={link(p).external ? 'noopener' : undefined}>{p.text}</a>,
+            )}
+          </li>
+        ))}
+      </ul>
     ) : (
       <h4 class="plot-h">{b.text}</h4>
     ),

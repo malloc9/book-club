@@ -17,10 +17,12 @@ export interface ArticleRef {
   url: string;
   translated?: boolean;
 }
+export type Inline = string | { text: string; href: string };
 export type Block =
   | string
+  | { type: 'rich'; parts: Inline[] }
   | { type: 'quote'; text: string; source: string | null }
-  | { type: 'list'; items: string[] }
+  | { type: 'list'; items: (string | Inline[])[] }
   | { type: 'heading'; text: string };
 export interface BioSection {
   level: number;
