@@ -9,6 +9,11 @@
 #                    Wikidata azonosító (pl. Q478016) vagy "hu:Cikk címe" / "en:Article title"
 #   englishTitle   – angol fordítás címe (opcionális, borítókereséshez, ha nincs magyar borító)
 #   cover          – saját borítókép a covers/ mappából (pl. covers/vilagitotorony.jpg)
+#   coverSource    – a saját borító forrása: { name, url }
+#   description    – saját összefoglaló bekezdések (csak ha nincs Wikipédia-szócikk a könyvről)
+#   sources        – az összefoglaló forrásai: [{ name, url }]
+#   facts          – kiegészítő adatok, ha a Wikidatán hiányoznak:
+#                    published, publisher, pages, genres, language, awards
 #
 # Új könyv után futtasd: npm run fetch
 
@@ -34,9 +39,64 @@
 
 - title: Hangyaboly
   author: Kaffka Margit
+  facts:
+    published: "1917"
+    publisher: Nyugat, Budapest
+    language: magyar
+    genres: [regény]
+  description:
+    - >-
+      Kaffka Margit 1917-ben, a Nyugat kiadásában megjelent regénye egy apácazárdában játszódik
+      a 20. század elején, ahol a nővérek mellett bentlakó növendékek, tanítóképzős lányok és bejáró
+      diákok élnek. A regény igazi főszereplője maga a zárda, a „hangyaboly”: sok egymás mellett
+      nyüzsgő, egymásba gabalyodó sors.
+    - >-
+      A beteg főnökasszony utódlása körül csendes hatalmi harc indul. A becsvágyó, modernizáló Virginia
+      nővér nyitottabb, állami támogatással működő intézményt szeretne, a szigorú, német származású
+      Kunigunda nővér a régi rendet őrzi. Közben a növendékek titkos szerelmekről, flörtökről és a felnőtt
+      élet ígéreteiről suttognak, a főnökasszony gazdag, árva unokahúga, Helénke körül pedig érdekek
+      gyűrűznek.
+    - >-
+      Kaffka a saját diákéveit idézi fel, amelyeket az irgalmas nővérek tanítóképzőjében töltött, és
+      nyíltan szembefordul a bigott, elmaradott vallásos neveléssel. A könyv megjelenésekor nagy
+      közönségsikert aratott; ma szabadon olvasható a Project Gutenbergen.
+  sources:
+    - { name: "Project Gutenberg – Hangyaboly (teljes szöveg)", url: "https://www.gutenberg.org/ebooks/63531" }
+    - { name: "MEK – Kaffka Margit összes költeménye (fülszöveg)", url: "https://mek.oszk.hu/00700/00710/fulszoveg.html" }
+    - { name: "Wikipédia – Kaffka Margit", url: "https://hu.wikipedia.org/wiki/Kaffka_Margit" }
 
 - title: Zsömle odavan
   author: Krasznahorkai László
+  cover: covers/zsomle-odavan.jpg
+  coverSource: { name: "Magvető", url: "https://magveto.hu/konyvek/zsomle-odavan/139511807" }
+  facts:
+    published: "2024. január 3."
+    publisher: Magvető
+    pages: 240
+    language: magyar
+    genres: [regény, szatíra]
+  description:
+    - >-
+      Kada Józsi bácsi kilencvenegy éves nyugalmazott villanyszerelő egy névtelen, többségében
+      szlovákok lakta észak-magyarországi faluban. Özvegy, a családjától eltávolodott, egyetlen
+      hűséges társa Zsömle nevű házőrző kutyája. Van azonban egy titka: meggyőződése szerint
+      IV. Béla és Dzsingisz kán leszármazottjaként ő, Árpád-házi I. József a magyar trón jogos örököse.
+    - >-
+      Amikor a titok kitudódik, különös, többnyire szélsőjobboldali követők gyűlnek köré – köztük a
+      királyság visszaállításáról ábrándozó monarchista és félkatonai akciókat tervező alakok –, akik
+      egészen a házelnökig próbálják eljuttatni az ügyét. Józsi bácsi közben elképesztő történeteket mesél
+      magáról: Horthy titokban királlyá koronázta, a háborúban megmentette Szolnokot, és ő tanította
+      úszni Johnny Weissmüllert. Sokáig nyitva marad, valódi trónörökös-e, szélhámos, vagy csak egy
+      összezavarodott öregember.
+    - >-
+      A kiadó groteszk és szatirikus regényként ajánlja, amely New York, Dalmácia és Türingia után egy
+      karneválszerű Magyarországra tér vissza; a történetben egy Krasznahorkai László nevű vándorzenész
+      is felbukkan. Bak Róbert a Telexen azt írta, hogy a szatirikus felszín alatt valójában tragédia rejlik:
+      a 21. századi ember mély magánya és a közösség szétesése; és bár a regény nem éri el a szerző
+      legjobb műveit, Krasznahorkai ma is pontosan érti a világot.
+  sources:
+    - { name: "Magvető – Zsömle odavan (kiadói oldal)", url: "https://magveto.hu/konyvek/zsomle-odavan/139511807" }
+    - { name: "Telex – Bak Róbert kritikája", url: "https://telex.hu/kult/2024/01/10/krasznahorkai-laszlo-zsomle-odavan-regeny-kritika" }
 
 - title: Édentől keletre
   author: John Steinbeck
@@ -45,6 +105,29 @@
 - title: Egy nő
   author: Esterházy Péter
   englishTitle: She Loves Me
+  facts:
+    published: "1993"
+    publisher: Magvető
+    language: magyar
+    genres: [regény]
+  description:
+    - >-
+      Esterházy Péter műfajilag nehezen besorolható regénye 97 rövid, számozott fejezetből áll.
+      Mindegyik ugyanazzal a gesztussal indul – van egy nő, aki szeret vagy gyűlöl –, és mindegyik egy
+      újabb nő, egy újabb kapcsolat pillanatképe. A cím így egyszerre szól egy nőről, sok nőről, és
+      arról a férfiról, aki elképzeli őket.
+    - >-
+      A könyv a testről, az érzékiségről, a vágyról és a férfi–nő kapcsolatok kusza egyszerűségéről szól.
+      Esterházyra jellemzően nem hagyományos történetet mesél: villanásokat, reflexiókat ad, a nyelvvel
+      és a formával játszik, gyakran humorral, így olvasása inkább egy vers- vagy esszékötet
+      lapozgatására emlékeztet.
+    - >-
+      Először 1993-ban jelent meg a Magvetőnél, azóta több mint egy tucat kiadást ért meg, és számos
+      nyelvre lefordították (angolul She Loves Me, franciául Une femme, olaszul Una donna címmel).
+      A kritika egy része eleinte mellékműnek tekintette, Nádas Péter viszont nagy könyvnek nevezte.
+  sources:
+    - { name: "Moly – Egy nő (kiadások, fülszöveg)", url: "https://moly.hu/konyvek/esterhazy-peter-egy-no" }
+    - { name: "Store norske leksikon – Péter Esterházy", url: "https://snl.no/P%C3%A9ter_Esterh%C3%A1zy" }
 
 - title: Vad lovak
   author: Cormac McCarthy
@@ -53,9 +136,39 @@
 - title: Trilógia
   author: Jon Fosse
   originalTitle: Trilogien
+  facts:
+    genres: [regény, kisregény-trilógia]
 
 - title: Rémtörténetek
   author: Nádas Péter
+  cover: covers/remtortenetek.jpg
+  coverSource: { name: "Moly", url: "https://moly.hu/konyvek/nadas-peter-remtortenetek" }
+  facts:
+    published: "2022"
+    publisher: Jelenkor
+    pages: 464
+    language: magyar
+    genres: [regény]
+    awards: [Merítés-díj (2023)]
+  description:
+    - >-
+      Nádas Péter 2022-ben megjelent regénye egy vízparti, a külvilágtól elzárkózó falu hétköznapjaiba
+      visz, a háttérben az 1950–60-as évek politikai rendszerével és életérzésével. A szereplők a falu
+      jellegzetes alakjai: gazdák és napszámosok, a katolikus pap és a református lelkész, a községi pásztor
+      és szellemileg sérült lánya, a tanító, egy évtizedek óta megbélyegzett öregasszony, egy ördögtől
+      megszállottnak tartott péksegéd, egy diáklány, kitelepített arisztokraták és nyaraló úriasszonyok –
+      no meg a kísértő szellemek.
+    - >-
+      A mindössze néhány napot átfogó cselekmény a kiszolgáltatottság, a függőség és az erőszak újabb és
+      újabb formáit mutatja meg; a sűrűn váltakozó nyelvi regiszterek és nézőpontok lassan sodorják a
+      szereplőket a közös végzet felé. Nádas egy interjúban az elszigeteltséget, az emberi egyenlőtlenséget,
+      a kirekesztést és a jóságot kiszorító agressziót nevezte meg a könyv fő kérdéseiként; az alapötlet
+      még az 1970-es évekre nyúlik vissza.
+    - >-
+      A 464 oldalas regény a Jelenkor Kiadónál jelent meg, és 2023-ban Merítés-díjat kapott.
+  sources:
+    - { name: "Moly – Rémtörténetek (kiadások, fülszöveg)", url: "https://moly.hu/konyvek/nadas-peter-remtortenetek" }
+    - { name: "Telex – interjú Nádas Péterrel", url: "https://telex.hu/kult/2022/05/21/nadas-peter-veiszer-alinda-interju" }
 
 - title: Az ötös számú vágóhíd
   author: Kurt Vonnegut
@@ -63,7 +176,11 @@
 
 - title: A fehér király
   author: Dragomán György
+  facts:
+    genres: [regény]
 
 - title: Sinistra körzet
   author: Bodor Ádám
   englishTitle: The Sinistra Zone
+  facts:
+    genres: [regény]

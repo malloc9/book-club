@@ -48,6 +48,8 @@ export interface BookData {
     article: ArticleRef | null;
     intro: Block[];
     introFromAuthor?: boolean;
+    introManual?: boolean;
+    sources?: { name: string; url: string }[];
     plot: Block[] | null;
     facts: {
       originalTitle: string | null;
@@ -55,6 +57,9 @@ export interface BookData {
       language: string | null;
       genres: string[];
       country: string | null;
+      publisher?: string | null;
+      pages?: number | null;
+      awards?: string[];
     };
     cover: Image | null;
   } | null;

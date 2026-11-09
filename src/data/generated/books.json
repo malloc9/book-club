@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T13:55:16.975Z",
+    "fetchedAt": "2026-11-09T14:21:32.987Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -68,6 +68,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "heading",
@@ -164,7 +166,10 @@
           "modernista irodalom",
           "lélektani próza"
         ],
-        "country": "Egyesült Királyság"
+        "country": "Egyesült Királyság",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/a-vilagitotorony.webp",
@@ -734,7 +739,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T13:55:29.607Z",
+    "fetchedAt": "2026-11-09T14:21:42.735Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -773,6 +778,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -877,9 +884,23 @@
           "kulcsregény",
           "autofikció"
         ],
-        "country": "Amerikai Egyesült Államok"
+        "country": "Amerikai Egyesült Államok",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
-      "cover": null
+      "cover": {
+        "src": "images/books/az-uvegbura.webp",
+        "width": 323,
+        "height": 500,
+        "credit": {
+          "artist": null,
+          "license": null,
+          "licenseUrl": null,
+          "source": "https://openlibrary.org/works/OL1865528W",
+          "sourceName": "Open Library"
+        }
+      }
     },
     "author": {
       "wikidataId": "Q133054",
@@ -1269,7 +1290,7 @@
     "slug": "a-kedves",
     "title": "A kedves",
     "authorName": "Toni Morrison",
-    "fetchedAt": "2026-11-09T13:55:47.139Z",
+    "fetchedAt": "2026-11-09T14:21:53.431Z",
     "book": {
       "wikidataId": "Q971767",
       "article": {
@@ -1313,6 +1334,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -1370,7 +1393,10 @@
           "mágikus realista próza",
           "történelmi fikció"
         ],
-        "country": "Amerikai Egyesült Államok"
+        "country": "Amerikai Egyesült Államok",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/a-kedves.webp",
@@ -1657,7 +1683,7 @@
     "slug": "ne-bantsatok-a-feketerigot",
     "title": "Ne bántsátok a feketerigót!",
     "authorName": "Harper Lee",
-    "fetchedAt": "2026-11-09T13:55:53.745Z",
+    "fetchedAt": "2026-11-09T14:21:59.581Z",
     "book": {
       "wikidataId": "Q212340",
       "article": {
@@ -1744,6 +1770,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -1855,7 +1883,10 @@
           "déli gótika",
           "társadalmi regény"
         ],
-        "country": "Amerikai Egyesült Államok"
+        "country": "Amerikai Egyesült Államok",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/ne-bantsatok-a-feketerigot.webp",
@@ -2158,7 +2189,7 @@
     "slug": "evek",
     "title": "Évek",
     "authorName": "Annie Ernaux",
-    "fetchedAt": "2026-11-09T13:56:00.650Z",
+    "fetchedAt": "2026-11-09T14:22:05.886Z",
     "book": {
       "wikidataId": "Q3230588",
       "article": {
@@ -2186,6 +2217,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -2212,7 +2245,10 @@
           "irodalmi önéletrajz",
           "társadalmi regény"
         ],
-        "country": "Franciaország"
+        "country": "Franciaország",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/evek.webp",
@@ -2743,7 +2779,7 @@
     "slug": "hangyaboly",
     "title": "Hangyaboly",
     "authorName": "Kaffka Margit",
-    "fetchedAt": "2026-11-09T13:56:07.023Z",
+    "fetchedAt": "2026-11-09T14:22:10.777Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -2751,18 +2787,55 @@
         {
           "type": "rich",
           "parts": [
-            "1912-ben jelent meg első (és talán legfontosabb) nagyregénye, a Színek és évek, amely az értékeit vesztett dzsentritársadalommal és a századfordulón élő nők sorsával foglalkozik. Másik nagy sikert aratott regényét, a Hangyabolyt – amelyben a zárdában töltött éveket idézi fel – 1917-ben adták ki."
+            "Kaffka Margit 1917-ben, a ",
+            {
+              "text": "Nyugat",
+              "href": "https://hu.wikipedia.org/wiki/Nyugat_(foly%C3%B3irat)"
+            },
+            " kiadásában megjelent regénye egy apácazárdában játszódik a 20. század elején, ahol a nővérek mellett bentlakó növendékek, tanítóképzős lányok és bejáró diákok élnek. A regény igazi főszereplője maga a zárda, a „hangyaboly”: sok egymás mellett nyüzsgő, egymásba gabalyodó sors."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "A beteg főnökasszony utódlása körül csendes hatalmi harc indul. A becsvágyó, modernizáló Virginia nővér nyitottabb, állami támogatással működő intézményt szeretne, a szigorú, német származású Kunigunda nővér a régi rendet őrzi. Közben a növendékek titkos szerelmekről, flörtökről és a felnőtt élet ígéreteiről suttognak, a főnökasszony gazdag, árva unokahúga, Helénke körül pedig érdekek gyűrűznek."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "Kaffka a saját diákéveit idézi fel, amelyeket az irgalmas nővérek tanítóképzőjében töltött, és nyíltan szembefordul a bigott, elmaradott vallásos neveléssel. A könyv megjelenésekor nagy közönségsikert aratott; ma szabadon olvasható a Project Gutenbergen."
           ]
         }
       ],
-      "introFromAuthor": true,
+      "introFromAuthor": false,
+      "introManual": true,
+      "sources": [
+        {
+          "name": "Project Gutenberg – Hangyaboly (teljes szöveg)",
+          "url": "https://www.gutenberg.org/ebooks/63531"
+        },
+        {
+          "name": "MEK – Kaffka Margit összes költeménye (fülszöveg)",
+          "url": "https://mek.oszk.hu/00700/00710/fulszoveg.html"
+        },
+        {
+          "name": "Wikipédia – Kaffka Margit",
+          "url": "https://hu.wikipedia.org/wiki/Kaffka_Margit"
+        }
+      ],
       "plot": null,
       "facts": {
         "originalTitle": null,
-        "published": null,
-        "language": null,
-        "genres": [],
-        "country": null
+        "published": "1917",
+        "language": "magyar",
+        "genres": [
+          "regény"
+        ],
+        "country": null,
+        "publisher": "Nyugat, Budapest",
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/hangyaboly.webp",
@@ -2992,21 +3065,73 @@
     "slug": "zsomle-odavan",
     "title": "Zsömle odavan",
     "authorName": "Krasznahorkai László",
-    "fetchedAt": "2026-11-09T13:56:15.042Z",
+    "fetchedAt": "2026-11-09T14:22:18.458Z",
     "book": {
       "wikidataId": "Q139899382",
       "article": null,
-      "intro": [],
+      "intro": [
+        {
+          "type": "rich",
+          "parts": [
+            "Kada Józsi bácsi kilencvenegy éves nyugalmazott villanyszerelő egy névtelen, többségében szlovákok lakta észak-magyarországi faluban. Özvegy, a családjától eltávolodott, egyetlen hűséges társa Zsömle nevű házőrző kutyája. Van azonban egy titka: meggyőződése szerint IV. Béla és Dzsingisz kán leszármazottjaként ő, Árpád-házi I. József a magyar trón jogos örököse."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "Amikor a titok kitudódik, különös, többnyire szélsőjobboldali követők gyűlnek köré – köztük a királyság visszaállításáról ábrándozó monarchista és félkatonai akciókat tervező alakok –, akik egészen a házelnökig próbálják eljuttatni az ügyét. Józsi bácsi közben elképesztő történeteket mesél magáról: Horthy titokban királlyá koronázta, a háborúban megmentette Szolnokot, és ő tanította úszni Johnny Weissmüllert. Sokáig nyitva marad, valódi trónörökös-e, szélhámos, vagy csak egy összezavarodott öregember."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "A kiadó groteszk és szatirikus regényként ajánlja, amely New York, Dalmácia és Türingia után egy karneválszerű ",
+            {
+              "text": "Magyarországra",
+              "href": "https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1g"
+            },
+            " tér vissza; a történetben egy Krasznahorkai László nevű vándorzenész is felbukkan. Bak Róbert a Telexen azt írta, hogy a szatirikus felszín alatt valójában tragédia rejlik: a 21. századi ember mély magánya és a közösség szétesése; és bár a regény nem éri el a szerző legjobb műveit, Krasznahorkai ma is pontosan érti a világot."
+          ]
+        }
+      ],
       "introFromAuthor": false,
+      "introManual": true,
+      "sources": [
+        {
+          "name": "Magvető – Zsömle odavan (kiadói oldal)",
+          "url": "https://magveto.hu/konyvek/zsomle-odavan/139511807"
+        },
+        {
+          "name": "Telex – Bak Róbert kritikája",
+          "url": "https://telex.hu/kult/2024/01/10/krasznahorkai-laszlo-zsomle-odavan-regeny-kritika"
+        }
+      ],
       "plot": null,
       "facts": {
         "originalTitle": "Zsömle odavan",
         "published": "2024",
         "language": "magyar",
-        "genres": [],
-        "country": null
+        "genres": [
+          "regény",
+          "szatíra"
+        ],
+        "country": null,
+        "publisher": "Magvető",
+        "pages": 240,
+        "awards": []
       },
-      "cover": null
+      "cover": {
+        "src": "images/books/zsomle-odavan.webp",
+        "width": 600,
+        "height": 977,
+        "credit": {
+          "artist": null,
+          "license": null,
+          "licenseUrl": null,
+          "source": "https://magveto.hu/konyvek/zsomle-odavan/139511807",
+          "sourceName": "Magvető"
+        }
+      }
     },
     "author": {
       "wikidataId": "Q512062",
@@ -3456,7 +3581,7 @@
     "slug": "edentol-keletre",
     "title": "Édentől keletre",
     "authorName": "John Steinbeck",
-    "fetchedAt": "2026-11-09T13:56:20.500Z",
+    "fetchedAt": "2026-11-09T14:22:22.956Z",
     "book": {
       "wikidataId": "Q849701",
       "article": {
@@ -3500,6 +3625,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -3622,7 +3749,10 @@
         "genres": [
           "családregény"
         ],
-        "country": "Amerikai Egyesült Államok"
+        "country": "Amerikai Egyesült Államok",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/edentol-keletre.webp",
@@ -4359,19 +4489,59 @@
     "slug": "egy-no",
     "title": "Egy nő",
     "authorName": "Esterházy Péter",
-    "fetchedAt": "2026-11-09T13:56:24.181Z",
+    "fetchedAt": "2026-11-09T14:22:26.223Z",
     "book": {
       "wikidataId": null,
       "article": null,
-      "intro": [],
+      "intro": [
+        {
+          "type": "rich",
+          "parts": [
+            "Esterházy Péter műfajilag nehezen besorolható regénye 97 rövid, számozott fejezetből áll. Mindegyik ugyanazzal a gesztussal indul – van egy nő, aki szeret vagy gyűlöl –, és mindegyik egy újabb nő, egy újabb kapcsolat pillanatképe. A cím így egyszerre szól egy nőről, sok nőről, és arról a férfiról, aki elképzeli őket."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "A könyv a testről, az érzékiségről, a vágyról és a férfi–nő kapcsolatok kusza egyszerűségéről szól. Esterházyra jellemzően nem hagyományos történetet mesél: villanásokat, reflexiókat ad, a nyelvvel és a formával játszik, gyakran humorral, így olvasása inkább egy vers- vagy esszékötet lapozgatására emlékeztet."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "Először 1993-ban jelent meg a Magvetőnél, azóta több mint egy tucat kiadást ért meg, és számos nyelvre lefordították (angolul She Loves Me, franciául Une femme, olaszul Una donna címmel). A kritika egy része eleinte mellékműnek tekintette, ",
+            {
+              "text": "Nádas Péter",
+              "href": "https://hu.wikipedia.org/wiki/N%C3%A1das_P%C3%A9ter"
+            },
+            " viszont nagy könyvnek nevezte."
+          ]
+        }
+      ],
       "introFromAuthor": false,
+      "introManual": true,
+      "sources": [
+        {
+          "name": "Moly – Egy nő (kiadások, fülszöveg)",
+          "url": "https://moly.hu/konyvek/esterhazy-peter-egy-no"
+        },
+        {
+          "name": "Store norske leksikon – Péter Esterházy",
+          "url": "https://snl.no/P%C3%A9ter_Esterh%C3%A1zy"
+        }
+      ],
       "plot": null,
       "facts": {
         "originalTitle": null,
-        "published": null,
-        "language": null,
-        "genres": [],
-        "country": null
+        "published": "1993",
+        "language": "magyar",
+        "genres": [
+          "regény"
+        ],
+        "country": null,
+        "publisher": "Magvető",
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/egy-no.webp",
@@ -4751,7 +4921,7 @@
     "slug": "vad-lovak",
     "title": "Vad lovak",
     "authorName": "Cormac McCarthy",
-    "fetchedAt": "2026-11-09T13:56:32.245Z",
+    "fetchedAt": "2026-11-09T14:22:34.090Z",
     "book": {
       "wikidataId": "Q264519",
       "article": {
@@ -4831,6 +5001,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -4932,7 +5104,10 @@
         "genres": [
           "westernregény"
         ],
-        "country": "Amerikai Egyesült Államok"
+        "country": "Amerikai Egyesült Államok",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/vad-lovak.webp",
@@ -5417,7 +5592,7 @@
     "slug": "trilogia",
     "title": "Trilógia",
     "authorName": "Jon Fosse",
-    "fetchedAt": "2026-11-09T13:56:42.675Z",
+    "fetchedAt": "2026-11-09T14:22:43.628Z",
     "book": {
       "wikidataId": "Q131179124",
       "article": {
@@ -5452,13 +5627,21 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": null,
       "facts": {
         "originalTitle": "Trilogien",
         "published": "2014",
         "language": "nynorsk norvég",
-        "genres": [],
-        "country": null
+        "genres": [
+          "regény",
+          "kisregény-trilógia"
+        ],
+        "country": null,
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/trilogia.webp",
@@ -6089,7 +6272,7 @@
     "slug": "remtortenetek",
     "title": "Rémtörténetek",
     "authorName": "Nádas Péter",
-    "fetchedAt": "2026-11-09T13:56:51.265Z",
+    "fetchedAt": "2026-11-09T14:22:51.857Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -6097,40 +6280,61 @@
         {
           "type": "rich",
           "parts": [
-            "A modern magyar irodalom meghatározó, világirodalmi rangú alkotója. A különösképp a német nyelvterületen kedvelt Nádas neve többször felmerült már az irodalmi Nobel-díj esélyesei között. A posztmodern prózafordulat, ",
-            {
-              "text": "Esterházy Péterrel",
-              "href": "https://hu.wikipedia.org/wiki/Esterh%C3%A1zy_P%C3%A9ter"
-            },
-            ", ",
-            {
-              "text": "Hajnóczy Péterrel",
-              "href": "https://hu.wikipedia.org/wiki/Hajn%C3%B3czy_P%C3%A9ter"
-            },
-            " és ",
-            {
-              "text": "Lengyel Péterrel",
-              "href": "https://hu.wikipedia.org/wiki/Lengyel_P%C3%A9ter_(%C3%ADr%C3%B3)"
-            },
-            " együtt a \"Péterek nemzedékének\" egyik nagy újítója, akinek olyan monumentális regényeket köszönhetünk, mint az Emlékiratok könyve, a ",
-            {
-              "text": "Párhuzamos történetek",
-              "href": "https://hu.wikipedia.org/wiki/P%C3%A1rhuzamos_t%C3%B6rt%C3%A9netek"
-            },
-            ", a Világló részletek, illetőleg a Rémtörténetek."
+            "Nádas Péter 2022-ben megjelent regénye egy vízparti, a külvilágtól elzárkózó falu hétköznapjaiba visz, a háttérben az 1950–60-as évek politikai rendszerével és életérzésével. A szereplők a falu jellegzetes alakjai: gazdák és napszámosok, a katolikus pap és a református lelkész, a községi pásztor és szellemileg sérült lánya, a tanító, egy évtizedek óta megbélyegzett öregasszony, egy ördögtől megszállottnak tartott péksegéd, egy diáklány, kitelepített arisztokraták és nyaraló úriasszonyok – no meg a kísértő szellemek."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "A mindössze néhány napot átfogó cselekmény a kiszolgáltatottság, a függőség és az erőszak újabb és újabb formáit mutatja meg; a sűrűn váltakozó nyelvi regiszterek és nézőpontok lassan sodorják a szereplőket a közös végzet felé. Nádas egy interjúban az elszigeteltséget, az emberi egyenlőtlenséget, a kirekesztést és a jóságot kiszorító agressziót nevezte meg a könyv fő kérdéseiként; az alapötlet még az 1970-es évekre nyúlik vissza."
+          ]
+        },
+        {
+          "type": "rich",
+          "parts": [
+            "A 464 oldalas regény a Jelenkor Kiadónál jelent meg, és 2023-ban Merítés-díjat kapott."
           ]
         }
       ],
-      "introFromAuthor": true,
+      "introFromAuthor": false,
+      "introManual": true,
+      "sources": [
+        {
+          "name": "Moly – Rémtörténetek (kiadások, fülszöveg)",
+          "url": "https://moly.hu/konyvek/nadas-peter-remtortenetek"
+        },
+        {
+          "name": "Telex – interjú Nádas Péterrel",
+          "url": "https://telex.hu/kult/2022/05/21/nadas-peter-veiszer-alinda-interju"
+        }
+      ],
       "plot": null,
       "facts": {
         "originalTitle": null,
-        "published": null,
-        "language": null,
-        "genres": [],
-        "country": null
+        "published": "2022",
+        "language": "magyar",
+        "genres": [
+          "regény"
+        ],
+        "country": null,
+        "publisher": "Jelenkor",
+        "pages": 464,
+        "awards": [
+          "Merítés-díj (2023)"
+        ]
       },
-      "cover": null
+      "cover": {
+        "src": "images/books/remtortenetek.webp",
+        "width": 333,
+        "height": 500,
+        "credit": {
+          "artist": null,
+          "license": null,
+          "licenseUrl": null,
+          "source": "https://moly.hu/konyvek/nadas-peter-remtortenetek",
+          "sourceName": "Moly"
+        }
+      }
     },
     "author": {
       "wikidataId": "Q336698",
@@ -6631,7 +6835,7 @@
     "slug": "az-otos-szamu-vagohid",
     "title": "Az ötös számú vágóhíd",
     "authorName": "Kurt Vonnegut",
-    "fetchedAt": "2026-11-09T13:56:57.727Z",
+    "fetchedAt": "2026-11-09T14:22:56.448Z",
     "book": {
       "wikidataId": "Q265954",
       "article": {
@@ -6726,6 +6930,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -6759,7 +6965,10 @@
           "szatirikus próza",
           "fekete humor"
         ],
-        "country": "Amerikai Egyesült Államok"
+        "country": "Amerikai Egyesült Államok",
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/az-otos-szamu-vagohid.webp",
@@ -7644,7 +7853,7 @@
           "title": "Look at the Birdie",
           "originalTitle": null,
           "year": 2009,
-          "type": "novellagyűjtemény",
+          "type": "antológia",
           "url": "https://en.wikipedia.org/wiki/Look_at_the_Birdie",
           "urlLang": "en"
         },
@@ -7653,7 +7862,7 @@
           "title": "While Mortals Sleep",
           "originalTitle": null,
           "year": 2011,
-          "type": "novellagyűjtemény",
+          "type": "antológia",
           "url": "https://en.wikipedia.org/wiki/While_Mortals_Sleep_(short_story_collection)",
           "urlLang": "en"
         },
@@ -7745,7 +7954,7 @@
     "slug": "a-feher-kiraly",
     "title": "A fehér király",
     "authorName": "Dragomán György",
-    "fetchedAt": "2026-11-09T13:57:02.873Z",
+    "fetchedAt": "2026-11-09T14:23:01.106Z",
     "book": {
       "wikidataId": "Q56641079",
       "article": {
@@ -7768,6 +7977,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -7810,8 +8021,13 @@
         "originalTitle": null,
         "published": "2005",
         "language": "magyar",
-        "genres": [],
-        "country": null
+        "genres": [
+          "regény"
+        ],
+        "country": null,
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/a-feher-kiraly.webp",
@@ -8001,7 +8217,7 @@
     "slug": "sinistra-korzet",
     "title": "Sinistra körzet",
     "authorName": "Bodor Ádám",
-    "fetchedAt": "2026-11-09T13:57:09.814Z",
+    "fetchedAt": "2026-11-09T14:23:08.062Z",
     "book": {
       "wikidataId": "Q16522756",
       "article": {
@@ -8024,6 +8240,8 @@
         }
       ],
       "introFromAuthor": false,
+      "introManual": false,
+      "sources": [],
       "plot": [
         {
           "type": "rich",
@@ -8041,8 +8259,13 @@
         "originalTitle": "Sinistra körzet",
         "published": "1992",
         "language": "magyar",
-        "genres": [],
-        "country": null
+        "genres": [
+          "regény"
+        ],
+        "country": null,
+        "publisher": null,
+        "pages": null,
+        "awards": []
       },
       "cover": {
         "src": "images/books/sinistra-korzet.webp",

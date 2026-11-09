@@ -51,6 +51,9 @@ const died = place(af?.death, af?.deathPlace);
               {f.language && (<div><dt>Eredeti nyelv</dt><dd>{f.language}</dd></div>)}
               {f.country && (<div><dt>Ország</dt><dd>{f.country}</dd></div>)}
               {f.genres.length > 0 && (<div><dt>Műfaj</dt><dd>{f.genres.join(', ')}</dd></div>)}
+              {f.publisher && (<div><dt>Kiadó</dt><dd>{f.publisher}</dd></div>)}
+              {f.pages && (<div><dt>Terjedelem</dt><dd>{f.pages} oldal</dd></div>)}
+              {f.awards && f.awards.length > 0 && (<div><dt>Díj</dt><dd>{f.awards.join(', ')}</dd></div>)}
             </dl>
           )
         }
@@ -62,7 +65,11 @@ const died = place(af?.death, af?.deathPlace);
         <section class="prose">
           <h2>
             A könyvről
-            {book.introFromAuthor ? (
+            {book.introManual ? (
+              <span class="badge" title="Erről a könyvről nincs Wikipédia-szócikk; ez a leírás az alább felsorolt források alapján készült.">
+                összefoglaló több forrás alapján
+              </span>
+            ) : book.introFromAuthor ? (
               <span class="badge" title="Erről a könyvről nincs külön Wikipédia-szócikk; ezek a szerző szócikkének a könyvet említő bekezdései.">
                 a szerző szócikkéből
               </span>
@@ -77,7 +84,19 @@ const died = place(af?.death, af?.deathPlace);
               <div class="spoiler-body"><Blocks blocks={book.plot} /></div>
             </details>
           )}
-          <Source article={book.introFromAuthor ? author?.article : book.article} />
+          {book.introManual ? (
+            <p class="source">
+              Források:{' '}
+              {book.sources?.map((src, i) => (
+                <>
+                  {i > 0 && ' · '}
+                  <a href={src.url}>{src.name}</a>
+                </>
+              ))}
+            </p>
+          ) : (
+            <Source article={book.introFromAuthor ? author?.article : book.article} />
+          )}
         </section>
       ) : (
         <section class="prose">

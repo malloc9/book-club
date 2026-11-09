@@ -632,7 +632,8 @@ async function saveImage(input, relPath, width) {
 async function bookCover(book, slug, article, entity) {
   if (book.cover) {
     const img = await saveImage(path.join(ROOT, book.cover), `books/${slug}.webp`, 600);
-    return { ...img, credit: null };
+    const src = book.coverSource;
+    return { ...img, credit: src ? { artist: null, license: null, licenseUrl: null, source: src.url, sourceName: src.name } : null };
   }
   const candidates = [];
   if (article?.pageImage) candidates.push(() => imageInfo(article.pageImage.lang, article.pageImage.file));
@@ -692,7 +693,15 @@ async function fetchBook(book) {
 
   const originalTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle ?? null;
   // No article about the book: use the author's article paragraphs that discuss it.
-  const fromAuthor = bookArticle?.intro?.length ? null : mentionsOf(authorArticle, book.title);
+  const hasArticle = !!bookArticle?.intro?.length;
+  // Hand-written summary from books.yaml (researched from publisher/review pages) when there is
+  // no Wikipedia article about the book; names are linked using the author article's links.
+  const manual = !hasArticle && book.description?.length
+    ? linkifyBlocks(book.description, makeLinker(authorArticle?.links ?? []) ?? ((t) => [t]))
+    : null;
+  const fromAuthor = hasArticle || manual ? null : mentionsOf(authorArticle, book.title);
+  const yf = book.facts ?? {};
+  const wdGenres = await itemLabels(bookEnt, 'P136', 3);
   const published = formatWdTime(claimValues(bookEnt, 'P577').sort((a, b) => a.time.localeCompare(b.time))[0]);
 
   const authorText = blocksText(authorArticle?.intro);
@@ -707,15 +716,21 @@ async function fetchBook(book) {
     book: {
       wikidataId: bookQid,
       article: bookArticle && { lang: bookArticle.lang, title: bookArticle.title, url: bookArticle.url, translated: !!bookArticle.translated },
-      intro: bookArticle?.intro?.length ? bookArticle.intro : fromAuthor ?? [],
-      introFromAuthor: !!(fromAuthor && !bookArticle?.intro?.length),
+      intro: hasArticle ? bookArticle.intro : manual ?? fromAuthor ?? [],
+      introFromAuthor: !!fromAuthor,
+      introManual: !!manual,
+      sources: manual ? book.sources ?? [] : [],
       plot: bookArticle?.plot ?? null,
+      // Wikidata first; books.yaml `facts` fill the gaps (and add publisher/pages/awards).
       facts: {
         originalTitle,
-        published,
-        language: (await itemLabels(bookEnt, 'P407', 1))[0] ?? null,
-        genres: await itemLabels(bookEnt, 'P136', 3),
-        country: (await itemLabels(bookEnt, 'P495', 1))[0] ?? null,
+        published: published ?? yf.published ?? null,
+        language: (await itemLabels(bookEnt, 'P407', 1))[0] ?? yf.language ?? null,
+        genres: wdGenres.length ? wdGenres : yf.genres ?? [],
+        country: (await itemLabels(bookEnt, 'P495', 1))[0] ?? yf.country ?? null,
+        publisher: yf.publisher ?? null,
+        pages: yf.pages ?? null,
+        awards: yf.awards ?? [],
       },
       cover: await bookCover(book, slug, bookArticle, bookEnt),
     },
