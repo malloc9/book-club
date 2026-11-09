@@ -1,0 +1,25 @@
+---
+import type { Work } from '../data/types';
+
+interface Props {
+  w: Work;
+  ours: string | null; // URL of our own book page when the club has read this work
+}
+const { w, ours } = Astro.props;
+---
+<li class:list={{ ours: !!ours }} title={ours ? 'Ezt a könyvet olvastuk' : undefined}>
+  <span class="w-year">{w.year ?? '–'}</span>
+  <span class="w-main">
+    {
+      ours ? (
+        <a href={ours} class="w-title">{w.title}</a>
+      ) : w.url ? (
+        <a href={w.url} class="w-title" target="_blank" rel="noopener">{w.title}</a>
+      ) : (
+        <span class="w-title">{w.title}</span>
+      )
+    }
+    {w.originalTitle && <span class="w-orig">{w.originalTitle}</span>}
+  </span>
+  <span class="w-tags">{w.type && <span class="tag">{w.type}</span>}</span>
+</li>

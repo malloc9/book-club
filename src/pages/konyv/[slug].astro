@@ -6,7 +6,8 @@ import Source from '../../components/Source.astro';
 import EnBadge from '../../components/EnBadge.astro';
 import Blocks from '../../components/Blocks.astro';
 import { books, asset, bookUrl } from '../../data/books';
-import type { BookData } from '../../data/types';
+import type { BookData, Work } from '../../data/types';
+import WorkItem from '../../components/WorkItem.astro';
 
 export function getStaticPaths() {
   return books.map((b) => ({ params: { slug: b.slug }, props: { b } }));
@@ -20,7 +21,15 @@ const af = author?.facts;
 const place = (when: string | null | undefined, where: string | null | undefined) =>
   [when, where].filter(Boolean).join(', ');
 // Works the club has read link to our own book page.
-const clubBooks = new Map(books.filter((x) => x.book).map((x) => [x.book!.wikidataId, x.slug]));
+// Works the club has read link to our own book page (by Wikidata id or by title).
+const normT = (t: string) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+const clubById = new Map(books.filter((x) => x.book?.wikidataId).map((x) => [x.book!.wikidataId!, x.slug]));
+const clubByTitle = new Map(books.map((x) => [normT(x.title), x.slug]));
+const oursOf = (w: Work) => {
+  const slug = w.clubTitle ? b.slug : (w.wikidataId && clubById.get(w.wikidataId)) || clubByTitle.get(normT(w.title));
+  return slug ? bookUrl(slug) : null;
+};
+const WORKS_SHOWN = 20;
 const firstPara = book?.intro.find((x) => typeof x === 'string' || x.type === 'rich');
 const description = (typeof firstPara === 'string'
   ? firstPara
@@ -159,31 +168,19 @@ const died = place(af?.death, af?.deathPlace);
             <div class="works-block">
               <h3 class="sub">Művei</h3>
               <ol class="works">
-                {author.works.map((w) => {
-                  const ours = clubBooks.get(w.wikidataId);
-                  return (
-                    <li class:list={{ ours: !!ours }} title={ours ? 'Ezt a könyvet olvastuk' : undefined}>
-                      <span class="w-year">{w.year ?? '–'}</span>
-                      <span class="w-main">
-                        {ours ? (
-                          <a href={bookUrl(ours)} class="w-title">{w.title}</a>
-                        ) : w.url ? (
-                          <a href={w.url} class="w-title">{w.title}</a>
-                        ) : (
-                          <span class="w-title">{w.title}</span>
-                        )}
-                        {w.originalTitle && <span class="w-orig">{w.originalTitle}</span>}
-                      </span>
-                      <span class="w-tags">
-                        {w.type && <span class="tag">{w.type}</span>}
-                      </span>
-                    </li>
-                  );
-                })}
+                {author.works.slice(0, WORKS_SHOWN).map((w) => <WorkItem w={w} ours={oursOf(w)} />)}
               </ol>
+              {author.works.length > WORKS_SHOWN && (
+                <details class="more-works">
+                  <summary>További {author.works.length - WORKS_SHOWN} mű megjelenítése</summary>
+                  <ol class="works">
+                    {author.works.slice(WORKS_SHOWN).map((w) => <WorkItem w={w} ours={oursOf(w)} />)}
+                  </ol>
+                </details>
+              )}
               <p class="source">
-                Forrás: <a href={`https://www.wikidata.org/wiki/${author.wikidataId}`}>Wikidata</a> – a lista a
-                Wikipédia-szócikkel rendelkező műveket tartalmazza.
+                Forrás: a szerző Wikipédia-szócikkének műjegyzéke és a{' '}
+                <a href={`https://www.wikidata.org/wiki/${author.wikidataId}`}>Wikidata</a>.
               </p>
             </div>
           )}

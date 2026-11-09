@@ -30,13 +30,14 @@ export interface BioSection {
   paras: Block[];
 }
 export interface Work {
-  wikidataId: string;
+  wikidataId: string | null;
   title: string;
   originalTitle: string | null;
   year: number | null;
   type: string | null;
   url: string | null;
-  urlLang: 'hu' | 'en' | null;
+  urlLang: string | null;
+  clubTitle?: string;
 }
 export interface BookData {
   slug: string;

@@ -7,6 +7,7 @@ import YAML from 'yaml';
 import sharp from 'sharp';
 import { parse } from 'node-html-parser';
 import { createHash } from 'node:crypto';
+import { worksFromHtml, mergeWorks, normTitle } from './works-parser.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BOOKS_YAML = path.join(ROOT, 'src/data/books.yaml');
@@ -448,6 +449,7 @@ async function getArticle(entity, { kind, langs }) {
       plot: kind === 'book' ? plotOf(sections) : null,
       biography: kind === 'author' ? biographyOf(sections) : null,
       huEditions: kind === 'author' ? huEditionsOf(sections) : null,
+      works: kind === 'author' ? worksFromHtml(parsed.parse.text, lang, SKIP_SEL) : null,
       pageImage: page.pageimage ? { lang, file: page.pageimage } : null,
       links: await resolveLinks(lang, links, page.title),
     };
@@ -742,7 +744,7 @@ async function fetchBook(book) {
       biography: (bioArticle ?? authorArticle)?.biography ?? [],
       biographyArticle: bioArticle && { lang: bioArticle.lang, title: bioArticle.title, url: bioArticle.url, translated: !!bioArticle.translated },
       huEditions: authorArticle?.huEditions ?? null,
-      works: await authorWorks(authorQid),
+      works: withClubBook(mergeWorks(authorArticle?.works ?? [], await authorWorks(authorQid)), book, bookQid, yf.published ?? published, bookArticle),
       facts: {
         birth,
         birthPlace: await placeMatchingText(itemIds(authorEnt, 'P19')[0], authorText),
@@ -911,6 +913,30 @@ async function richerBiography(entity, article, glossary) {
     }
   }
   return null;
+}
+
+// Make sure the club's book is in the author's works list, and mark it.
+function withClubBook(works, book, bookQid, published, bookArticle) {
+  const keys = [book.title, book.originalTitle].filter(Boolean).map(normTitle);
+  let entry = works.find((w) => (bookQid && w.wikidataId === bookQid) || [w.title, w.originalTitle].filter(Boolean).some((t) => keys.includes(normTitle(t))));
+  if (!entry) {
+    const year = Number(String(published ?? '').slice(0, 4)) || null;
+    entry = { title: book.title, originalTitle: book.originalTitle ?? null, year, type: null, url: bookArticle?.url ?? null, urlLang: bookArticle?.lang ?? null, wikidataId: bookQid };
+    works.push(entry);
+    works.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.title.localeCompare(b.title, 'hu'));
+  }
+  entry.wikidataId ??= bookQid;
+  entry.clubTitle = book.title;
+  // Show the club's Hungarian title and our (checked) publication year.
+  if (normTitle(entry.title) !== normTitle(book.title)) {
+    entry.originalTitle ??= entry.title;
+    entry.title = book.title;
+  }
+  const year = Number(String(published ?? '').slice(0, 4)) || null;
+  if (year) entry.year = year;
+  entry.type ??= book.facts?.genres?.[0] ?? 'regény';
+  works.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.title.localeCompare(b.title, 'hu'));
+  return works;
 }
 
 // Paragraphs of the author's article that mention the book title (rich paragraphs only, no lists).

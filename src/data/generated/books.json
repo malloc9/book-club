@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T14:21:32.987Z",
+    "fetchedAt": "2026-11-09T14:39:31.173Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -472,13 +472,13 @@
       ],
       "works": [
         {
-          "wikidataId": "Q599198",
           "title": "Messzeség",
           "originalTitle": "The Voyage Out",
           "year": 1915,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Voyage_Out",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q599198"
         },
         {
           "wikidataId": "Q19894217",
@@ -490,13 +490,13 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q1610831",
           "title": "Éjre nap",
           "originalTitle": "Night and Day",
           "year": 1919,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Night_and_Day_(Woolf_novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1610831"
         },
         {
           "wikidataId": "Q3814864",
@@ -508,6 +508,15 @@
           "urlLang": "en"
         },
         {
+          "title": "Modern Fiction",
+          "originalTitle": null,
+          "year": 1919,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "wikidataId": "Q21403300",
           "title": "A Society",
           "originalTitle": null,
@@ -517,13 +526,13 @@
           "urlLang": null
         },
         {
-          "wikidataId": "Q6898670",
           "title": "Monday or Tuesday",
           "originalTitle": null,
           "year": 1921,
-          "type": "novellagyűjtemény",
+          "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Monday_or_Tuesday",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q6898670"
         },
         {
           "wikidataId": "Q16740601",
@@ -535,13 +544,13 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q1677745",
           "title": "Jacob szobája",
           "originalTitle": "Jacob's Room",
           "year": 1922,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Jacob%27s_Room",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1677745"
         },
         {
           "wikidataId": "Q55076592",
@@ -553,49 +562,68 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q752584",
           "title": "Mrs. Dalloway",
-          "originalTitle": "Mrs Dalloway",
+          "originalTitle": null,
           "year": 1925,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Mrs._Dalloway_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q752584"
         },
         {
-          "wikidataId": "Q64230947",
           "title": "The Common Reader",
           "originalTitle": null,
           "year": 1925,
           "type": null,
           "url": null,
-          "urlLang": null
+          "urlLang": null,
+          "wikidataId": "Q64230947"
         },
         {
-          "wikidataId": "Q478016",
           "title": "A világítótorony",
           "originalTitle": "To the Lighthouse",
           "year": 1927,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/A_vil%C3%A1g%C3%ADt%C3%B3torony_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q478016",
+          "clubTitle": "A világítótorony"
         },
         {
-          "wikidataId": "Q3794975",
           "title": "The New Dress",
           "originalTitle": null,
           "year": 1927,
-          "type": "novella",
+          "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_New_Dress_(short_story)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q3794975"
         },
         {
-          "wikidataId": "Q1629456",
           "title": "Orlando",
           "originalTitle": "Orlando: A Biography",
           "year": 1928,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Orlando:_A_Biography",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1629456"
+        },
+        {
+          "title": "A Room of One's Own",
+          "originalTitle": null,
+          "year": 1929,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "On Being Ill",
+          "originalTitle": null,
+          "year": 1930,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/On_Being_Ill",
+          "urlLang": "en",
+          "wikidataId": "Q7090909"
         },
         {
           "wikidataId": "Q138836639",
@@ -607,31 +635,58 @@
           "urlLang": null
         },
         {
-          "wikidataId": "Q1217475",
           "title": "Hullámok",
           "originalTitle": "The Waves",
           "year": 1931,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Waves",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1217475"
         },
         {
-          "wikidataId": "Q16210839",
           "title": "The London Scene",
           "originalTitle": null,
           "year": 1931,
           "type": null,
           "url": "https://en.wikipedia.org/wiki/The_London_Scene",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q16210839"
         },
         {
-          "wikidataId": "Q1616684",
+          "title": "The Common Reader: Second Series",
+          "originalTitle": null,
+          "year": 1932,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Flush",
+          "originalTitle": null,
+          "year": 1933,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Az évek",
           "originalTitle": "The Years",
           "year": 1937,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Years_(Woolf_novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1616684"
+        },
+        {
+          "title": "Három adomány",
+          "originalTitle": null,
+          "year": 1938,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q3822209",
@@ -661,13 +716,76 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q4004168",
+          "title": "Felvonások között",
+          "originalTitle": null,
+          "year": 1941,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Death of the Moth and Other Essays",
+          "originalTitle": null,
+          "year": 1942,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "A Haunted House and Other Short Stories",
           "originalTitle": null,
           "year": 1944,
-          "type": "novellagyűjtemény",
+          "type": "regény",
           "url": "https://en.wikipedia.org/wiki/A_Haunted_House_and_Other_Short_Stories",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q4004168"
+        },
+        {
+          "title": "The Moment and Other Essays",
+          "originalTitle": null,
+          "year": 1947,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Captain's Death Bed And Other Essays",
+          "originalTitle": null,
+          "year": 1950,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Granite and Rainbow",
+          "originalTitle": null,
+          "year": 1958,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Books and Portraits",
+          "originalTitle": null,
+          "year": 1978,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Women And Writing",
+          "originalTitle": null,
+          "year": 1979,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q6897212",
@@ -679,21 +797,30 @@
           "urlLang": "en"
         },
         {
+          "title": "The Complete Shorter Fiction",
+          "originalTitle": null,
+          "year": 1985,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Collected Essays",
+          "originalTitle": null,
+          "year": null,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "wikidataId": "Q18624264",
           "title": "Freshwater",
           "originalTitle": null,
           "year": null,
           "type": "színmű",
           "url": "https://en.wikipedia.org/wiki/Freshwater_(play)",
-          "urlLang": "en"
-        },
-        {
-          "wikidataId": "Q7090909",
-          "title": "On Being Ill",
-          "originalTitle": null,
-          "year": null,
-          "type": null,
-          "url": "https://en.wikipedia.org/wiki/On_Being_Ill",
           "urlLang": "en"
         },
         {
@@ -739,7 +866,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T14:21:42.735Z",
+    "fetchedAt": "2026-11-09T14:39:59.688Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -1149,31 +1276,32 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q7726866",
           "title": "The Colossus and Other Poems",
           "originalTitle": null,
           "year": 1960,
-          "type": "verseskötet",
+          "type": "versek",
           "url": "https://en.wikipedia.org/wiki/The_Colossus_and_Other_Poems",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q7726866"
         },
         {
-          "wikidataId": "Q1213085",
           "title": "Az üvegbúra",
           "originalTitle": "The Bell Jar",
           "year": 1963,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Bell_Jar",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1213085",
+          "clubTitle": "Az üvegbúra"
         },
         {
-          "wikidataId": "Q4790385",
           "title": "Ariel",
           "originalTitle": null,
           "year": 1965,
-          "type": "vers",
+          "type": "versek",
           "url": "https://en.wikipedia.org/wiki/Ariel_(poem)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q4790385"
         },
         {
           "wikidataId": "Q132126730",
@@ -1194,22 +1322,148 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q17001482",
+          "title": "Three Women: A Monologue for Three Voices",
+          "originalTitle": null,
+          "year": 1968,
+          "type": "versek",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Crossing the Water",
           "originalTitle": null,
           "year": 1971,
-          "type": "vers",
+          "type": "versek",
           "url": "https://en.wikipedia.org/wiki/Crossing_the_Water",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q17001482"
         },
         {
-          "wikidataId": "Q18163352",
           "title": "Winter Trees",
           "originalTitle": null,
           "year": 1971,
-          "type": null,
+          "type": "versek",
           "url": "https://en.wikipedia.org/wiki/Winter_Trees",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q18163352"
+        },
+        {
+          "title": "Letters Home",
+          "originalTitle": null,
+          "year": 1975,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Bed Book",
+          "originalTitle": null,
+          "year": 1976,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": "Q96942864"
+        },
+        {
+          "title": "Johnny Panic and the Bible of Dreams",
+          "originalTitle": null,
+          "year": 1977,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Collected Poems",
+          "originalTitle": null,
+          "year": 1981,
+          "type": "versek",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Journals of Sylvia Plath",
+          "originalTitle": null,
+          "year": 1982,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Selected Poems",
+          "originalTitle": null,
+          "year": 1985,
+          "type": "versek",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Magic Mirror",
+          "originalTitle": null,
+          "year": 1989,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The It-Doesn't-Matter-Suit",
+          "originalTitle": null,
+          "year": 1996,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Plath: Poems",
+          "originalTitle": null,
+          "year": 1998,
+          "type": "versek",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Sylvia Plath Reads",
+          "originalTitle": null,
+          "year": 2000,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Unabridged Journals of Sylvia Plath",
+          "originalTitle": null,
+          "year": 2000,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Collected Children's Stories",
+          "originalTitle": null,
+          "year": 2001,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Mrs. Cherry's Kitchen",
+          "originalTitle": null,
+          "year": 2001,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q132126737",
@@ -1228,15 +1482,6 @@
           "type": "vers",
           "url": "https://en.wikipedia.org/wiki/Lady_Lazarus",
           "urlLang": "en"
-        },
-        {
-          "wikidataId": "Q96942864",
-          "title": "The Bed Book",
-          "originalTitle": null,
-          "year": null,
-          "type": null,
-          "url": null,
-          "urlLang": null
         },
         {
           "wikidataId": "Q131904781",
@@ -1290,7 +1535,7 @@
     "slug": "a-kedves",
     "title": "A kedves",
     "authorName": "Toni Morrison",
-    "fetchedAt": "2026-11-09T14:21:53.431Z",
+    "fetchedAt": "2026-11-09T14:40:12.844Z",
     "book": {
       "wikidataId": "Q971767",
       "article": {
@@ -1533,6 +1778,15 @@
       ],
       "works": [
         {
+          "title": "Nagyonkék",
+          "originalTitle": null,
+          "year": 1970,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "wikidataId": "Q1069956",
           "title": "The Bluest Eye",
           "originalTitle": null,
@@ -1542,40 +1796,68 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q3503405",
           "title": "Sula",
           "originalTitle": null,
           "year": 1973,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Sula_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q3503405"
         },
         {
-          "wikidataId": "Q85806574",
           "title": "The Black Book",
           "originalTitle": null,
           "year": 1974,
           "type": null,
           "url": "https://en.wikipedia.org/wiki/The_Black_Book_(Morrison_book)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q85806574"
         },
         {
-          "wikidataId": "Q7684981",
+          "title": "Salamon-ének",
+          "originalTitle": null,
+          "year": 1977,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Tar Baby",
           "originalTitle": null,
           "year": 1981,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Tar_Baby_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q7684981"
         },
         {
-          "wikidataId": "Q971767",
+          "title": "Recitatif\" (1983)",
+          "originalTitle": null,
+          "year": 1983,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "A kedves",
           "originalTitle": "Beloved",
           "year": 1987,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Beloved_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q971767",
+          "clubTitle": "A kedves"
+        },
+        {
+          "title": "Dzsessz",
+          "originalTitle": null,
+          "year": 1992,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q3163324",
@@ -1587,6 +1869,24 @@
           "urlLang": "en"
         },
         {
+          "title": "Playing in the Dark",
+          "originalTitle": null,
+          "year": 1992,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Birth of a Nation'hood",
+          "originalTitle": null,
+          "year": 1997,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "wikidataId": "Q7134233",
           "title": "Paradise",
           "originalTitle": null,
@@ -1596,6 +1896,33 @@
           "urlLang": "en"
         },
         {
+          "title": "A paradicsom",
+          "originalTitle": null,
+          "year": 1999,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Big Box",
+          "originalTitle": null,
+          "year": 2002,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Book of Mean People",
+          "originalTitle": null,
+          "year": 2002,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "wikidataId": "Q3614534",
           "title": "Love",
           "originalTitle": null,
@@ -1603,6 +1930,78 @@
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Love_(Morrison_novel)",
           "urlLang": "en"
+        },
+        {
+          "title": "Szerelem",
+          "originalTitle": null,
+          "year": 2003,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Who's Got Game?: The Ant or the Grasshopper",
+          "originalTitle": null,
+          "year": 2003,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Who's Got Game?: The Lion or the Mouse?",
+          "originalTitle": null,
+          "year": 2003,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Remember:The Journey to School Integration",
+          "originalTitle": null,
+          "year": 2004,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Who's Got Game?: Poppy or the Snake?",
+          "originalTitle": null,
+          "year": 2004,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Margaret Garner",
+          "originalTitle": null,
+          "year": 2005,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Who's Got Game?: The Mirror or the Glass?",
+          "originalTitle": null,
+          "year": 2007,
+          "type": "gyermekkönyv",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A Mercy",
+          "originalTitle": null,
+          "year": 2008,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q5263837",
@@ -1632,13 +2031,22 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q20758145",
           "title": "Dreaming Emmett",
           "originalTitle": null,
           "year": null,
           "type": "színmű",
           "url": "https://en.wikipedia.org/wiki/Dreaming_Emmett",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q20758145"
+        },
+        {
+          "title": "Engedjétek hozzám",
+          "originalTitle": null,
+          "year": null,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q7302499",
@@ -1683,7 +2091,7 @@
     "slug": "ne-bantsatok-a-feketerigot",
     "title": "Ne bántsátok a feketerigót!",
     "authorName": "Harper Lee",
-    "fetchedAt": "2026-11-09T14:21:59.581Z",
+    "fetchedAt": "2026-11-09T14:40:21.501Z",
     "book": {
       "wikidataId": "Q212340",
       "article": {
@@ -2135,7 +2543,8 @@
           "year": 1960,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Ne_b%C3%A1nts%C3%A1tok_a_feketerig%C3%B3t!_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "clubTitle": "Ne bántsátok a feketerigót!"
         },
         {
           "wikidataId": "Q18949486",
@@ -2189,7 +2598,7 @@
     "slug": "evek",
     "title": "Évek",
     "authorName": "Annie Ernaux",
-    "fetchedAt": "2026-11-09T14:22:05.886Z",
+    "fetchedAt": "2026-11-09T14:40:29.631Z",
     "book": {
       "wikidataId": "Q3230588",
       "article": {
@@ -2704,12 +3113,13 @@
         },
         {
           "wikidataId": "Q3230588",
-          "title": "Les Années",
-          "originalTitle": null,
+          "title": "Évek",
+          "originalTitle": "Les Années",
           "year": 2008,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Years_(Ernaux_book)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "clubTitle": "Évek"
         },
         {
           "wikidataId": "Q60834406",
@@ -2779,7 +3189,7 @@
     "slug": "hangyaboly",
     "title": "Hangyaboly",
     "authorName": "Kaffka Margit",
-    "fetchedAt": "2026-11-09T14:22:10.777Z",
+    "fetchedAt": "2026-11-09T14:40:38.642Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -3023,13 +3433,293 @@
       "huEditions": null,
       "works": [
         {
-          "wikidataId": "Q118255775",
+          "title": "Versek",
+          "originalTitle": null,
+          "year": 1904,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Levelek a zárdából",
+          "originalTitle": "Magyar könyvtár",
+          "year": 1905,
+          "type": "elbeszélések",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A gondolkodók és egyéb elbeszélések",
+          "originalTitle": "Jeles elbeszélők, műírók és költők",
+          "year": 1906,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kaffka Margit könyve",
+          "originalTitle": null,
+          "year": 1906,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Képzelet-királyfiak",
+          "originalTitle": null,
+          "year": 1909,
+          "type": "mese",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Csendes válságok",
+          "originalTitle": null,
+          "year": 1910,
+          "type": "elbeszélések",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Költészettan. A polgári leányiskolák 4. osztálya számára",
+          "originalTitle": null,
+          "year": 1910,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Csonka regény és novellák",
+          "originalTitle": "Modern könyvtár",
+          "year": 1911,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Tallózó évek",
+          "originalTitle": null,
+          "year": 1911,
+          "type": "versek",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A Kirilláné múltja",
+          "originalTitle": null,
+          "year": 1912,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Süppedő talajon",
+          "originalTitle": "Magyar könyvtár",
+          "year": 1912,
+          "type": "elbeszélések",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Színek és évek",
+          "originalTitle": null,
+          "year": 1912,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Mária évei",
+          "originalTitle": null,
+          "year": 1913,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Utólszor lyrán. Új versek. Anthologia a régebbi versekből",
+          "originalTitle": null,
+          "year": 1913,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Szent Ildefonso bálja",
+          "originalTitle": "Tevan-könyvtár",
+          "year": 1914,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Két nyár",
+          "originalTitle": null,
+          "year": 1916,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Állomások",
+          "originalTitle": null,
+          "year": 1917,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Hangyaboly",
+          "originalTitle": null,
+          "year": 1917,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null,
+          "clubTitle": "Hangyaboly"
+        },
+        {
           "title": "A révnél",
           "originalTitle": null,
-          "year": null,
-          "type": "novellagyűjtemény",
+          "year": 1918,
+          "type": "elbeszélések",
           "url": "https://hu.wikipedia.org/wiki/A_r%C3%A9vn%C3%A9l",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q118255775"
+        },
+        {
+          "title": "Az élet útján. Válogatott gyűjtemény régi és legújabb költeményeiből",
+          "originalTitle": null,
+          "year": 1918,
+          "type": "versek",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kis emberek, barátocskáim. Játékok",
+          "originalTitle": null,
+          "year": 1918,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Álom. Kaffka Margit kiadatlan elbeszélései",
+          "originalTitle": null,
+          "year": 1942,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kaffka Margit összes versei",
+          "originalTitle": null,
+          "year": 1943,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Babamúzeum",
+          "originalTitle": null,
+          "year": 1951,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kaffka Margit válogatott művei",
+          "originalTitle": null,
+          "year": 1956,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Lázadó asszonyok. Összegyűjtött elbeszélések, 1-2",
+          "originalTitle": null,
+          "year": 1958,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Hullámzó élet. Cikkek, tanulmányok",
+          "originalTitle": null,
+          "year": 1959,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Marie, a kis hajó",
+          "originalTitle": null,
+          "year": 1962,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Mirjam és Mária. Misztikus és mitikus elbeszélések",
+          "originalTitle": null,
+          "year": 1995,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kaffka Margit naplói",
+          "originalTitle": null,
+          "year": 2008,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A lélek stációi. Kaffka Margit válogatott levelezése",
+          "originalTitle": null,
+          "year": 2010,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az üvegkisasszony és más elbeszélések",
+          "originalTitle": null,
+          "year": 2019,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         }
       ],
       "facts": {
@@ -3065,7 +3755,7 @@
     "slug": "zsomle-odavan",
     "title": "Zsömle odavan",
     "authorName": "Krasznahorkai László",
-    "fetchedAt": "2026-11-09T14:22:18.458Z",
+    "fetchedAt": "2026-11-09T14:40:48.027Z",
     "book": {
       "wikidataId": "Q139899382",
       "article": null,
@@ -3458,58 +4148,184 @@
       "huEditions": null,
       "works": [
         {
-          "wikidataId": "Q1315145",
+          "title": "Az állomáskereső",
+          "originalTitle": null,
+          "year": 1985,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Sátántangó",
           "originalTitle": null,
           "year": 1985,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/S%C3%A1t%C3%A1ntang%C3%B3_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q1315145"
         },
         {
-          "wikidataId": "Q785109",
+          "title": "Kegyelmi viszonyok",
+          "originalTitle": null,
+          "year": 1986,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Az ellenállás melankóliája",
           "originalTitle": null,
           "year": 1989,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Az_ellen%C3%A1ll%C3%A1s_melank%C3%B3li%C3%A1ja",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q785109"
         },
         {
-          "wikidataId": "Q19843038",
-          "title": "Háború és háború",
+          "title": "Az urgai fogoly",
+          "originalTitle": null,
+          "year": 1992,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A harmadik beszéd",
+          "originalTitle": null,
+          "year": 1993,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A Théseus-általános. Titkos akadémiai előadások",
+          "originalTitle": null,
+          "year": 1993,
+          "type": "orációk",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": "Q86679642"
+        },
+        {
+          "title": "Járás egy áldás nélküli térben",
+          "originalTitle": null,
+          "year": 1998,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Megjött Ézsaiás",
+          "originalTitle": null,
+          "year": 1998,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Háború és Háború",
           "originalTitle": null,
           "year": 1999,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/War_and_War",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q19843038"
         },
         {
-          "wikidataId": "Q28450891",
+          "title": "Este hat; néhány szabad megnyitás",
+          "originalTitle": null,
+          "year": 2001,
+          "type": "esszék",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Északról hegy, Délről tó, Nyugatról utak, Keletről folyó",
+          "originalTitle": null,
+          "year": 2003,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Krasznahorkai beszélgetések",
+          "originalTitle": null,
+          "year": 2003,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Rombolás és bánat az Ég alatt",
           "originalTitle": "Destruction and Sorrow Beneath the Heavens",
           "year": 2004,
           "type": null,
           "url": "https://en.wikipedia.org/wiki/Destruction_and_Sorrow_Beneath_the_Heavens",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q28450891"
         },
         {
-          "wikidataId": "Q16746713",
+          "title": "Háborús architektúra",
+          "originalTitle": null,
+          "year": 2008,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Seiobo járt odalent",
           "originalTitle": null,
           "year": 2008,
-          "type": "regény",
+          "type": "elbeszélések",
           "url": "https://en.wikipedia.org/wiki/Seiobo_There_Below",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q16746713"
         },
         {
-          "wikidataId": "Q98617483",
+          "title": "Az utolsó farkas",
+          "originalTitle": null,
+          "year": 2009,
+          "type": "elbeszélés",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Állatvanbent",
+          "originalTitle": null,
+          "year": 2010,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Nem kérdez, nem válaszol. Huszonöt beszélgetés ugyanarról",
+          "originalTitle": null,
+          "year": 2012,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Megy a világ",
           "originalTitle": null,
           "year": 2013,
-          "type": "novellagyűjtemény",
+          "type": "elbeszélések",
           "url": "https://en.wikipedia.org/wiki/The_World_Goes_On",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q98617483"
         },
         {
           "wikidataId": "Q48965611",
@@ -3521,31 +4337,68 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q85745490",
           "title": "Báró Wenckheim hazatér",
           "originalTitle": null,
           "year": 2016,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Baron_Wenckheim%27s_Homecoming",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q85745490"
         },
         {
-          "wikidataId": "Q123150393",
-          "title": "Herscht 07769",
+          "title": "A Manhattan-terv",
+          "originalTitle": null,
+          "year": 2018,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Aprómunka egy palotáért. Bejárás mások őrületébe",
+          "originalTitle": null,
+          "year": 2018,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Mindig Homérosznak",
+          "originalTitle": null,
+          "year": 2019,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Herscht 07769. Florian Herscht Bach-regénye",
           "originalTitle": null,
           "year": 2021,
-          "type": "regény",
+          "type": "elbeszélés",
           "url": "https://en.wikipedia.org/wiki/Herscht_07769",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q123150393"
         },
         {
-          "wikidataId": "Q86679642",
-          "title": "A Théseus-általános",
+          "title": "Zsömle odavan",
           "originalTitle": null,
-          "year": null,
+          "year": 2024,
           "type": "regény",
           "url": null,
-          "urlLang": null
+          "urlLang": null,
+          "wikidataId": "Q139899382",
+          "clubTitle": "Zsömle odavan"
+        },
+        {
+          "title": "A magyar nemzet biztonsága - Vadászat pillangóra",
+          "originalTitle": null,
+          "year": 2025,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         }
       ],
       "facts": {
@@ -3581,7 +4434,7 @@
     "slug": "edentol-keletre",
     "title": "Édentől keletre",
     "authorName": "John Steinbeck",
-    "fetchedAt": "2026-11-09T14:22:22.956Z",
+    "fetchedAt": "2026-11-09T14:40:54.418Z",
     "book": {
       "wikidataId": "Q849701",
       "article": {
@@ -4213,31 +5066,31 @@
       "huEditions": null,
       "works": [
         {
-          "wikidataId": "Q3207868",
           "title": "Cup of Gold",
           "originalTitle": null,
           "year": 1929,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Cup_of_Gold",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q3207868"
         },
         {
-          "wikidataId": "Q257144",
           "title": "The Pastures of Heaven",
           "originalTitle": null,
           "year": 1932,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Pastures_of_Heaven",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q257144"
         },
         {
-          "wikidataId": "Q246409",
           "title": "To a God Unknown",
           "originalTitle": null,
           "year": 1933,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/To_a_God_Unknown",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q246409"
         },
         {
           "wikidataId": "Q124785379",
@@ -4249,31 +5102,31 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q606720",
-          "title": "Kedves csirkefogók",
-          "originalTitle": "Tortilla Flat",
+          "title": "Tortilla Flat",
+          "originalTitle": null,
           "year": 1935,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Tortilla_Flat",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q606720"
         },
         {
-          "wikidataId": "Q582472",
           "title": "In Dubious Battle",
           "originalTitle": null,
           "year": 1936,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/In_Dubious_Battle",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q582472"
         },
         {
-          "wikidataId": "Q457977",
-          "title": "Egerek és emberek",
-          "originalTitle": "Of Mice and Men",
+          "title": "Of Mice and Men",
+          "originalTitle": null,
           "year": 1937,
           "type": "kisregény",
           "url": "https://hu.wikipedia.org/wiki/Egerek_%C3%A9s_emberek_(kisreg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q457977"
         },
         {
           "wikidataId": "Q2897301",
@@ -4285,94 +5138,194 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q673452",
           "title": "The Long Valley",
           "originalTitle": null,
           "year": 1938,
           "type": "novellagyűjtemény",
           "url": "https://en.wikipedia.org/wiki/The_Long_Valley",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q673452"
         },
         {
-          "wikidataId": "Q215983",
-          "title": "Érik a gyümölcs",
-          "originalTitle": "The Grapes of Wrath",
+          "title": "The Grapes of Wrath",
+          "originalTitle": null,
           "year": 1939,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/%C3%89rik_a_gy%C3%BCm%C3%B6lcs_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q215983"
         },
         {
-          "wikidataId": "Q1195848",
+          "title": "Érik a gyümölcs",
+          "originalTitle": null,
+          "year": 1940,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A mohos szikla",
+          "originalTitle": null,
+          "year": 1941,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Forgotten Village",
+          "originalTitle": null,
+          "year": 1941,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Log from the Sea of Cortez|Sea of Cortez: A Leisurely Journal of Travel and Research",
+          "originalTitle": null,
+          "year": 1941,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Bombs Away: The Story of a Bomber Team",
+          "originalTitle": null,
+          "year": 1942,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "The Moon Is Down",
           "originalTitle": null,
           "year": 1942,
           "type": "kisregény",
           "url": "https://en.wikipedia.org/wiki/The_Moon_Is_Down",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1195848"
         },
         {
-          "wikidataId": "Q1216542",
+          "title": "Egerek és emberek",
+          "originalTitle": null,
+          "year": 1943,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Cannery Row",
           "originalTitle": null,
           "year": 1945,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Cannery_Row_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1216542"
         },
         {
-          "wikidataId": "Q1215393",
+          "title": "A kék öböl",
+          "originalTitle": null,
+          "year": 1947,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A szeszélyes autóbusz",
+          "originalTitle": null,
+          "year": 1947,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "The Pearl",
           "originalTitle": null,
           "year": 1947,
           "type": "kisregény",
           "url": "https://en.wikipedia.org/wiki/The_Pearl_(novella)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1215393"
         },
         {
-          "wikidataId": "Q1115676",
           "title": "The Wayward Bus",
           "originalTitle": null,
           "year": 1947,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Wayward_Bus",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1115676"
         },
         {
-          "wikidataId": "Q4400753",
           "title": "A Russian Journal",
           "originalTitle": null,
           "year": 1948,
           "type": null,
           "url": "https://en.wikipedia.org/wiki/A_Russian_Journal",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q4400753"
         },
         {
-          "wikidataId": "Q4999822",
+          "title": "A gyöngyszem",
+          "originalTitle": null,
+          "year": 1949,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Burning Bright",
           "originalTitle": null,
           "year": 1950,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Burning_Bright",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q4999822"
         },
         {
-          "wikidataId": "Q849701",
+          "title": "Fényes tűz",
+          "originalTitle": null,
+          "year": 1950,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Log from the Sea of Cortez",
+          "originalTitle": null,
+          "year": 1951,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Édentől keletre",
           "originalTitle": "East of Eden",
           "year": 1952,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/%C3%89dent%C5%91l_keletre_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q849701",
+          "clubTitle": "Édentől keletre"
         },
         {
-          "wikidataId": "Q1416875",
           "title": "Sweet Thursday",
           "originalTitle": null,
           "year": 1954,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Sweet_Thursday_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1416875"
         },
         {
           "wikidataId": "Q2378518",
@@ -4384,13 +5337,67 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q2063426",
+          "title": "The Short Reign of Pippin IV: A Fabrication",
+          "originalTitle": null,
+          "year": 1957,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Egy marék arany",
+          "originalTitle": null,
+          "year": 1958,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Once There Was A War",
+          "originalTitle": null,
+          "year": 1958,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "The Winter of Our Discontent",
           "originalTitle": null,
           "year": 1961,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Winter_of_Our_Discontent",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q2063426"
+        },
+        {
+          "title": "Travels with Charley: In Search of America",
+          "originalTitle": null,
+          "year": 1962,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "America and Americans",
+          "originalTitle": null,
+          "year": 1966,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kék öböl",
+          "originalTitle": null,
+          "year": 1966,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q6296070",
@@ -4402,13 +5409,85 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q7712325",
+          "title": "Journal of a Novel: The East of Eden Letters",
+          "originalTitle": null,
+          "year": 1969,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Viva Zapata!",
+          "originalTitle": null,
+          "year": 1975,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "The Acts of King Arthur and His Noble Knights",
           "originalTitle": null,
           "year": 1976,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Acts_of_King_Arthur_and_His_Noble_Knights",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q7712325"
+        },
+        {
+          "title": "Workings Days: The Journals of The Grapes of Wrath",
+          "originalTitle": null,
+          "year": 1989,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Életben maradni",
+          "originalTitle": null,
+          "year": 1994,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Szeszélyes autóbusz",
+          "originalTitle": null,
+          "year": 1994,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Lángolás",
+          "originalTitle": null,
+          "year": 1997,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A gyöngy",
+          "originalTitle": null,
+          "year": 2000,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az aranyserleg. A Karib-tenger leghíresebb kalóza, Morgan kapitány élettörténete",
+          "originalTitle": null,
+          "year": 2001,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q5459129",
@@ -4417,15 +5496,6 @@
           "year": null,
           "type": "novella",
           "url": "https://en.wikipedia.org/wiki/Flight_(Steinbeck_story)",
-          "urlLang": "en"
-        },
-        {
-          "wikidataId": "Q16983114",
-          "title": "Of Mice and Men",
-          "originalTitle": null,
-          "year": null,
-          "type": "színmű",
-          "url": "https://en.wikipedia.org/wiki/Of_Mice_and_Men_(play)",
           "urlLang": "en"
         },
         {
@@ -4489,7 +5559,7 @@
     "slug": "egy-no",
     "title": "Egy nő",
     "authorName": "Esterházy Péter",
-    "fetchedAt": "2026-11-09T14:22:26.223Z",
+    "fetchedAt": "2026-11-09T14:40:59.679Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -4862,31 +5932,428 @@
       "huEditions": null,
       "works": [
         {
-          "wikidataId": "Q1004247",
+          "title": "Fancsikó és Pinta",
+          "originalTitle": null,
+          "year": 1976,
+          "type": "elbeszélések",
+          "url": "https://hu.wikipedia.org/wiki/Fancsik%C3%B3_%C3%A9s_Pinta",
+          "urlLang": "hu",
+          "wikidataId": null
+        },
+        {
+          "title": "Pápai vizeken ne kalózkodj",
+          "originalTitle": null,
+          "year": 1977,
+          "type": "elbeszélések",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Termelési-regény (kisssregény)",
+          "originalTitle": null,
+          "year": 1979,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Függő",
+          "originalTitle": "Matúra Klasszikusok",
+          "year": 1981,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Ki szavatol a lady biztonságáért?",
+          "originalTitle": null,
+          "year": 1982,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Fuharosok",
           "originalTitle": null,
           "year": 1983,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Fuharosok",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q1004247"
         },
         {
-          "wikidataId": "Q6656521",
+          "title": "Daisy",
+          "originalTitle": null,
+          "year": 1984,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kis Magyar Pornográfia",
+          "originalTitle": null,
+          "year": 1984,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "A szív segédigéi",
           "originalTitle": "Helping Verbs of the Heart",
           "year": 1985,
           "type": "regény",
           "url": null,
-          "urlLang": null
+          "urlLang": null,
+          "wikidataId": "Q6656521"
         },
         {
-          "wikidataId": "Q1585604",
+          "title": "Bevezetés a szépirodalomba",
+          "originalTitle": null,
+          "year": 1986,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Tizenhét hattyúk",
+          "originalTitle": null,
+          "year": 1987,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A kitömött hattyú",
+          "originalTitle": null,
+          "year": 1988,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Biztos kaland",
+          "originalTitle": null,
+          "year": 1989,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Hrabal könyve",
+          "originalTitle": null,
+          "year": 1990,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A halacska csodálatos élete",
+          "originalTitle": null,
+          "year": 1991,
+          "type": "publicisztika",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az elefántcsonttoronyból",
+          "originalTitle": null,
+          "year": 1991,
+          "type": "publicisztika",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Hahn-Hahn grófnő pillantása",
+          "originalTitle": null,
+          "year": 1992,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A vajszínű árnyalat",
+          "originalTitle": null,
+          "year": 1993,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Amit a csokornyakkendőről tudni kell... Esterházy Péter be-vezetésével",
+          "originalTitle": null,
+          "year": 1993,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Egy nő",
+          "originalTitle": null,
+          "year": 1993,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null,
+          "clubTitle": "Egy nő"
+        },
+        {
+          "title": "Élet és irodalom",
+          "originalTitle": null,
+          "year": 1993,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Könyvek",
+          "originalTitle": null,
+          "year": 1993,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Búcsúszimfónia – A gabonakereskedő",
+          "originalTitle": null,
+          "year": 1994,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Egy kékharisnya följegyzéseiből",
+          "originalTitle": null,
+          "year": 1994,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Írások",
+          "originalTitle": null,
+          "year": 1994,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A szabadság nehéz mámora. Válogatott esszék, cikkek, 1996–2003",
+          "originalTitle": null,
+          "year": 1996,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Egy kék haris",
+          "originalTitle": null,
+          "year": 1996,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Esterházy: Egy házy nyúl csodálatos élete",
+          "originalTitle": null,
+          "year": 1996,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "Harmonia cælestis",
           "originalTitle": null,
           "year": 2000,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Harmonia_c%C3%A6lestis_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q1585604"
+        },
+        {
+          "title": "Javított kiadás. Melléklet a Harmonia caelestishez",
+          "originalTitle": null,
+          "year": 2002,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A szavak csodálatos életéből. A Mindentudás Egyetemén, 2003. szeptember 8-án elhangzott előadás bővített változata",
+          "originalTitle": null,
+          "year": 2003,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az olvasó országa",
+          "originalTitle": null,
+          "year": 2003,
+          "type": "esszék",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kalauz",
+          "originalTitle": null,
+          "year": 2003,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Hegedűs fotó",
+          "originalTitle": null,
+          "year": 2004,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Utazás a tizenhatos mélyére",
+          "originalTitle": null,
+          "year": 2006,
+          "type": null,
+          "url": "https://hu.wikipedia.org/wiki/Utaz%C3%A1s_a_tizenhatos_m%C3%A9ly%C3%A9re",
+          "urlLang": "hu",
+          "wikidataId": null
+        },
+        {
+          "title": "Rubens és a nemeuklideszi asszonyok",
+          "originalTitle": null,
+          "year": 2007,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Semmi művészet",
+          "originalTitle": null,
+          "year": 2008,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Esti",
+          "originalTitle": null,
+          "year": 2010,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Zidane melankóliája",
+          "originalTitle": null,
+          "year": 2010,
+          "type": null,
+          "url": "https://hu.wikipedia.org/wiki/Zin%C3%A9dine_Zidane",
+          "urlLang": "hu",
+          "wikidataId": null
+        },
+        {
+          "title": "Én vagyok a Te. Mai revü",
+          "originalTitle": "Nemzeti Színház színműtár",
+          "year": 2011,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Egyszerű történet vessző száz oldal – a kardozós változat",
+          "originalTitle": null,
+          "year": 2013,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A bűnös",
+          "originalTitle": null,
+          "year": 2015,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Drámák",
+          "originalTitle": null,
+          "year": 2016,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Hasnyálmirigynapló",
+          "originalTitle": null,
+          "year": 2016,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "És mesélni kezdtem",
+          "originalTitle": "Poket",
+          "year": 2018,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Hét utolsó szó",
+          "originalTitle": null,
+          "year": 2018,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Vanni van. Válogatott beszélgetések",
+          "originalTitle": null,
+          "year": 2025,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         }
       ],
       "facts": {
@@ -4921,7 +6388,7 @@
     "slug": "vad-lovak",
     "title": "Vad lovak",
     "authorName": "Cormac McCarthy",
-    "fetchedAt": "2026-11-09T14:22:34.090Z",
+    "fetchedAt": "2026-11-09T14:41:08.363Z",
     "book": {
       "wikidataId": "Q264519",
       "article": {
@@ -5424,40 +6891,76 @@
       ],
       "works": [
         {
-          "wikidataId": "Q1645692",
+          "title": "Wake for Susan",
+          "originalTitle": null,
+          "year": 1959,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A Drowning Incident",
+          "originalTitle": null,
+          "year": 1960,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Dark Waters",
+          "originalTitle": null,
+          "year": 1965,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "The Orchard Keeper",
           "originalTitle": null,
           "year": 1965,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Orchard_Keeper",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1645692"
         },
         {
-          "wikidataId": "Q2364029",
           "title": "Outer Dark",
           "originalTitle": null,
           "year": 1968,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Outer_Dark",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q2364029"
         },
         {
-          "wikidataId": "Q3744845",
           "title": "Child of God",
           "originalTitle": null,
           "year": 1973,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Child_of_God",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q3744845"
         },
         {
-          "wikidataId": "Q3978367",
           "title": "Suttree",
           "originalTitle": null,
           "year": 1979,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Suttree",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q3978367"
+        },
+        {
+          "title": "Blood Meridian",
+          "originalTitle": null,
+          "year": 1985,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         },
         {
           "wikidataId": "Q581426",
@@ -5469,40 +6972,50 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q264519",
-          "title": "All the Pretty Horses",
-          "originalTitle": null,
+          "title": "Vad lovak",
+          "originalTitle": "All the Pretty Horses",
           "year": 1992,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/All_the_Pretty_Horses_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q264519",
+          "clubTitle": "Vad lovak"
         },
         {
-          "wikidataId": "Q1539874",
           "title": "The Crossing",
           "originalTitle": null,
           "year": 1994,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Crossing_(McCarthy_novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1539874"
         },
         {
-          "wikidataId": "Q1640710",
-          "title": "Cities of the Plain",
+          "title": "The Stonemason",
+          "originalTitle": null,
+          "year": 1995,
+          "type": "dráma",
+          "url": "https://en.wikipedia.org/wiki/The_Stonemason",
+          "urlLang": "en",
+          "wikidataId": "Q7766635"
+        },
+        {
+          "title": "Cities of the Plain (",
           "originalTitle": null,
           "year": 1998,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Cities_of_the_Plain_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q1640710"
         },
         {
-          "wikidataId": "Q611689",
-          "title": "Nem vénnek való vidék",
-          "originalTitle": "No Country for Old Men",
+          "title": "No Country for Old Men",
+          "originalTitle": null,
           "year": 2005,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Nem_v%C3%A9nnek_val%C3%B3_vid%C3%A9k",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q611689"
         },
         {
           "wikidataId": "Q1140295",
@@ -5514,49 +7027,49 @@
           "urlLang": "en"
         },
         {
-          "wikidataId": "Q96409403",
+          "title": "The Road",
+          "originalTitle": null,
+          "year": 2006,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "The Sunset Limited",
+          "originalTitle": null,
+          "year": 2006,
+          "type": "dráma",
+          "url": "https://en.wikipedia.org/wiki/The_Sunset_Limited_(play)",
+          "urlLang": "en",
+          "wikidataId": "Q1754013"
+        },
+        {
           "title": "The Kekulé Problem",
           "originalTitle": null,
           "year": 2017,
-          "type": null,
+          "type": "esszék",
           "url": "https://en.wikipedia.org/wiki/The_Kekul%C3%A9_Problem",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q96409403"
         },
         {
-          "wikidataId": "Q113456487",
-          "title": "Az utas",
-          "originalTitle": "The Passenger",
-          "year": 2022,
-          "type": "regény",
-          "url": "https://en.wikipedia.org/wiki/The_Passenger_(McCarthy_novel)",
-          "urlLang": "en"
-        },
-        {
-          "wikidataId": "Q113549027",
           "title": "Stella Maris",
           "originalTitle": null,
           "year": 2022,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Stella_Maris_(novel)",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q113549027"
         },
         {
-          "wikidataId": "Q7766635",
-          "title": "The Stonemason",
+          "title": "The Passenger",
           "originalTitle": null,
-          "year": null,
-          "type": "színmű",
-          "url": "https://en.wikipedia.org/wiki/The_Stonemason",
-          "urlLang": "en"
-        },
-        {
-          "wikidataId": "Q1754013",
-          "title": "The Sunset Limited",
-          "originalTitle": null,
-          "year": null,
-          "type": "színmű",
-          "url": "https://en.wikipedia.org/wiki/The_Sunset_Limited_(play)",
-          "urlLang": "en"
+          "year": 2022,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/The_Passenger_(McCarthy_novel)",
+          "urlLang": "en",
+          "wikidataId": "Q113456487"
         }
       ],
       "facts": {
@@ -5592,7 +7105,7 @@
     "slug": "trilogia",
     "title": "Trilógia",
     "authorName": "Jon Fosse",
-    "fetchedAt": "2026-11-09T14:22:43.628Z",
+    "fetchedAt": "2026-11-09T14:41:18.116Z",
     "book": {
       "wikidataId": "Q131179124",
       "article": {
@@ -6177,12 +7690,13 @@
         },
         {
           "wikidataId": "Q131179124",
-          "title": "Trilogien",
-          "originalTitle": null,
+          "title": "Trilógia",
+          "originalTitle": "Trilogien",
           "year": 2014,
           "type": "regény",
           "url": null,
-          "urlLang": null
+          "urlLang": null,
+          "clubTitle": "Trilógia"
         },
         {
           "wikidataId": "Q23823916",
@@ -6272,7 +7786,7 @@
     "slug": "remtortenetek",
     "title": "Rémtörténetek",
     "authorName": "Nádas Péter",
-    "fetchedAt": "2026-11-09T14:22:51.857Z",
+    "fetchedAt": "2026-11-09T14:41:27.129Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -6800,6 +8314,16 @@
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/A_Book_of_Memories",
           "urlLang": "en"
+        },
+        {
+          "title": "Rémtörténetek",
+          "originalTitle": null,
+          "year": 2022,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null,
+          "clubTitle": "Rémtörténetek"
         }
       ],
       "facts": {
@@ -6835,7 +8359,7 @@
     "slug": "az-otos-szamu-vagohid",
     "title": "Az ötös számú vágóhíd",
     "authorName": "Kurt Vonnegut",
-    "fetchedAt": "2026-11-09T14:22:56.448Z",
+    "fetchedAt": "2026-11-09T14:41:33.875Z",
     "book": {
       "wikidataId": "Q265954",
       "article": {
@@ -7738,7 +9262,8 @@
           "year": 1969,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Az_%C3%B6t%C3%B6s_sz%C3%A1m%C3%BA_v%C3%A1g%C3%B3h%C3%ADd_(reg%C3%A9ny)",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "clubTitle": "Az ötös számú vágóhíd"
         },
         {
           "wikidataId": "Q57399739",
@@ -7910,15 +9435,6 @@
           "type": "antológia",
           "url": null,
           "urlLang": null
-        },
-        {
-          "wikidataId": "Q7980813",
-          "title": "Welcome to the Monkey House",
-          "originalTitle": null,
-          "year": null,
-          "type": "novella",
-          "url": "https://en.wikipedia.org/wiki/Welcome_to_the_Monkey_House_(short_story)",
-          "urlLang": "en"
         }
       ],
       "facts": {
@@ -7954,7 +9470,7 @@
     "slug": "a-feher-kiraly",
     "title": "A fehér király",
     "authorName": "Dragomán György",
-    "fetchedAt": "2026-11-09T14:23:01.106Z",
+    "fetchedAt": "2026-11-09T14:41:42.095Z",
     "book": {
       "wikidataId": "Q56641079",
       "article": {
@@ -8175,13 +9691,131 @@
       "huEditions": null,
       "works": [
         {
-          "wikidataId": "Q56641079",
+          "title": "A pusztítás könyve",
+          "originalTitle": null,
+          "year": 2002,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
           "title": "A fehér király",
           "originalTitle": "The White King",
           "year": 2005,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/A_feh%C3%A9r_kir%C3%A1ly",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q56641079",
+          "clubTitle": "A fehér király"
+        },
+        {
+          "title": "Expander",
+          "originalTitle": null,
+          "year": 2010,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Agyag",
+          "originalTitle": null,
+          "year": 2011,
+          "type": "elbeszélés",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Állomás, éjszaka. Tízkezes egy Bodor novellára",
+          "originalTitle": null,
+          "year": 2011,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Erőtánc",
+          "originalTitle": null,
+          "year": 2013,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Máglya",
+          "originalTitle": null,
+          "year": 2014,
+          "type": "regény",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Oroszlánkórus",
+          "originalTitle": null,
+          "year": 2015,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Kalucsni",
+          "originalTitle": null,
+          "year": 2018,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Rendszerújra. Szabadulástörténetek",
+          "originalTitle": null,
+          "year": 2018,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Jég",
+          "originalTitle": null,
+          "year": 2019,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Főzőskönyv. Írások főzésről és evésről",
+          "originalTitle": null,
+          "year": 2020,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Adjuk meg a módját! Írások főzésről és evésről",
+          "originalTitle": null,
+          "year": 2022,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Budapest Nagyregény",
+          "originalTitle": null,
+          "year": 2023,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         }
       ],
       "facts": {
@@ -8217,7 +9851,7 @@
     "slug": "sinistra-korzet",
     "title": "Sinistra körzet",
     "authorName": "Bodor Ádám",
-    "fetchedAt": "2026-11-09T14:23:08.062Z",
+    "fetchedAt": "2026-11-09T14:41:51.583Z",
     "book": {
       "wikidataId": "Q16522756",
       "article": {
@@ -8394,13 +10028,167 @@
       "huEditions": null,
       "works": [
         {
-          "wikidataId": "Q16522756",
-          "title": "Sinistra körzet",
+          "title": "A tanú",
           "originalTitle": null,
+          "year": 1969,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Plusz-mínusz egy nap",
+          "originalTitle": null,
+          "year": 1974,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az utolsó szénégetők",
+          "originalTitle": null,
+          "year": 1978,
+          "type": "tárcák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Megérkezés északra",
+          "originalTitle": null,
+          "year": 1978,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Milyen is egy hágó?",
+          "originalTitle": null,
+          "year": 1980,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A Zangezur hegység",
+          "originalTitle": null,
+          "year": 1981,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az Eufrátesz Babilonnál",
+          "originalTitle": null,
+          "year": 1985,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Sinistra körzet",
+          "originalTitle": "Sinistra körzet. Egy regény fejezetei",
           "year": 1992,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Sinistra_k%C3%B6rzet",
-          "urlLang": "hu"
+          "urlLang": "hu",
+          "wikidataId": "Q16522756",
+          "clubTitle": "Sinistra körzet"
+        },
+        {
+          "title": "Vissza a fülesbagolyhoz. Válogatott elbeszélések",
+          "originalTitle": null,
+          "year": 1992,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az érsek látogatása",
+          "originalTitle": null,
+          "year": 1999,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A börtön szaga. Válaszok Balla Zsófia kérdéseire. Egy korábbi rádióinterjú változata",
+          "originalTitle": null,
+          "year": 2001,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A részleg (novella)",
+          "originalTitle": null,
+          "year": 2006,
+          "type": "novella",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Állomás, éjszaka. Tízkezes egy Bodor novellára",
+          "originalTitle": null,
+          "year": 2011,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Verhovina madarai. Változatok végnapokrai",
+          "originalTitle": null,
+          "year": 2011,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "(Folyóiratban megjelent fejezetei Archiválva 2016",
+          "originalTitle": null,
+          "year": 2016,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "A barátkozás lehetőségei",
+          "originalTitle": null,
+          "year": 2016,
+          "type": "novellák",
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Sehol",
+          "originalTitle": null,
+          "year": 2019,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
+        },
+        {
+          "title": "Az értelmezés útvesztői. Tizenöt beszélgetés",
+          "originalTitle": null,
+          "year": 2021,
+          "type": null,
+          "url": null,
+          "urlLang": null,
+          "wikidataId": null
         }
       ],
       "facts": {
