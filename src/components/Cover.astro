@@ -1,0 +1,32 @@
+---
+import type { Image } from '../data/types';
+import { asset } from '../data/books';
+
+interface Props {
+  image: Image | null | undefined;
+  title: string;
+  author: string;
+  eager?: boolean;
+}
+const { image, title, author, eager = false } = Astro.props;
+// Deterministic hue for the generated placeholder cover.
+const hue = [...title].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
+---
+{
+  image ? (
+    <img
+      class="cover"
+      src={asset(image.src)}
+      width={image.width}
+      height={image.height}
+      alt={`${title} – borító`}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  ) : (
+    <div class="cover cover-placeholder" style={`--hue:${hue}`} role="img" aria-label={`${title} – borító`}>
+      <span class="ph-title">{title}</span>
+      <span class="ph-author">{author}</span>
+    </div>
+  )
+}

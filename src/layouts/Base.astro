@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+import { asset } from '../data/books';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description = 'A Béri Olvasókör könyvei – szerzők, összefoglalók, borítók.' } = Astro.props;
+const siteName = 'Béri Olvasókör';
+const fullTitle = title ? `${title} – ${siteName}` : siteName;
+---
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href={asset('')} class="brand">
+        <span class="brand-mark" aria-hidden="true">❦</span>
+        <span>{siteName}</span>
+      </a>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        A szövegek forrása a <a href="https://hu.wikipedia.org/">Wikipédia</a>
+        (<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.hu">CC BY-SA 4.0</a>), az adatok forrása a
+        <a href="https://www.wikidata.org/">Wikidata</a> (CC0). A képek szerzői és licencei a képek alatt olvashatók.
+      </p>
+    </footer>
+  </body>
+</html>

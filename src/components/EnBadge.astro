@@ -1,0 +1,12 @@
+---
+interface Props {
+  lang: string | undefined;
+}
+---
+{
+  Astro.props.lang === 'en' && (
+    <span class="badge" title="Ehhez nincs magyar Wikipédia-szócikk, ezért az angol változatot mutatjuk.">
+      angol nyelvű forrás
+    </span>
+  )
+}

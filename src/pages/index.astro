@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Cover from '../components/Cover.astro';
+import { books, bookUrl } from '../data/books';
+---
+<Base>
+  <section class="intro">
+    <h1>Könyveink</h1>
+    <p class="lead">A Béri Olvasókör olvasmányai – a könyvekről és szerzőikről.</p>
+  </section>
+  <ul class="book-grid">
+    {
+      books.map((b, i) => (
+        <li>
+          <a class="book-card" href={bookUrl(b.slug)}>
+            <Cover image={b.book?.cover} title={b.title} author={b.authorName} eager={i < 4} />
+            <span class="card-title">{b.title}</span>
+            <span class="card-author">{b.authorName}</span>
+            {b.book?.facts.published && <span class="card-year">{b.book.facts.published.slice(0, 4)}</span>}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

@@ -1,0 +1,20 @@
+# A Béri Olvasókör könyvlistája.
+# A sorrend itt határozza meg a kezdőlap sorrendjét.
+#
+# Mezők:
+#   title          – a könyv magyar címe (kötelező)
+#   author         – a szerző neve (kötelező)
+#   originalTitle  – eredeti cím (opcionális, segít a keresésben)
+#   wiki           – kézi felülírás, ha az automatikus keresés rossz cikket talál:
+#                    Wikidata azonosító (pl. Q478016) vagy "hu:Cikk címe" / "en:Article title"
+#   cover          – saját borítókép a covers/ mappából (pl. covers/vilagitotorony.jpg)
+#
+# Új könyv után futtasd: npm run fetch
+
+- title: A világítótorony
+  author: Virginia Woolf
+  originalTitle: To the Lighthouse
+
+- title: Az üvegbúra
+  author: Sylvia Plath
+  originalTitle: The Bell Jar

@@ -1,0 +1,107 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cover from '../../components/Cover.astro';
+import Credit from '../../components/Credit.astro';
+import Source from '../../components/Source.astro';
+import EnBadge from '../../components/EnBadge.astro';
+import { books, asset } from '../../data/books';
+import type { BookData } from '../../data/types';
+
+export function getStaticPaths() {
+  return books.map((b) => ({ params: { slug: b.slug }, props: { b } }));
+}
+const { b } = Astro.props as { b: BookData };
+const book = b.book;
+const author = b.author;
+const f = book?.facts;
+const af = author?.facts;
+
+const place = (when: string | null | undefined, where: string | null | undefined) =>
+  [when, where].filter(Boolean).join(', ');
+const born = place(af?.birth, af?.birthPlace);
+const died = place(af?.death, af?.deathPlace);
+---
+<Base title={b.title} description={book?.intro[0]?.slice(0, 160)}>
+  <a class="back" href={asset('')}>← Vissza a könyvekhez</a>
+
+  <article class="book">
+    <header class="book-hero">
+      <figure class="hero-cover">
+        <Cover image={book?.cover} title={b.title} author={b.authorName} eager />
+        <figcaption><Credit image={book?.cover} /></figcaption>
+      </figure>
+      <div class="hero-text">
+        <p class="eyebrow">{b.authorName}</p>
+        <h1>{b.title}</h1>
+        {f?.originalTitle && f.originalTitle !== b.title && <p class="original-title">{f.originalTitle}</p>}
+        {
+          f && (
+            <dl class="facts">
+              {f.published && (<div><dt>Első megjelenés</dt><dd>{f.published}</dd></div>)}
+              {f.language && (<div><dt>Eredeti nyelv</dt><dd>{f.language}</dd></div>)}
+              {f.country && (<div><dt>Ország</dt><dd>{f.country}</dd></div>)}
+              {f.genres.length > 0 && (<div><dt>Műfaj</dt><dd>{f.genres.join(', ')}</dd></div>)}
+            </dl>
+          )
+        }
+      </div>
+    </header>
+
+    {
+      book && book.intro.length > 0 ? (
+        <section class="prose">
+          <h2>A könyvről <EnBadge lang={book.article?.lang} /></h2>
+          {book.intro.map((p) => <p>{p}</p>)}
+          {book.plot && (
+            <details class="spoiler">
+              <summary>Cselekmény – <strong>spoilert tartalmaz</strong>, kattints a megjelenítéshez</summary>
+              <div class="spoiler-body">{book.plot.map((p) => <p>{p}</p>)}</div>
+            </details>
+          )}
+          <Source article={book.article} />
+        </section>
+      ) : (
+        <section class="prose">
+          <p class="muted">Ehhez a könyvhöz nem találtunk Wikipédia-szócikket.</p>
+        </section>
+      )
+    }
+
+    {
+      author && (
+        <section class="author">
+          <h2>A szerzőről <EnBadge lang={author.article?.lang} /></h2>
+          <div class="author-grid">
+            <figure class="portrait-fig">
+              {author.portrait ? (
+                <img
+                  class="portrait"
+                  src={asset(author.portrait.src)}
+                  width={author.portrait.width}
+                  height={author.portrait.height}
+                  alt={author.name}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div class="portrait portrait-placeholder" aria-hidden="true">{author.name.charAt(0)}</div>
+              )}
+              <figcaption><Credit image={author.portrait} /></figcaption>
+            </figure>
+            <div class="author-body">
+              <h3>{author.name}</h3>
+              <dl class="facts compact">
+                {born && (<div><dt>Született</dt><dd>{born}</dd></div>)}
+                {died && (<div><dt>Elhunyt</dt><dd>{died}</dd></div>)}
+                {af && af.nationality.length > 0 && (<div><dt>Állampolgárság</dt><dd>{af.nationality.join(', ')}</dd></div>)}
+                {af && af.occupations.length > 0 && (<div><dt>Foglalkozás</dt><dd>{af.occupations.join(', ')}</dd></div>)}
+              </dl>
+              <div class="prose">{author.intro.map((p) => <p>{p}</p>)}</div>
+              <Source article={author.article} />
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </article>
+</Base>

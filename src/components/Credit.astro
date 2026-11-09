@@ -1,0 +1,18 @@
+---
+import type { Image } from '../data/types';
+
+interface Props {
+  image: Image | null | undefined;
+}
+const credit = Astro.props.image?.credit;
+---
+{
+  credit && (
+    <p class="credit">
+      Kép: {credit.artist && <>{credit.artist} · </>}
+      {credit.license && (credit.licenseUrl ? <a href={credit.licenseUrl}>{credit.license}</a> : <>{credit.license}</>)}
+      {credit.license && ' · '}
+      <a href={credit.source}>{credit.sourceName}</a>
+    </p>
+  )
+}
