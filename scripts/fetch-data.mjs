@@ -790,9 +790,19 @@ let translationCache = {};
 let translationFailures = 0;
 const hashText = (lang, t) => createHash('sha1').update(`${lang}\n${t}`).digest('hex').slice(0, 16);
 
+// Glossary replacement, except where the term is quoted as the original after a language label:
+// "The Years (French: Les Années)" must keep "Les Années", not become "(franciául: Évek)".
+const ORIGINAL_LABEL_RE = /\(\s*(?:[\p{L}-]+\s+)?[\p{L}-]+\s*:\s*$/u;
+function replaceTerm(src, orig, hu) {
+  const parts = src.split(orig);
+  let out = parts[0];
+  for (let i = 1; i < parts.length; i++) out += (ORIGINAL_LABEL_RE.test(out) ? orig : hu) + parts[i];
+  return out;
+}
+
 async function translate(text, from, glossary = []) {
   let src = text;
-  for (const [orig, hu] of glossary) src = src.split(orig).join(hu);
+  for (const [orig, hu] of glossary) src = replaceTerm(src, orig, hu);
   const key = hashText(from, src);
   if (translationCache[key]) return translationCache[key];
   if (translationFailures >= 3) return null; // endpoint looks down/blocked: stop trying this run

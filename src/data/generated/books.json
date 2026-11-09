@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T17:39:46.755Z",
+    "fetchedAt": "2026-11-09T18:14:21.161Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -925,7 +925,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T17:40:01.128Z",
+    "fetchedAt": "2026-11-09T18:14:35.021Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -1589,7 +1589,7 @@
     "slug": "a-kedves",
     "title": "A kedves",
     "authorName": "Toni Morrison",
-    "fetchedAt": "2026-11-09T17:40:23.157Z",
+    "fetchedAt": "2026-11-09T18:14:50.442Z",
     "book": {
       "wikidataId": "Q971767",
       "article": {
@@ -3018,7 +3018,7 @@
     "slug": "ne-bantsatok-a-feketerigot",
     "title": "Ne bántsátok a feketerigót!",
     "authorName": "Harper Lee",
-    "fetchedAt": "2026-11-09T17:40:33.119Z",
+    "fetchedAt": "2026-11-09T18:14:58.962Z",
     "book": {
       "wikidataId": "Q212340",
       "article": {
@@ -3608,7 +3608,7 @@
     "slug": "evek",
     "title": "Évek",
     "authorName": "Annie Ernaux",
-    "fetchedAt": "2026-11-09T17:40:49.377Z",
+    "fetchedAt": "2026-11-09T18:15:10.636Z",
     "book": {
       "wikidataId": "Q3230588",
       "article": {
@@ -3621,17 +3621,17 @@
         {
           "type": "rich",
           "parts": [
-            "Az évek (franciául: Évek) ",
+            "Az évek (franciául: Les Années) ",
             {
               "text": "Annie Ernaux",
               "href": "https://hu.wikipedia.org/wiki/Annie_Ernaux"
             },
-            " 2008-as non-fiction könyve. Az 1941 és 2006 közötti időszakot felölelő „hibrid” memoárként írták le. Ernaux angol kiadója, a ",
+            " 2008-as nem fikciós könyve. Az 1941 és 2006 közötti időszakot felölelő „hibrid” memoárként írták le. Ernaux angol kiadója, a ",
             {
               "text": "Seven Stories Press",
               "href": "https://en.wikipedia.org/wiki/Seven_Stories_Press"
             },
-            " önéletrajzi könyvként írta le, amely „egyszerre szubjektív és személytelen, privát és kollektív”."
+            " önéletrajzként írta le, amely „egyszerre szubjektív és személytelen, privát és kollektív”."
           ]
         }
       ],
@@ -4285,7 +4285,7 @@
     "slug": "hangyaboly",
     "title": "Hangyaboly",
     "authorName": "Kaffka Margit",
-    "fetchedAt": "2026-11-09T17:41:02.309Z",
+    "fetchedAt": "2026-11-09T18:15:20.442Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -4883,7 +4883,7 @@
     "slug": "zsomle-odavan",
     "title": "Zsömle odavan",
     "authorName": "Krasznahorkai László",
-    "fetchedAt": "2026-11-09T17:41:28.760Z",
+    "fetchedAt": "2026-11-09T18:15:29.049Z",
     "book": {
       "wikidataId": "Q139899382",
       "article": null,
@@ -5593,7 +5593,7 @@
     "slug": "edentol-keletre",
     "title": "Édentől keletre",
     "authorName": "John Steinbeck",
-    "fetchedAt": "2026-11-09T17:41:43.162Z",
+    "fetchedAt": "2026-11-09T18:15:34.673Z",
     "book": {
       "wikidataId": "Q849701",
       "article": {
@@ -6588,7 +6588,7 @@
     "slug": "egy-no",
     "title": "Egy nő",
     "authorName": "Esterházy Péter",
-    "fetchedAt": "2026-11-09T17:42:01.706Z",
+    "fetchedAt": "2026-11-09T18:15:38.821Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -7464,7 +7464,7 @@
     "slug": "vad-lovak",
     "title": "Vad lovak",
     "authorName": "Cormac McCarthy",
-    "fetchedAt": "2026-11-09T17:42:12.681Z",
+    "fetchedAt": "2026-11-09T18:15:47.359Z",
     "book": {
       "wikidataId": "Q264519",
       "article": {
@@ -8181,7 +8181,7 @@
     "slug": "trilogia",
     "title": "Trilógia",
     "authorName": "Jon Fosse",
-    "fetchedAt": "2026-11-09T17:42:28.661Z",
+    "fetchedAt": "2026-11-09T18:15:59.101Z",
     "book": {
       "wikidataId": "Q131179124",
       "article": {
@@ -9124,7 +9124,7 @@
     "slug": "remtortenetek",
     "title": "Rémtörténetek",
     "authorName": "Nádas Péter",
-    "fetchedAt": "2026-11-09T17:42:41.066Z",
+    "fetchedAt": "2026-11-09T18:16:10.227Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -9872,7 +9872,7 @@
     "slug": "az-otos-szamu-vagohid",
     "title": "Az ötös számú vágóhíd",
     "authorName": "Kurt Vonnegut",
-    "fetchedAt": "2026-11-09T17:42:47.037Z",
+    "fetchedAt": "2026-11-09T18:16:16.631Z",
     "book": {
       "wikidataId": "Q265954",
       "article": {
@@ -11142,7 +11142,7 @@
     "slug": "a-feher-kiraly",
     "title": "A fehér király",
     "authorName": "Dragomán György",
-    "fetchedAt": "2026-11-09T17:42:58.064Z",
+    "fetchedAt": "2026-11-09T18:16:23.818Z",
     "book": {
       "wikidataId": "Q56641079",
       "article": {
@@ -11537,7 +11537,7 @@
     "slug": "sinistra-korzet",
     "title": "Sinistra körzet",
     "authorName": "Bodor Ádám",
-    "fetchedAt": "2026-11-09T17:43:08.177Z",
+    "fetchedAt": "2026-11-09T18:16:33.697Z",
     "book": {
       "wikidataId": "Q16522756",
       "article": {
