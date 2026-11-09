@@ -17,7 +17,7 @@ Saját borítóhoz tedd a képet a `covers/` mappába, és add meg a `cover` mez
 ## Működés
 
 - `scripts/fetch-data.mjs` – build előtt fut: Wikidatán megkeresi a szerzőt és a könyvet, a magyar (vagy ha nincs, angol) Wikipédiából kiveszi a bevezetőt és a cselekményt, a képeket WebP-be konvertálva elmenti. Hiba esetén a korábbi, elmentett adat marad.
-- Ha nincs magyar szócikk, a idegen nyelvű szöveget a Google Fordító ingyenes végpontja fordítja le; a fordítások a `src/data/generated/translations.json` fájlban tárolódnak, így csak az új vagy módosult bekezdések mennek fordításra. Az oldalon „gépi fordítás” jelvény jelzi. Ha a fordítás nem sikerül, az eredeti szöveg jelenik meg.
+- Ha nincs magyar szócikk, az idegen nyelvű szöveget a Google Fordító ingyenes végpontja fordítja le; a fordítások a `src/data/generated/translations.json` fájlban tárolódnak, így csak az új vagy módosult bekezdések mennek fordításra. Az oldalon „gépi fordítás” jelvény jelzi. Ha a fordítás nem sikerül, az eredeti szöveg jelenik meg.
 - Borító sorrend: saját kép → Wikipédia/Wikimedia → Open Library → generált borító.
 - Az oldal Astro-val készül, a GitHub Actions minden pushnál és hetente frissíti.
 
