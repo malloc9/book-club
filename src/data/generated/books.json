@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T17:19:46.913Z",
+    "fetchedAt": "2026-11-09T17:34:38.000Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -925,7 +925,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T17:20:09.235Z",
+    "fetchedAt": "2026-11-09T17:34:47.647Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -1589,7 +1589,7 @@
     "slug": "a-kedves",
     "title": "A kedves",
     "authorName": "Toni Morrison",
-    "fetchedAt": "2026-11-09T17:20:34.824Z",
+    "fetchedAt": "2026-11-09T17:35:01.211Z",
     "book": {
       "wikidataId": "Q971767",
       "article": {
@@ -3018,7 +3018,7 @@
     "slug": "ne-bantsatok-a-feketerigot",
     "title": "Ne bántsátok a feketerigót!",
     "authorName": "Harper Lee",
-    "fetchedAt": "2026-11-09T17:20:47.139Z",
+    "fetchedAt": "2026-11-09T17:35:07.823Z",
     "book": {
       "wikidataId": "Q212340",
       "article": {
@@ -3608,7 +3608,7 @@
     "slug": "evek",
     "title": "Évek",
     "authorName": "Annie Ernaux",
-    "fetchedAt": "2026-11-09T17:20:55.683Z",
+    "fetchedAt": "2026-11-09T17:35:15.723Z",
     "book": {
       "wikidataId": "Q3230588",
       "article": {
@@ -4285,7 +4285,7 @@
     "slug": "hangyaboly",
     "title": "Hangyaboly",
     "authorName": "Kaffka Margit",
-    "fetchedAt": "2026-11-09T17:21:05.890Z",
+    "fetchedAt": "2026-11-09T17:35:23.696Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -4883,7 +4883,7 @@
     "slug": "zsomle-odavan",
     "title": "Zsömle odavan",
     "authorName": "Krasznahorkai László",
-    "fetchedAt": "2026-11-09T17:21:15.137Z",
+    "fetchedAt": "2026-11-09T17:35:32.906Z",
     "book": {
       "wikidataId": "Q139899382",
       "article": null,
@@ -5593,7 +5593,7 @@
     "slug": "edentol-keletre",
     "title": "Édentől keletre",
     "authorName": "John Steinbeck",
-    "fetchedAt": "2026-11-09T17:21:22.349Z",
+    "fetchedAt": "2026-11-09T17:35:38.080Z",
     "book": {
       "wikidataId": "Q849701",
       "article": {
@@ -6588,7 +6588,7 @@
     "slug": "egy-no",
     "title": "Egy nő",
     "authorName": "Esterházy Péter",
-    "fetchedAt": "2026-11-09T17:21:28.939Z",
+    "fetchedAt": "2026-11-09T17:35:41.675Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -7464,7 +7464,7 @@
     "slug": "vad-lovak",
     "title": "Vad lovak",
     "authorName": "Cormac McCarthy",
-    "fetchedAt": "2026-11-09T17:21:37.712Z",
+    "fetchedAt": "2026-11-09T17:35:49.315Z",
     "book": {
       "wikidataId": "Q264519",
       "article": {
@@ -8181,7 +8181,7 @@
     "slug": "trilogia",
     "title": "Trilógia",
     "authorName": "Jon Fosse",
-    "fetchedAt": "2026-11-09T17:21:49.475Z",
+    "fetchedAt": "2026-11-09T17:35:59.642Z",
     "book": {
       "wikidataId": "Q131179124",
       "article": {
@@ -8194,30 +8194,43 @@
         {
           "type": "rich",
           "parts": [
-            "A trilógia. Álmatlan. Olav álmai. ",
+            "Jon Fosse Trilógia című kötete három, eredetileg külön megjelent kisregényt fog egybe: az Álmatlanság (Andvake, 2007), az Olav álma (Olavs draumar, 2012) és az Esti dal (Kveldsvævd, 2014) címűt. Az egybegyűjtött kötet 2014-ben jelent meg norvégul, és 2015-ben elnyerte az ",
             {
-              "text": "Jon Fosse",
-              "href": "https://hu.wikipedia.org/wiki/Jon_Fosse"
+              "text": "Északi Tanács Irodalmi Díját",
+              "href": "https://hu.wikipedia.org/wiki/Az_%C3%89szaki_Tan%C3%A1cs_Irodalmi_D%C3%ADja"
             },
-            " Abendmattigkeit című műve 2014-ben jelent meg eredeti norvég nyelven, 2016-ban pedig német fordításban. A kötetért a szerző 2015-ben megkapta az Északi Tanács Irodalmi Díját. A trilógia három egymáshoz kapcsolódó történetben meséli el a két fiatal főszereplő, Alida és Asle életét és halálát, akik hiába keresik a gyermeket, hogy életben maradjanak. A cselekmény ikonográfiailag egy karácsonyi történet és egy Bonny és Clyde-történet között alakul: a körülmények áldozataiból hamarosan elkövetők lesznek, akik eleve elrendelés, ellenséges társadalom és saját döntéseik miatt kudarcot vallanak."
+            ". Magyarul 2015-ben adta ki a Kalligram."
           ]
         },
         {
           "type": "rich",
           "parts": [
-            "Tobias Wenzel és Christina Brunnenkamp szerint ez egy „sötét szerelmi történet”, szinte „bibliai témákkal”. Tobias Wenzel számára a történet „úgy hangzik, mintha az Úr imája a végtelenségig nyúlna”. Oliver Pfohlmann egy karácsonyi történetet társít a bűnügyi határátlépéshez. Jon Fosse maga kifejtette, hogy nem gondolt a Bibliára, amikor azt írta, és nem hisz az irodalmi utalásokban és az „intertextualitási dolgokban”: „Ez csak egy fiatal pár története, akik szállást keresnek.”"
+            "A történet a 19. század derekán, Nyugat-Norvégiában játszódik. Asle és Alida tizenhét évesek, nem házasok, nincstelenek, és Alida gyermeket vár. Otthon nélkül érkeznek a tengerparti Bjørgvinbe, ahol esős, hideg estén hiába keresnek szállást: idegenként mindenhonnan elküldik őket. A kritika egyszerre látott benne karácsonyi történetet és Bonnie és Clyde-történetet: a körülmények áldozataiból hamarosan elkövetők lesznek. A harmadik rész évtizedekkel később, Alida idős lánya, Ales emlékein keresztül folytatja a családtörténetet."
           ]
         },
         {
           "type": "rich",
           "parts": [
-            "Az utolsó oldalakon olvasható megjegyzés szerint a trilógia Jon Fosse családtörténetének részlete lehet, aki a 19. század közepén, Nyugat-Norvégiában, családi történetek alapján dolgozta fel anyai dédszülei életét irodalmilag."
+            "Német kritikusai „sötét szerelmi történetnek” nevezték, szinte bibliai témákkal. Fosse szerint írás közben nem a Bibliára gondolt: ez csak egy fiatal pár története, akik szállást keresnek. A kötet végén olvasható megjegyzés szerint a történet Fosse anyai ági dédszüleinek életét dolgozhatja fel, családi elbeszélések alapján."
           ]
         }
       ],
       "introFromAuthor": false,
-      "introManual": false,
-      "sources": [],
+      "introManual": true,
+      "sources": [
+        {
+          "name": "Wikipédia (német) – Trilogie (Jon Fosse)",
+          "url": "https://de.wikipedia.org/wiki/Trilogie_(Jon_Fosse)"
+        },
+        {
+          "name": "Wikipedia (angol) – Wakefulness",
+          "url": "https://en.wikipedia.org/wiki/Wakefulness_(novella)"
+        },
+        {
+          "name": "NobelPrize.org – Jon Fosse bibliográfia",
+          "url": "https://www.nobelprize.org/prizes/literature/2023/bio-bibliography/"
+        }
+      ],
       "plot": null,
       "facts": {
         "originalTitle": "Trilogien",
@@ -9111,7 +9124,7 @@
     "slug": "remtortenetek",
     "title": "Rémtörténetek",
     "authorName": "Nádas Péter",
-    "fetchedAt": "2026-11-09T17:22:00.522Z",
+    "fetchedAt": "2026-11-09T17:36:09.134Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -9859,7 +9872,7 @@
     "slug": "az-otos-szamu-vagohid",
     "title": "Az ötös számú vágóhíd",
     "authorName": "Kurt Vonnegut",
-    "fetchedAt": "2026-11-09T17:22:06.055Z",
+    "fetchedAt": "2026-11-09T17:36:14.360Z",
     "book": {
       "wikidataId": "Q265954",
       "article": {
@@ -11129,7 +11142,7 @@
     "slug": "a-feher-kiraly",
     "title": "A fehér király",
     "authorName": "Dragomán György",
-    "fetchedAt": "2026-11-09T17:22:14.479Z",
+    "fetchedAt": "2026-11-09T17:36:20.076Z",
     "book": {
       "wikidataId": "Q56641079",
       "article": {
@@ -11524,7 +11537,7 @@
     "slug": "sinistra-korzet",
     "title": "Sinistra körzet",
     "authorName": "Bodor Ádám",
-    "fetchedAt": "2026-11-09T17:22:24.576Z",
+    "fetchedAt": "2026-11-09T17:36:28.840Z",
     "book": {
       "wikidataId": "Q16522756",
       "article": {

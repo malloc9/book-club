@@ -12,6 +12,7 @@
 #   coverSource    – a saját borító forrása: { name, url }
 #   description    – saját összefoglaló bekezdések (csak ha nincs Wikipédia-szócikk a könyvről)
 #   sources        – az összefoglaló forrásai: [{ name, url }]
+#   glossary       – gépi fordításhoz: idegen kifejezés → magyar (pl. német kiadás címe → magyar cím)
 #   facts          – kiegészítő adatok, ha a Wikidatán hiányoznak:
 #                    published, publisher, pages, genres, language, country, awards
 #
@@ -139,6 +140,35 @@
 - title: Trilógia
   author: Jon Fosse
   originalTitle: Trilogien
+  # The German article lists the German edition's titles; use the Hungarian edition's (Kalligram, 2015).
+  glossary:
+    "Die Trilogie. Schlaflos. Olavs Träume. Abendmattigkeit": "Die „Trilógia (Álmatlanság / Olav álma / Esti dal)”"
+    "Schlaflos": "Álmatlanság"
+    "Olavs Träume": "Olav álma"
+    "Abendmattigkeit": "Esti dal"
+  # The Wikipedia article is German only and machine-translates badly, so the summary is our own.
+  description:
+    - >-
+      Jon Fosse Trilógia című kötete három, eredetileg külön megjelent kisregényt fog egybe: az
+      Álmatlanság (Andvake, 2007), az Olav álma (Olavs draumar, 2012) és az Esti dal (Kveldsvævd, 2014)
+      címűt. Az egybegyűjtött kötet 2014-ben jelent meg norvégul, és 2015-ben elnyerte az Északi Tanács
+      Irodalmi Díját. Magyarul 2015-ben adta ki a Kalligram.
+    - >-
+      A történet a 19. század derekán, Nyugat-Norvégiában játszódik. Asle és Alida tizenhét évesek, nem
+      házasok, nincstelenek, és Alida gyermeket vár. Otthon nélkül érkeznek a tengerparti Bjørgvinbe,
+      ahol esős, hideg estén hiába keresnek szállást: idegenként mindenhonnan elküldik őket. A kritika
+      egyszerre látott benne karácsonyi történetet és Bonnie és Clyde-történetet: a körülmények áldozataiból
+      hamarosan elkövetők lesznek. A harmadik rész évtizedekkel később, Alida idős lánya, Ales emlékein
+      keresztül folytatja a családtörténetet.
+    - >-
+      Német kritikusai „sötét szerelmi történetnek” nevezték, szinte bibliai témákkal. Fosse szerint
+      írás közben nem a Bibliára gondolt: ez csak egy fiatal pár története, akik szállást keresnek.
+      A kötet végén olvasható megjegyzés szerint a történet Fosse anyai ági dédszüleinek életét
+      dolgozhatja fel, családi elbeszélések alapján.
+  sources:
+    - { name: "Wikipédia (német) – Trilogie (Jon Fosse)", url: "https://de.wikipedia.org/wiki/Trilogie_(Jon_Fosse)" }
+    - { name: "Wikipedia (angol) – Wakefulness", url: "https://en.wikipedia.org/wiki/Wakefulness_(novella)" }
+    - { name: "NobelPrize.org – Jon Fosse bibliográfia", url: "https://www.nobelprize.org/prizes/literature/2023/bio-bibliography/" }
   facts:
     country: Norvégia
     genres: [regény, kisregény-trilógia]

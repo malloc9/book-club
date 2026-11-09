@@ -710,7 +710,8 @@ async function fetchBook(book) {
 
   // Keep titles consistent in machine translation: original title → Hungarian title.
   const origTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle;
-  const glossary = [...(origTitle && origTitle !== book.title ? [[origTitle, book.title]] : []), ...GLOBAL_GLOSSARY];
+  // Per-book terms first (longest phrases win), e.g. German edition titles → Hungarian edition titles.
+  const glossary = [...Object.entries(book.glossary ?? {}).sort((a, b) => b[0].length - a[0].length), ...(origTitle && origTitle !== book.title ? [[origTitle, book.title]] : []), ...GLOBAL_GLOSSARY];
   const bookArticle = linkifyArticle(await translateArticle(await getArticle(bookEnt, { kind: 'book' }), glossary));
   const authorArticle = linkifyArticle(await translateArticle(await getArticle(authorEnt, { kind: 'author' }), glossary));
   const bioArticle = await richerBiography(authorEnt, authorArticle, glossary);
@@ -718,9 +719,10 @@ async function fetchBook(book) {
   const originalTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle ?? null;
   // No article about the book: use the author's article paragraphs that discuss it.
   const hasArticle = !!bookArticle?.intro?.length;
-  // Hand-written summary from books.yaml (researched from publisher/review pages) when there is
-  // no Wikipedia article about the book; names are linked using the author article's links.
-  const manual = !hasArticle && book.description?.length
+  // Hand-written summary from books.yaml (researched from publisher/review pages); used when there
+  // is no Wikipedia article about the book, or instead of a poor machine translation of one.
+  // Names are linked using the author article's links.
+  const manual = book.description?.length
     ? linkifyBlocks(book.description, makeLinker(authorArticle?.links ?? []) ?? ((t) => [t]))
     : null;
   const fromAuthor = hasArticle || manual ? null : mentionsOf(authorArticle, book.title);
@@ -740,7 +742,7 @@ async function fetchBook(book) {
     book: {
       wikidataId: bookQid,
       article: bookArticle && { lang: bookArticle.lang, title: bookArticle.title, url: bookArticle.url, translated: !!bookArticle.translated },
-      intro: hasArticle ? bookArticle.intro : manual ?? fromAuthor ?? [],
+      intro: manual ?? (hasArticle ? bookArticle.intro : fromAuthor ?? []),
       introFromAuthor: !!fromAuthor,
       introManual: !!manual,
       sources: manual ? book.sources ?? [] : [],
