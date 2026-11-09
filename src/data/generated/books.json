@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T12:38:03.297Z",
+    "fetchedAt": "2026-11-09T12:53:23.029Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -16,17 +16,7 @@
         "A világítótorony követi és kiterjeszti a modernista regényírók – mint Marcel Proust és James Joyce – hagyományait, mely szerint a cselekmény csak másodlagos eszköze a filozofikus szemlélődésnek, a gondolatisága pedig szövevényes, nehezen követhető lehet. A regény kis dialógusokat tartalmaz, cselekményt viszont alig; a legtöbbje a szereplők gondolatai, észrevételei, megfigyeléseiként jelenik meg. A regény hangsúlyozza a gyerekkori érzelmek meghatározó mivoltát és a felnőtt kapcsolatok változékonyságát.",
         "1998-ban a Modern Library rangsorában, a 20. század 100 legjobb angol nyelvű regénye között a 15. helyre került, 2005-ben pedig a TIME magazin beválasztotta A 100 legjobb angol nyelvű regény 1923-tól napjainkig c. listájába."
       ],
-      "plot": [
-        "Mr. és Mrs. Ramsay nyolc gyerekükkel a Skye szigeten található (Hebridák) nyári lakukban töltik a nyarat. A házuktól nem messze, az öblön túl áll egy nagy világítótorony. A 6 éves James Ramsay leghőbb vágya meglátogatni a világítótornyot, és Mrs. Ramsay ígéretet tesz, ha az idő engedi, következő nap elmennek. De James öröme nem tart sokáig, mert apja, Mr. Ramsay távolságtartó ridegséggel kijelenti, hogy másnap nem lesz jó idő. Megjegyzése nem csak Mr. és Mrs. Ramsay között, hanem James és Mr. Ramsay között is feszültséget kelt. Ez a bizonyos incidens a fejezet során többször is felidéződik, elsősorban Mr. és Mrs. Ramsay kapcsolatának szempontjából. Ramsayék több barátot és kollégát vendégül látnak, például Charles Tansleyt, aki nagy rajongója Mr. Ramsay metafizikus filozófiai munkáinak.",
-        "Lily Briscoe egy fiatal festőnő, aki Mrs. Ramsayről próbál portrét készíteni. Mrs. Ramsay feltett szándéka, hogy Lilyt hozzáadja egy régi családi barátjukhoz, William Bankeshez, de Lily nem gondolkozik házasságban. Mrs. Ramsay ezen kívül Paul Rayley és Minta Doyle kapcsolatát is menedzseli, szintén házasságot remélve. A délután folyamán Paul megkéri Minta kezét, Lily elkezdi a festményét, Mrs. Ramsay vigasztalja a megbántott Jamest, Mr. Ramsay pedig a hiányosságai miatt emészti magát, mint gondolkodó ember, mint filozófus.",
-        "Ezen az estén Ramsayék vacsorapartit tartanak, ami látszólag egy kicsit balsorsúan alakul: Paul és Minta és a két Ramsay gyerek késnek a tengerparti sétából visszajövet. Mindenki feszeng, csak udvariaskodik, felszínes társalgás folyik. Lily gondolatban neheztel Charles Tansleyre, mert Charles szerint a nők nem tudnak sem írni, sem festeni. Mr. Ramsay udvariatlanul reagál, amikor a költő Augustus Carmichael még egy tányér levest kér. (Nem szerette, ha mások még esznek, mikor ő már végzett.) De mire az este éjszakába fordul ezek a ballépések elmosódnak, és a vendégek egymásra hangolódnak.",
-        "A második részben az idő múlása felgyorsul, 10 év telik el. Az első világháború végigsöpör Európán. Mrs. Ramsay egyik éjjel váratlanul meghal. Andrew Ramsay, a legidősebb fiú elesik a harcmezőn; Andrew egyik húga, Prue pedig szülési komplikációba hal bele.",
-        "A család nem vakációzik többet a nyári lakban, amit az idő sem kímél: a kertet az elburjánzott gyomok, a házat pókhálók lepik el. A család 10 év múlva látogatja meg újra a nyaralót. Mrs. McNab, a házvezető, néhány alkalmazott segítségével rendbe teszi a házat, ami így megmenekül az enyészettől, és amikor Lily Briscoe visszatér, már újra minden rendben.",
-        "Az utolsó részben, a család maradék tagja visszatér a nyári lakba, - 10 éve jártak itt utoljára. Mr. Ramsay megkésett vitorlás kirándulást tervez a világítótoronyhoz, fiával Jamessel és lányával Cammel, ami ismét majdnem elmarad, amikor a gyerekek nem készülnek el időben, de végül útnak indulnak.",
-        "Mialatt ők a világítótorony felé vitorláznak, Lily elfoglalja helyét a pázsiton, hogy megkísérelje befejezni rég félbehagyott festményét.",
-        "A hajóban feszült csend és feszült párbeszédek, James és Cam tehetetlen haragot éreznek apjuk iránt, elegük van önsajnálkozó viselkedéséből, zsarnokoskodásából, megközelíthetetlenségéből, mégis, amikor a hajó kiköt, valamiféle elfogult szeretettel figyelik őt. Még James is, akit apja megdicsér, amiért ügyesen kormányoz, és ezzel egy pillanatra megszűnik köztük a távolság.",
-        "A parton Lily elvégzi a festményén az utolsó simításokat: egy végső vonás a vásznon és leteszi az ecsetet – végül sikerült megfestenie úgy, ahogy ő látta."
-      ],
+      "plot": null,
       "facts": {
         "originalTitle": "To the Lighthouse",
         "published": "1927",
@@ -61,6 +51,314 @@
       "intro": [
         "Virginia Woolf (London, 1882. január 25. – Sussex, Rodmell, 1941. március 28.) angol regényíró, esszéista, novellista, kritikus, könyvkiadó, feminista, és a 20. századi modern irodalom egyik vezető alakjaként tartják számon."
       ],
+      "biography": [
+        {
+          "level": 1,
+          "heading": "Élete",
+          "paras": [
+            "Adelina Virginia Stephenként látta meg a napvilágot egy londoni felső-középosztálybeli családban.",
+            "Anyja, Julia Prinsep Stephen, a híres szépség, Indiában született; anyjával később költöztek Angliába, ahol preraffaelita festőknek (pl. Edward Burne-Jones) állt modellt. Apja, Sir Leslie Stephen, híres irodalmár-filozófus, hegymászó, és a Viktória-kor egyik legismertebb kritikusa volt.",
+            "Korábban mindketten házasok voltak, majd megözvegyültek. Juliának az első férjétől, Herbert Duckworthtől, három gyereke született: George, Stella és Gerard. Leslie, Minny Thackerayjel való házasságából pedig egy lányt hozott magával: Laura Makepeace Stephent, akinél fejlődési rendellenességet állapítottak meg, és egészen 1891-ig a családdal élt, majd intézetbe került. Leslienek és Juliának négy közös gyereke született: Vanessa (1879), Thoby (1880), Virginia (1882) és Adrian (1883).",
+            "Irodalmi légkörben töltötte gyermekkorát: iskolába nem járt, nevelői és szülei tanították, kivételes műveltségét pedig apja könyvtárában szerezte. Nagyon korán eldöntötte, hogy író akar lenni.",
+            "1882-től 1894-ig a család a nyári szüneteket egy cornwalli tengerparti kisvárosban, St. Ivesban töltötte. 1895-ben, az anyja halála után a St. Ives-i házat eladták, de Virginia sokszor visszatért még ide. A kisváros is megjelenik műveiben, például A világítótorony és a Jacob szobája című regényében. Legtöbb művének London, illetve St. Ives a helyszíne.",
+            "1895-ben, 13 éves korában vesztette el váratlanul az édesanyját; ekkor volt az első idegösszeomlása. Későbbi vallomásában beismeri, hogy 44 éves koráig nem hagyta nyugodni anyja emléke. A féltestvére, Stella vette át a háztartási feladatokat, de hamarosan, 1897-ben férjhez ment, és a nászútjukról visszatérve ő is meghalt.",
+            "Apja, aki sokak szerint elnyomta Virginiát, 1904-ben hunyt el, ami összetörte a különösen érzékeny írónőt, holott nem volt jó véleménnyel róla: \"minden művészi érzék nélkülinek\" titulálta évekkel később.1912-ben ment feleségül Leonard Woolf-hoz.",
+            "Idegösszeroppanásainak és visszatérő depressziós periódusainak gyökere, a pszichoanalitikusok és életrajzkutatók feltételezése szerint annak a következménye, hogy Virginiát és Vanessát a féltestvéreik, George és Gerald Duckworth szexuálisan molesztálták.",
+            "Mentális betegsége és hangulatingadozásai egész életére hatással voltak, de irodalmi termékenysége kisebb szünetekkel bár, de töretlen volt egészen a haláláig."
+          ]
+        },
+        {
+          "level": 1,
+          "heading": "Halála",
+          "paras": [
+            "1940-ben bombatalálat érte londoni lakásukat és rodmelli kertjüket egyaránt. Gyenge idegrendszerét a történtek annyira megviselték, hogy öngyilkos lett: 1941. március 28-án kövekkel megrakva zsebeit a sussexi birtokuk közelében lévő Ouse folyóba ölte magát. A holttestét április 18-áig nem találták. Férje Virginia hamvait a rodmelli kertjükben egy fa alá temette el.",
+            "Férjének hagyott utolsó levelében ezt írja:"
+          ]
+        },
+        {
+          "level": 1,
+          "heading": "Írói munkássága",
+          "paras": [
+            "Noha már 23 éves korától jelentek meg publikációi, első jelentős regénye, a Mrs. Dalloway csak 1925-ben jelent meg. A Mrs. Dalloway egy érzékeny úrinő estélyre való készülődését, jelenen, múlton, emberi kapcsolatokon való merengését állítja párhuzamba egy idegsokkban szenvedő munkásember-frontharcos kilátástalan életével.",
+            "1928-ban adták ki az Orlandót, melynek hőse négyszáz évig él, előbb férfiként, majd nőként látja a világot.",
+            "1927-ben írta meg esszéisztikus naplóját, mely a női lét korabeli jellegzetes társadalmi problémáit elemzi: a napló Saját szoba címmel jelent meg könyv alakban. Szintén 1927-ben adták ki A világítótorony című könyvét, mely egy cselekmény nélküli mű, egy Skóciában álló házról szól. A könyvben az élet gyors múlása áll szemben a műben keretként használt tárgyak látszólagos állandóságával.",
+            "Az 1931-ben megjelent Hullámok bár prózában íródott, s könyvnyi terjedelmű, inkább költői alkotás, semmint az epika körébe tartozó regény. A könyv alakjai valójában egyetlen személy vetületeiként jelennek meg, s az ábrázolás olyan távolságból történik, amilyenből az ember szemléli saját magát.",
+            "Woolf a modern angol próza, a lélektani regény egyik megteremtője volt."
+          ]
+        },
+        {
+          "level": 1,
+          "heading": "Bloomsbury-kör",
+          "paras": [
+            "Woolf 35 éven keresztül dolgozott kritikusként a Times Literary Supplementnek; éles és hiteles kritikáinak köszönhetően nagy befolyással volt az irodalmi életre. Az 1910-es években a lap és az írónő köré csoportosuló értelmiségiek Bloomsbury-kör néven váltak ismertté (Bloomsbury annak a londoni negyednek a neve, ahol a tagok laktak és dolgoztak, köztük Virginia és a férje is), és az 1930-as évek közepéig ők voltak a radikális értelmiségi elit legnagyobb hatású csoportja Angliában.",
+            "A kör 1905 körül alakult meg, a négy testvér: Virginia Woolf, Vanessa Bell (festő), Thoby és Adrian Stephen, valamint Virginia férje, Leonard Woolf (aki egyébként maga is foglalkozott regényírással) és Vanessa férje, Clive Bell (művészetkritikus) jóvoltából, a Cambridge-i diákklubok hagyományait folytatva. A körbe elsősorban prűd korukkal szemben ellenérzéseket tápláló, azt kifigurázó értelmiségiek tartoztak, mint például: G.E. Moore, az analitikus filozófia megalapozója; Duncan Grant, festő; Roger Fry, művészettörténész; J.M. Keynes, a modern polgári közgazdaságtan művelője; L. Strachey, életrajzíró és E.M. Forster, regényíró."
+          ]
+        },
+        {
+          "level": 1,
+          "heading": "Könyvkiadó",
+          "paras": [
+            "1917-ben férjével közösen, egy kis kézihajtású nyomdagéppel, önerőből egy könyvkiadó vállalkozást alapítottak Hogarth Press néven. Olyan híres írók műveit jelentették meg, mint Gorkij, Rilke, Freud, T. S. Eliot, Robert Graves és Katherine Mansfield. Ők jelentették meg – Angliában elsőként – Madách Imre: Az ember tragédiája című művét angol nyelven. A kiadó ma is működik."
+          ]
+        }
+      ],
+      "huEditions": [
+        "Évek. 1-2. köt.; ford. Hevesi András, bev. Schöpflin Aladár; Franklin, Bp., 1940",
+        "Orlando. Regény; ford. Gyergyai Albert, Szávai Nándor; Révai, Bp., 1945",
+        "Clarissa; ford. Nagypál István; Franklin, Bp., 1946 (Külföldi regényírók) (Mrs. Dalloway címen is)",
+        "Flush. Regény; ford. Rónay György; Révai, Bp., 1947 (Révai könyvtár)",
+        "Orlando; ford. Szávai Nándor, utószó Gyergyai Albert; Európa, Bp., 1966 (5 világrész könyvei)",
+        "Az orosz látásmód; ford. Szegedy-Maszák Mihály; in: Hagyomány és egyéniség. Az angol esszé klasszikusai; vál. Európa Könyvkiadó munkaközössége, közrem. Ruttkay Kálmán, Ungvári Tamás, utószó Abody Béla, jegyz. Abádi Nagy Zoltán; Európa, Bp., 1967",
+        "A világítótorony. Regény; ford., bev. Mátyás Sándor; Magvető, Bp., 1971 (Világkönyvtár)",
+        "Mrs. Dalloway; ford. Tandori Dezső; Magyar Helikon–Európa, Bp., 1971 (Helikon kiskönyvtár) (Clarissa címen is)",
+        "Hullámok; ford. Mátyás Sándor; Európa, Bp., 1978",
+        "A pille halála. Esszék; ford. Bécsy Ágnes et al., vál., utószó, jegyz. Bécsy Ágnes; Európa, Bp., 1980",
+        "Saját szoba; ford. Bécsy Ágnes; Európa, Bp., 1986 (Mérleg)",
+        "Egy jó házból való angol úrilány. Önéletrajzi írások; ford., bev. Séllei Nóra; Csokonai, Debrecen, 1999 (Artemisz könyvek)",
+        "Felvonások között; ford. Tandori Dezső; Európa, Bp., 2003",
+        "Jacob szobája; ford. Gy. Horváth László; Európa, Bp., 2005",
+        "Az évek; ford. Tandori Dezső; Európa, Bp., 2006",
+        "Három adomány; ford. Séllei Nóra; Európa, Bp., 2006 (Mérleg)",
+        "Messzeség; ford. Tandori Dezső; Európa, Bp., 2007",
+        "Éjre nap; ford. Tandori Dezső; Európa, Bp., 2007",
+        "Mrs. Dalloway a Bond Streeten (Mrs. Dalloway in Bond Street) / Hölgy tükörben (The lady in the looking-glass) / A hercegné és az ékszerész (The duchess and the jeweller); ford. Bánki Veronika; Kossuth, Bp., 2017 (Angol-magyar kétnyelvű klasszikusok)"
+      ],
+      "works": [
+        {
+          "wikidataId": "Q599198",
+          "title": "Messzeség",
+          "originalTitle": "The Voyage Out",
+          "year": 1915,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/The_Voyage_Out",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q19894217",
+          "title": "The Mark on the Wall",
+          "originalTitle": null,
+          "year": 1917,
+          "type": "novella",
+          "url": "https://en.wikipedia.org/wiki/The_Mark_on_the_Wall",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q1610831",
+          "title": "Éjre nap",
+          "originalTitle": "Night and Day",
+          "year": 1919,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/Night_and_Day_(Woolf_novel)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q3814864",
+          "title": "Kew Gardens",
+          "originalTitle": null,
+          "year": 1919,
+          "type": "novella",
+          "url": "https://en.wikipedia.org/wiki/Kew_Gardens_(short_story)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q21403300",
+          "title": "A Society",
+          "originalTitle": null,
+          "year": 1921,
+          "type": "novella",
+          "url": null,
+          "urlLang": null
+        },
+        {
+          "wikidataId": "Q6898670",
+          "title": "Monday or Tuesday",
+          "originalTitle": null,
+          "year": 1921,
+          "type": "novellagyűjtemény",
+          "url": "https://en.wikipedia.org/wiki/Monday_or_Tuesday",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q16740601",
+          "title": "The String Quartet",
+          "originalTitle": null,
+          "year": 1921,
+          "type": "novella",
+          "url": "https://en.wikipedia.org/wiki/The_String_Quartet",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q1677745",
+          "title": "Jacob szobája",
+          "originalTitle": "Jacob's Room",
+          "year": 1922,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/Jacob%27s_Room",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q55076592",
+          "title": "Mr. Bennett and Mrs. Brown",
+          "originalTitle": null,
+          "year": 1924,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/Mr._Bennett_and_Mrs._Brown",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q752584",
+          "title": "Mrs. Dalloway",
+          "originalTitle": "Mrs Dalloway",
+          "year": 1925,
+          "type": "regény",
+          "url": "https://hu.wikipedia.org/wiki/Mrs._Dalloway_(reg%C3%A9ny)",
+          "urlLang": "hu"
+        },
+        {
+          "wikidataId": "Q64230947",
+          "title": "The Common Reader",
+          "originalTitle": null,
+          "year": 1925,
+          "type": null,
+          "url": null,
+          "urlLang": null
+        },
+        {
+          "wikidataId": "Q478016",
+          "title": "A világítótorony",
+          "originalTitle": "To the Lighthouse",
+          "year": 1927,
+          "type": "regény",
+          "url": "https://hu.wikipedia.org/wiki/A_vil%C3%A1g%C3%ADt%C3%B3torony_(reg%C3%A9ny)",
+          "urlLang": "hu"
+        },
+        {
+          "wikidataId": "Q3794975",
+          "title": "The New Dress",
+          "originalTitle": null,
+          "year": 1927,
+          "type": "novella",
+          "url": "https://en.wikipedia.org/wiki/The_New_Dress_(short_story)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q1629456",
+          "title": "Orlando",
+          "originalTitle": "Orlando: A Biography",
+          "year": 1928,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/Orlando:_A_Biography",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q138836639",
+          "title": "Street Haunting: A London Adventure",
+          "originalTitle": null,
+          "year": 1930,
+          "type": null,
+          "url": null,
+          "urlLang": null
+        },
+        {
+          "wikidataId": "Q1217475",
+          "title": "Hullámok",
+          "originalTitle": "The Waves",
+          "year": 1931,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/The_Waves",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q16210839",
+          "title": "The London Scene",
+          "originalTitle": null,
+          "year": 1931,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/The_London_Scene",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q1616684",
+          "title": "Az évek",
+          "originalTitle": "The Years",
+          "year": 1937,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/The_Years_(Woolf_novel)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q3822209",
+          "title": "The Duchess and the Jeweller",
+          "originalTitle": null,
+          "year": 1938,
+          "type": "novella",
+          "url": "https://en.wikipedia.org/wiki/The_Duchess_and_the_Jeweller",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q4659564",
+          "title": "A Sketch of the Past",
+          "originalTitle": null,
+          "year": 1939,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/A_Sketch_of_the_Past",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q7358215",
+          "title": "Roger Fry: A Biography",
+          "originalTitle": null,
+          "year": 1940,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/Roger_Fry:_A_Biography",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q4004168",
+          "title": "A Haunted House and Other Short Stories",
+          "originalTitle": null,
+          "year": 1944,
+          "type": "novellagyűjtemény",
+          "url": "https://en.wikipedia.org/wiki/A_Haunted_House_and_Other_Short_Stories",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q6897212",
+          "title": "Moments of Being",
+          "originalTitle": null,
+          "year": 1985,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/Moments_of_Being",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q18624264",
+          "title": "Freshwater",
+          "originalTitle": null,
+          "year": null,
+          "type": "színmű",
+          "url": "https://en.wikipedia.org/wiki/Freshwater_(play)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q7090909",
+          "title": "On Being Ill",
+          "originalTitle": null,
+          "year": null,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/On_Being_Ill",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q104877803",
+          "title": "The Widow and the Parrot",
+          "originalTitle": null,
+          "year": null,
+          "type": "novella",
+          "url": "https://en.wikipedia.org/wiki/The_Widow_and_the_Parrot",
+          "urlLang": "en"
+        }
+      ],
       "facts": {
         "birth": "1882. január 25.",
         "birthPlace": "London",
@@ -94,7 +392,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T12:38:08.651Z",
+    "fetchedAt": "2026-11-09T12:53:43.862Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -154,6 +452,197 @@
       },
       "intro": [
         "Sylvia Plath (Boston, Massachusetts, 1932. október 27. – London, 1963. február 11.) amerikai költő, író, novellista, gyerekkönyvíró."
+      ],
+      "biography": [
+        {
+          "level": 1,
+          "heading": "Élete",
+          "paras": []
+        },
+        {
+          "level": 2,
+          "heading": "Gyermekkora",
+          "paras": [
+            "Sylvia Plath 1932. október 27-én, a nagy gazdasági világválság idején született Bostonban, Aurelia Schober Plath és Otto Emile Plath első gyermekeként. Apja Németországból települt be, főiskolai tanárként dolgozott, és a méhek ismert szakértője volt. Embóliában halt meg egy műtétet követően, fel nem ismert cukorbetegsége következményeként 1940. november 5-én. Ekkor Sylvia nyolcéves volt. Állítólag apja halálakor azt mondta: „Soha többé nem beszélek Istenhez”. Emléke egész életén végigkísérte és kísértette. Verseiben gyakran megjelenik az életén uralkodó apafigura, többek között méhekhez kapcsolódó motívumok használatán keresztül. Anyja elsőgenerációs amerikai volt, osztrák felmenőkkel; csaknem 20 évvel volt fiatalabb férjénél. Öccse 1935 áprilisában született.",
+            "Első verse nyolcéves korában jelent meg a Boston Herald c. napilapban."
+          ]
+        },
+        {
+          "level": 2,
+          "heading": "Főiskolai évek",
+          "paras": [
+            "Tanulmányait a northamptoni Smith College-ban, majd 1955-től 1957-ig az angliai Cambridge-i Egyetemen végezte. A Smith College-os évek alatt kezdett el randizgatni egy Dick Norton nevű yale-es hallgatóval. Nortonról mintázta Buddy karakterét Az üvegbura c. önéletrajzi regényében. Amikor Nortont tuberkulózissal kezelték egy New York állambeli szanatóriumban, Sylvia meglátogatta őt, és síelés közben eltörte a lábát. Akkor úgy nyilatkozott az epizódról, hogy csak egy baleset volt; a regényben viszont öngyilkossági célzatot kap. (Feltehetőleg ez az aspektus csak fikció volt a regényben.)",
+            "„Belső hang sürgetett – ne legyek hülye, mentsem a bőröm, csatoljam le a léceket, s úgy ballagjak le a lesiklópályát szegélyező sűrű fenyők védelmében –, de aztán elhalt a zümmögése, mint egy bánatos moszkító. Hűvösen, mint egy fa vagy virág, kisarjadt a fejemben a gondolat, hogy esetleg a halálba rohanok.\" (Az üvegbura, részlet)",
+            "A főiskola harmadik évét követő nyáron vendégszerkesztői állást ajánlottak neki a Mademoiselle magazinnál, így egy hónapot töltött New Yorkban. Az ott szerzett tapasztalatait sokszor negatív élményként élte meg; kilátásai saját magával és az élettel kapcsolatban meglehetősen pesszimista tónusba fordultak. Ezek után követte el az első orvosilag dokumentált öngyilkossági kísérletét: a házuk pincéjében elbújt, és altatóval túladagolta magát. Ebből az időszakból később sok mindent megörökít Az üvegburában is. Az öngyilkossági kísérlet után rövid ideig egy elmegyógyintézetbe vonult, ahol többek között elektrosokk-terápiával kezelték. Az ott-tartózkodását Olive Higgins Prouty finanszírozta, akinek egyébként az ösztöndíját is köszönhette korábban. (Prouty maga is sikeresen talpra állt egy idegösszeomlás után.)",
+            "Úgy tűnt, a kezelések után Sylvia nagyjából helyrejött, 1955 júniusában sikeresen lediplomázott a Smith College-ban.",
+            "Ezek után a Fulbright-program ösztöndíjasaként a Cambridge-i Egyetemen folytatta tovább tanulmányait, ahol továbbra is aktívan írta költeményeit, amiket alkalmanként publikált az iskolaújságban. Egy cambridge-i partin ismerkedett meg az angol költővel, Ted Hughes-sal. Rövid udvarlás után, 1956. június 16-án házasodtak össze."
+          ]
+        },
+        {
+          "level": 2,
+          "heading": "Magánélete",
+          "paras": [
+            "Plath és Hughes 1957 júliusától 1959 októberéig az Amerikai Egyesült Államokban élt, ahol Sylvia 1957-58-ban a Smith College-ban adott elő angol irodalmat. A pár ezután Bostonba költözött, ahol Plath Robert Lowell előadásait látogatta; itt találkozott Anne Sextonnal is. Ebben az időszakban találkoztak első alkalommal W. S. Merwinnel, aki csodálta munkájukat és életre szóló barátjukká vált.",
+            "Plath hamarosan terhes lett, a pár visszaköltözött Nagy-Britanniába. Rövid ideig Londonban éltek, majd egy devoni kisvárosban telepedtek le. Itt publikálta első verseskötetét, The Colossus címmel. Ebben a kötetben az 1956-60-ban írt verseit gyűjtötte össze. 1961 februárjában elvetélt; erről az eseményről néhány verse említést is tesz.",
+            "Szenvedélyes házasságuk diszharmonikus volt és botrányokkal kísért, különösen, amikor kiderült férje Assia Wevill-lel való viszonya. Emellett a költőnő egyre inkább rávetítette apja emlékét Tedre, a két figura elméjében lassan egybemosódott – 1962 végén elváltak.",
+            "Sylvia visszatért Londonba két gyerekével, Friedával és Nicholasszal. Abban a házban laktak, ahol egykor W. B. Yeats is élt; Sylvia ezt jó jelnek tekintette."
+          ]
+        },
+        {
+          "level": 2,
+          "heading": "Halála",
+          "paras": [
+            "„Keresztre feszítenek a saját korlátaid. Amit vakon választottál, megváltoztathatatlan; vissza nem vonható. Voltak esélyeid; nem kaptál rajtuk, az eredendő bűnben dagonyázol; a korlátaid közé szorítva. Még azt sem vagy képes eldönteni, hogy sétálj-e egyet a szabadban: nem vagy biztos benne, menekülés-e ez is, vagy puszta felfrissülés az egész napi szobafogság után. Elveszítettél minden életörömöt. Előtted sehová sem vezető ösvények egész sora.”",
+            "Öngyilkosságot követett el, miután teljesen elszigetelte a szobát közte és az alvó gyerekei között „nedves törölközőkkel és ruhákkal”. Kinyitotta a gázt és a fejét a sütőbe tette. A következő napon a vizsgálat megállapította, hogy öngyilkosság történt.",
+            "Felvetették, hogy Plath öngyilkossága túl precíz, túl körültekintő volt, nem lehetett öngyilkosság.",
+            "Mindenesetre Jilian Becker, Sylvia legjobb barátnője, a Giving Up: The Last Days of Sylvia Plath című könyvben azt mondja: „Mr. Goodchild szerint – aki a kórboncnokhoz rendelt rendőrtiszt volt –, Plath teljesen betette a fejét a sütőbe. Ő tényleg komolyan gondolta.”",
+            "Sírköve egy angliai faluban, Heptonstallban áll, a következő felirattal: „Even amidst fierce flames the golden lotus can be planted.” (szabad fordításban: Arany lótuszt még a legmardosóbb lángok közé is ültethetünk.)",
+            "Férje, Ted Hughes, Plath halála után újranősült és házasságukról több mint harminc évig nem nyilatkozott. Hughes végül 1998-ban publikálta halott feleségéhez írt vallomásos levélszerű verseinek gyűjteményét Születésnapi levelek c. kötetében, ezzel 35 évnyi hallgatást megtörve, majd ugyanezen évben maga is meghalt."
+          ]
+        },
+        {
+          "level": 1,
+          "heading": "Munkássága",
+          "paras": []
+        },
+        {
+          "level": 1,
+          "heading": "Kötetei, költészete",
+          "paras": [
+            "R. Lowell vallomásos költészete nagy hatással volt rá; ugyanúgy ahogy Ted is, verseinek tömörségével, nyers, éles képiségével. Ezek az elemek Sylvia-nál finom árnyaltsággal, egyensúllyal párosultak. Ugyanakkor felfedezhetőek benne hasonló vonások Anne Sexton és W. D. Snodgrass költészetével is.",
+            "Első kötete, a The Colossus, bár kedvező kritikákat kapott, de későbbi munkáihoz képest ezek a versek sokkal konvencionálisabbak.",
+            "Az 1965-ben posztumusz kiadott Ariel c. kötet verseit már a letisztult, szikár formavilág, dísztelen nyelvezet jellemzi.",
+            "Verseiben számos témát feszeget; foglalkoztatják például gyermekkora rossz emlékei, apja halála, az életét körülvevő tárgyak idegensége, de vall fiatalkori lelki válságáról is, az 1963-ban – első ízben Victoria Lucas álnéven, majd halála előtt a saját nevén – kiadott önéletrajzi regényében, Az üvegburában."
+          ]
+        }
+      ],
+      "huEditions": [
+        "Az üvegbúra. Regény; ford. Tandori Dezső, utószó Géher István; Európa, Bp., 1971 (Modern könyvtár)",
+        "Zúzódás. Válogatott versek; ford. Tandori Dezső, vál., szerk., utószó Geher István; Európa, Bp., 1978",
+        "Naplók; ford. Lázár Júlia; Pesti Szalon, Bp., 1994",
+        "Az ötvenkilencedik medve; ford. Gálvölgyi Judit; Saxum, Bp., 1996",
+        "Sylvia Plath versei; vál., szerk., jegyz. Lázár Júlia, ford. Báthori Csaba et al.; Európa, Bp., 2002 (Lyra mundi)",
+        "Naplók, 1950–1962; szerk. Karen V. Kukil; ford. Lázár Júlia; Cartaphilus, Bp., 2004",
+        "A mindegy-öltöny; ill., jegyz. Dániel András, ford. Rét Viktória; Pagony, Bp., 2019"
+      ],
+      "works": [
+        {
+          "wikidataId": "Q7643859",
+          "title": "Superman and Paula Brown's New Snowsuit",
+          "originalTitle": null,
+          "year": 1955,
+          "type": "novella",
+          "url": "https://en.wikipedia.org/wiki/Superman_and_Paula_Brown%27s_New_Snowsuit",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q7726866",
+          "title": "The Colossus and Other Poems",
+          "originalTitle": null,
+          "year": 1960,
+          "type": "verseskötet",
+          "url": "https://en.wikipedia.org/wiki/The_Colossus_and_Other_Poems",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q1213085",
+          "title": "Az üvegbúra",
+          "originalTitle": "The Bell Jar",
+          "year": 1963,
+          "type": "regény",
+          "url": "https://en.wikipedia.org/wiki/The_Bell_Jar",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q4790385",
+          "title": "Ariel",
+          "originalTitle": null,
+          "year": 1965,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/Ariel_(poem)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q132126730",
+          "title": "Death & Co.",
+          "originalTitle": null,
+          "year": 1965,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/Death_%26_Co._(poem)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q7752639",
+          "title": "The Munich Mannequins",
+          "originalTitle": null,
+          "year": 1965,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/The_Munich_Mannequins",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q17001482",
+          "title": "Crossing the Water",
+          "originalTitle": null,
+          "year": 1971,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/Crossing_the_Water",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q18163352",
+          "title": "Winter Trees",
+          "originalTitle": null,
+          "year": 1971,
+          "type": null,
+          "url": "https://en.wikipedia.org/wiki/Winter_Trees",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q132126737",
+          "title": "Elm",
+          "originalTitle": null,
+          "year": null,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/Elm_(poem)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q6470321",
+          "title": "Lady Lazarus",
+          "originalTitle": null,
+          "year": null,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/Lady_Lazarus",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q96942864",
+          "title": "The Bed Book",
+          "originalTitle": null,
+          "year": null,
+          "type": null,
+          "url": null,
+          "urlLang": null
+        },
+        {
+          "wikidataId": "Q131904781",
+          "title": "The Disquieting Muses",
+          "originalTitle": null,
+          "year": null,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/The_Disquieting_Muses_(poem)",
+          "urlLang": "en"
+        },
+        {
+          "wikidataId": "Q7852091",
+          "title": "Tulips",
+          "originalTitle": null,
+          "year": null,
+          "type": "vers",
+          "url": "https://en.wikipedia.org/wiki/Tulips_(poem)",
+          "urlLang": "en"
+        }
       ],
       "facts": {
         "birth": "1932. október 27.",

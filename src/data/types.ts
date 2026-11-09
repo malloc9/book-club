@@ -16,6 +16,20 @@ export interface ArticleRef {
   title: string;
   url: string;
 }
+export interface BioSection {
+  level: number;
+  heading: string;
+  paras: string[];
+}
+export interface Work {
+  wikidataId: string;
+  title: string;
+  originalTitle: string | null;
+  year: number | null;
+  type: string | null;
+  url: string | null;
+  urlLang: 'hu' | 'en' | null;
+}
 export interface BookData {
   slug: string;
   title: string;
@@ -40,6 +54,9 @@ export interface BookData {
     name: string;
     article: ArticleRef | null;
     intro: string[];
+    biography: BioSection[];
+    huEditions: string[] | null;
+    works: Work[];
     facts: {
       birth: string | null;
       birthPlace: string | null;

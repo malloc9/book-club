@@ -223,3 +223,55 @@ section.prose h2, .author h2 { font-size: 1.75rem; margin: 0 0 1rem; display: fl
   background: var(--accent-soft);
 }
 .author-body h3 { font-size: 1.6rem; margin: 0; }
+
+h3.sub {
+  font-size: 1.4rem;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--rule);
+}
+.bio h4 { font-size: 1.2rem; margin: 1.6rem 0 0.5rem; }
+.bio h5 {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 1.3rem 0 0.4rem;
+}
+
+/* works list */
+.works { list-style: none; padding: 0; margin: 0; max-width: 46rem; }
+.works li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr auto;
+  gap: 0.25rem 0.9rem;
+  align-items: baseline;
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.works li.ours { background: var(--accent-soft); border-radius: 6px; }
+.w-year { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.92rem; }
+.w-main { display: flex; flex-direction: column; min-width: 0; }
+.w-title { font-family: var(--serif); font-weight: 600; color: var(--ink); text-decoration: none; }
+a.w-title:hover { color: var(--accent); text-decoration: underline; }
+.w-orig { font-style: italic; color: var(--muted); font-size: 0.92rem; }
+.w-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; justify-content: flex-end; }
+.tag {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.tag-ours { background: var(--accent); border-color: var(--accent); color: var(--surface); font-weight: 600; }
+@media (max-width: 30rem) {
+  .works li { grid-template-columns: 2.8rem 1fr; }
+  .w-tags { grid-column: 2; justify-content: flex-start; }
+}
+
+/* Hungarian editions */
+.editions { max-width: 46rem; margin: 0; padding-left: 1.2rem; font-size: 0.95rem; }
+.editions li { margin: 0 0 0.45rem; }
+.editions li::marker { color: var(--accent); }

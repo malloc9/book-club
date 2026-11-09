@@ -4,7 +4,7 @@ import Cover from '../../components/Cover.astro';
 import Credit from '../../components/Credit.astro';
 import Source from '../../components/Source.astro';
 import EnBadge from '../../components/EnBadge.astro';
-import { books, asset } from '../../data/books';
+import { books, asset, bookUrl } from '../../data/books';
 import type { BookData } from '../../data/types';
 
 export function getStaticPaths() {
@@ -18,6 +18,8 @@ const af = author?.facts;
 
 const place = (when: string | null | undefined, where: string | null | undefined) =>
   [when, where].filter(Boolean).join(', ');
+// Works the club has read link to our own book page.
+const clubBooks = new Map(books.filter((x) => x.book).map((x) => [x.book!.wikidataId, x.slug]));
 const born = place(af?.birth, af?.birthPlace);
 const died = place(af?.death, af?.deathPlace);
 ---
@@ -97,9 +99,63 @@ const died = place(af?.death, af?.deathPlace);
                 {af && af.occupations.length > 0 && (<div><dt>Foglalkozás</dt><dd>{af.occupations.join(', ')}</dd></div>)}
               </dl>
               <div class="prose">{author.intro.map((p) => <p>{p}</p>)}</div>
-              <Source article={author.article} />
             </div>
           </div>
+
+          {author.biography?.length > 0 && (
+            <div class="prose bio">
+              <h3 class="sub">Életrajz</h3>
+              {author.biography.map((s) => (
+                <>
+                  {s.level <= 1 ? <h4>{s.heading}</h4> : <h5>{s.heading}</h5>}
+                  {s.paras.map((p) => <p>{p}</p>)}
+                </>
+              ))}
+            </div>
+          )}
+
+          {author.works?.length > 0 && (
+            <div class="works-block">
+              <h3 class="sub">Művei</h3>
+              <ol class="works">
+                {author.works.map((w) => {
+                  const ours = clubBooks.get(w.wikidataId);
+                  return (
+                    <li class:list={{ ours: !!ours }}>
+                      <span class="w-year">{w.year ?? '–'}</span>
+                      <span class="w-main">
+                        {ours ? (
+                          <a href={bookUrl(ours)} class="w-title">{w.title}</a>
+                        ) : w.url ? (
+                          <a href={w.url} class="w-title">{w.title}</a>
+                        ) : (
+                          <span class="w-title">{w.title}</span>
+                        )}
+                        {w.originalTitle && <span class="w-orig">{w.originalTitle}</span>}
+                      </span>
+                      <span class="w-tags">
+                        {w.type && <span class="tag">{w.type}</span>}
+                        {ours && <span class="tag tag-ours">olvastuk</span>}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
+              <p class="source">
+                Forrás: <a href={`https://www.wikidata.org/wiki/${author.wikidataId}`}>Wikidata</a> – a lista a
+                Wikipédia-szócikkel rendelkező műveket tartalmazza.
+              </p>
+            </div>
+          )}
+
+          {author.huEditions && (
+            <div class="editions-block">
+              <h3 class="sub">Magyarul megjelent</h3>
+              <ul class="editions">{author.huEditions.map((e) => <li>{e}</li>)}</ul>
+            </div>
+          )}
+
+          <Source article={author.article} />
         </section>
       )
     }

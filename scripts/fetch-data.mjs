@@ -144,23 +144,77 @@ async function findBook(book, authorQid) {
 // ---------- Wikipedia ----------
 const PLOT_RE = /^(cselekmény|történet|a regény cselekménye|tartalom|tartalma|plot|plot summary|synopsis|summary)$/i;
 
+// Biography stops at the first top-level section that is bibliography / references / etc.
+const BIO_STOP_RE =
+  /^(bibliográfia|művei|műveinek|főbb művei|magyarul|fordítás|források|jegyzetek|hivatkozások|irodalom|további információk|kapcsolódó szócikkek|lásd még|díjai|works|bibliography|selected works|notes|references|sources|further reading|external links|see also|citations|awards)/i;
+const HU_EDITIONS_RE = /^magyarul/i;
+const MAX_BIO_PARAS = 40;
+
+// explaintext + exsectionformat=wiki → "== Heading ==" markers. Level 1 = "==", 2 = "===", ...
 function parseExtract(text) {
-  // explaintext + exsectionformat=wiki → "== Heading ==" markers
-  const parts = text.split(/\n(?===[^=])/);
-  const paras = (s) => s.split('\n').map((l) => l.trim()).filter((l) => l && !/^=+.*=+$/.test(l));
-  const intro = paras(parts[0] ?? '');
-  let plot = null;
-  for (const part of parts.slice(1)) {
-    const h = /^==\s*(.+?)\s*==/.exec(part)?.[1];
-    if (h && PLOT_RE.test(h)) {
-      plot = paras(part.replace(/^==.*==/, ''));
-      break;
+  const sections = [];
+  let current = { level: 0, heading: null, paras: [] };
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line) continue;
+    const h = /^(={2,})\s*(.+?)\s*\1$/.exec(line);
+    if (h) {
+      sections.push(current);
+      current = { level: h[1].length - 1, heading: h[2], paras: [] };
+    } else {
+      current.paras.push(line);
     }
   }
-  return { intro, plot: plot?.length ? plot : null };
+  sections.push(current);
+  return { intro: sections[0].paras, sections: sections.slice(1) };
 }
 
-async function getArticle(entity, { withPlot }) {
+// Top-level section matching `re`, plus its subsections.
+function sectionGroup(sections, re) {
+  const i = sections.findIndex((s) => s.level === 1 && re.test(s.heading));
+  if (i < 0) return null;
+  const out = [sections[i]];
+  for (const s of sections.slice(i + 1)) {
+    if (s.level <= 1) break;
+    out.push(s);
+  }
+  return out;
+}
+
+function plotOf(sections) {
+  const s = sections.find((x) => x.level <= 2 && PLOT_RE.test(x.heading));
+  return s?.paras.length ? s.paras : null;
+}
+
+function biographyOf(sections) {
+  const out = [];
+  let count = 0;
+  for (const s of sections) {
+    if (s.level === 1 && BIO_STOP_RE.test(s.heading)) break;
+    if (count >= MAX_BIO_PARAS) break;
+    const paras = s.paras.slice(0, MAX_BIO_PARAS - count);
+    count += paras.length;
+    out.push({ level: s.level, heading: s.heading, paras });
+  }
+  // Drop trailing headings with no content of their own or below them.
+  while (out.length && !out.at(-1).paras.length) out.pop();
+  return out;
+}
+
+function huEditionsOf(sections) {
+  const group = sectionGroup(sections, HU_EDITIONS_RE);
+  if (!group) return null;
+  const lines = group.flatMap((s, i) => (i === 0 ? s.paras : [`${s.heading}:`, ...s.paras]));
+  // Parenthetical continuation lines ("(Mrs. Dalloway címen is)") belong to the previous entry.
+  const items = [];
+  for (const l of lines) {
+    if (/^\(.*\)$/.test(l) && items.length) items[items.length - 1] += ` ${l}`;
+    else items.push(l);
+  }
+  return items.length ? items : null;
+}
+
+async function getArticle(entity, { kind }) {
   for (const lang of LANGS) {
     const title = entity.sitelinks?.[`${lang}wiki`]?.title;
     if (!title) continue;
@@ -176,13 +230,15 @@ async function getArticle(entity, { withPlot }) {
     });
     const page = data.query?.pages?.[0];
     if (!page?.extract) continue;
-    const { intro, plot } = parseExtract(page.extract);
+    const { intro, sections } = parseExtract(page.extract);
     return {
       lang,
       title: page.title,
       url: page.fullurl,
       intro,
-      plot: withPlot ? plot : null,
+      plot: kind === 'book' ? plotOf(sections) : null,
+      biography: kind === 'author' ? biographyOf(sections) : null,
+      huEditions: kind === 'author' ? huEditionsOf(sections) : null,
       pageImage: page.pageimage ? { lang, file: page.pageimage } : null,
     };
   }
@@ -214,6 +270,52 @@ async function imageInfo(lang, file) {
       sourceName: 'Wikimedia',
     },
   };
+}
+
+// ---------- Author's works (Wikidata SPARQL) ----------
+// Literary works by the author that have at least one Wikipedia/Wikisource page (keeps the list notable).
+async function authorWorks(authorQid) {
+  const query = `
+SELECT ?w (SAMPLE(?huL) AS ?hu) (SAMPLE(?enL) AS ?en) (SAMPLE(?origT) AS ?orig) (MIN(?date) AS ?d)
+       (SAMPLE(?typeHu) AS ?type) (SAMPLE(?huWiki) AS ?huUrl) (SAMPLE(?enWiki) AS ?enUrl) (MAX(?links) AS ?n)
+WHERE {
+  ?w wdt:P50 wd:${authorQid};
+     wdt:P31/wdt:P279* wd:Q7725634;
+     wikibase:sitelinks ?links.
+  FILTER(?links > 0)
+  OPTIONAL { ?w wdt:P577 ?date }
+  OPTIONAL { ?w rdfs:label ?huL FILTER(LANG(?huL) = "hu") }
+  OPTIONAL { ?w rdfs:label ?enL FILTER(LANG(?enL) = "en") }
+  OPTIONAL { ?w wdt:P1476 ?origT }
+  FILTER NOT EXISTS { ?w wdt:P31 wd:Q3331189 }
+  OPTIONAL { ?w wdt:P7937 ?form. ?form rdfs:label ?typeHu FILTER(LANG(?typeHu) = "hu") }
+  OPTIONAL { ?huWiki schema:about ?w; schema:isPartOf <https://hu.wikipedia.org/> }
+  OPTIONAL { ?enWiki schema:about ?w; schema:isPartOf <https://en.wikipedia.org/> }
+}
+GROUP BY ?w`;
+  try {
+    const data = await getJson('https://query.wikidata.org/sparql', { query, format: 'json' });
+    const works = data.results.bindings
+      .map((b) => {
+        const original = b.orig?.value ?? b.en?.value ?? null;
+        const hu = b.hu?.value ?? null;
+        return {
+          wikidataId: b.w.value.split('/').pop(),
+          title: hu ?? original,
+          originalTitle: hu && original && original !== hu ? original : null,
+          year: b.d?.value ? Number(b.d.value.slice(0, 4)) || null : null,
+          type: b.type?.value ?? null,
+          url: b.huUrl?.value ?? b.enUrl?.value ?? null,
+          urlLang: b.huUrl ? 'hu' : b.enUrl ? 'en' : null,
+        };
+      })
+      .filter((w) => w.title && !/^Q\d+$/.test(w.title));
+    works.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.title.localeCompare(b.title, 'hu'));
+    return works;
+  } catch (err) {
+    console.warn(`  ! művek lekérése sikertelen (${authorQid}): ${err.message}`);
+    return [];
+  }
 }
 
 // ---------- Open Library ----------
@@ -300,8 +402,8 @@ async function fetchBook(book) {
   const bookQid = book.wiki ? await resolveWikiOverride(book.wiki) : await findBook(book, authorQid);
   const [bookEnt, authorEnt] = await getEntities([bookQid, authorQid]);
 
-  const bookArticle = await getArticle(bookEnt, { withPlot: true });
-  const authorArticle = await getArticle(authorEnt, { withPlot: false });
+  const bookArticle = await getArticle(bookEnt, { kind: 'book' });
+  const authorArticle = await getArticle(authorEnt, { kind: 'author' });
 
   const originalTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle ?? null;
   const published = formatWdTime(claimValues(bookEnt, 'P577').sort((a, b) => a.time.localeCompare(b.time))[0]);
@@ -332,7 +434,10 @@ async function fetchBook(book) {
       wikidataId: authorQid,
       name: label(authorEnt) ?? book.author,
       article: authorArticle && { lang: authorArticle.lang, title: authorArticle.title, url: authorArticle.url },
-      intro: (authorArticle?.intro ?? []).slice(0, 3),
+      intro: authorArticle?.intro ?? [],
+      biography: authorArticle?.biography ?? [],
+      huEditions: authorArticle?.huEditions ?? null,
+      works: await authorWorks(authorQid),
       facts: {
         birth,
         birthPlace: (await itemLabels(authorEnt, 'P19', 1))[0] ?? null,
