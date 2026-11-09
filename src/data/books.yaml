@@ -7,6 +7,7 @@
 #   originalTitle  – eredeti cím (opcionális, segít a keresésben)
 #   wiki           – kézi felülírás, ha az automatikus keresés rossz cikket talál:
 #                    Wikidata azonosító (pl. Q478016) vagy "hu:Cikk címe" / "en:Article title"
+#   englishTitle   – angol fordítás címe (opcionális, borítókereséshez, ha nincs magyar borító)
 #   cover          – saját borítókép a covers/ mappából (pl. covers/vilagitotorony.jpg)
 #
 # Új könyv után futtasd: npm run fetch
@@ -18,3 +19,51 @@
 - title: Az üvegbúra
   author: Sylvia Plath
   originalTitle: The Bell Jar
+
+- title: A kedves
+  author: Toni Morrison
+  originalTitle: Beloved
+
+- title: Ne bántsátok a feketerigót!
+  author: Harper Lee
+  originalTitle: To Kill a Mockingbird
+
+- title: Évek
+  author: Annie Ernaux
+  originalTitle: Les Années
+
+- title: Hangyaboly
+  author: Kaffka Margit
+
+- title: Zsömle odavan
+  author: Krasznahorkai László
+
+- title: Édentől keletre
+  author: John Steinbeck
+  originalTitle: East of Eden
+
+- title: Egy nő
+  author: Esterházy Péter
+  englishTitle: She Loves Me
+
+- title: Vad lovak
+  author: Cormac McCarthy
+  originalTitle: All the Pretty Horses
+
+- title: Trilógia
+  author: Jon Fosse
+  originalTitle: Trilogien
+
+- title: Rémtörténetek
+  author: Nádas Péter
+
+- title: Az ötös számú vágóhíd
+  author: Kurt Vonnegut
+  originalTitle: Slaughterhouse-Five
+
+- title: A fehér király
+  author: Dragomán György
+
+- title: Sinistra körzet
+  author: Bodor Ádám
+  englishTitle: The Sinistra Zone

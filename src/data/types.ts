@@ -44,9 +44,10 @@ export interface BookData {
   authorName: string;
   fetchedAt: string | null;
   book: {
-    wikidataId: string;
+    wikidataId: string | null;
     article: ArticleRef | null;
     intro: Block[];
+    introFromAuthor?: boolean;
     plot: Block[] | null;
     facts: {
       originalTitle: string | null;
@@ -63,6 +64,7 @@ export interface BookData {
     article: ArticleRef | null;
     intro: Block[];
     biography: BioSection[];
+    biographyArticle?: ArticleRef | null;
     huEditions: string[] | null;
     works: Work[];
     facts: {

@@ -13,7 +13,16 @@ const BOOKS_YAML = path.join(ROOT, 'src/data/books.yaml');
 const OUT_JSON = path.join(ROOT, 'src/data/generated/books.json');
 const IMG_DIR = path.join(ROOT, 'public/images');
 const UA = 'BeriOlvasokor/1.0 (https://github.com/malloc9/book-club)';
-const LANGS = ['hu', 'en'];
+// Preferred Wikipedia languages; after these, any other language edition is used (and machine-translated).
+const LANGS = ['hu', 'en', 'de', 'fr', 'es', 'it', 'no', 'nn', 'sv', 'da', 'pl', 'cs', 'ru', 'nl', 'pt'];
+const wikiLangsOf = (entity) => {
+  const all = Object.keys(entity?.sitelinks ?? {})
+    .filter((k) => /^[a-z]{2,3}wiki$/.test(k) && k !== 'commonswiki' && k !== 'specieswiki')
+    .map((k) => k.slice(0, -4));
+  return [...LANGS.filter((l) => all.includes(l)), ...all.filter((l) => !LANGS.includes(l))];
+};
+// Wikipedia language code → Google Translate code.
+const GT_LANG = { nn: 'no', nb: 'no', simple: 'en' };
 
 // ---------- HTTP helpers ----------
 async function getJson(url, params = {}) {
@@ -85,8 +94,8 @@ async function getEntities(ids) {
       action: 'wbgetentities',
       ids: chunk.join('|'),
       props: 'labels|claims|sitelinks',
-      languages: 'hu|en',
-      sitefilter: 'huwiki|enwiki',
+      languages: 'hu|en|de|fr',
+      // all sitelinks: non-hu/en editions are a fallback source
     });
     for (const [id, e] of Object.entries(data.entities ?? {})) entityCache.set(id, e);
   }
@@ -166,6 +175,23 @@ const HU_TERMS = {
   'social novel': 'társadalmi regény',
   'existentialist novel': 'egzisztencialista regény',
   'confessional poetry': 'konfesszionális költészet',
+  'magic realist fiction': 'mágikus realista próza',
+  'social fiction': 'társadalmi regény',
+  'legal fiction': 'jogi témájú regény',
+  'western novel': 'westernregény',
+  'western fiction': 'western',
+  'time-travel fiction': 'időutazós történet',
+  'satirical fiction': 'szatirikus próza',
+  'war fiction': 'háborús próza',
+  'anti-war fiction': 'háborúellenes próza',
+  'short story anthology': 'novellaantológia',
+  'scientific collector': 'tudományos gyűjtő',
+  'southern gothic': 'déli gótika',
+  'postmodern literature': 'posztmodern irodalom',
+  'historical fiction novel': 'történelmi regény',
+  'slave narrative': 'rabszolga-elbeszélés',
+  'neo-slave narrative': 'neo-rabszolga-elbeszélés',
+  'family novel': 'családregény',
 };
 const missingTerms = new Set();
 function huLabel(e, report = true) {
@@ -228,7 +254,7 @@ const PLOT_RE = /^(cselekmény|történet|a regény cselekménye|tartalom|tartal
 
 // Biography stops at the first top-level section that is bibliography / references / etc.
 const BIO_STOP_RE =
-  /^(bibliográfia|művei|műveinek|főbb művei|magyarul|fordítás|források|jegyzetek|hivatkozások|irodalom|további információk|kapcsolódó szócikkek|lásd még|díjai|works|bibliography|selected works|notes|references|sources|further reading|external links|see also|citations|awards)/i;
+  /^(bibliográfia|művei|műveinek|főbb művei|magyarul|fordítás|források|jegyzetek|hivatkozások|irodalom|további információk|kapcsolódó szócikkek|lásd még|díjai|works|bibliography|selected works|notes|references|sources|further reading|external links|see also|citations|awards|honou?rs|werke|schriften|publikationen|auszeichnungen|preise|literatur|weblinks|einzelnachweise|anmerkungen|siehe auch|œuvres|oeuvres|bibliographie|publications|distinctions|prix|notes|liens externes|voir aussi|références)/i;
 const HU_EDITIONS_RE = /^magyarul/i;
 const MAX_BIO_PARAS = 40;
 
@@ -388,8 +414,9 @@ function huEditionsOf(sections) {
   return items.length ? items : null;
 }
 
-async function getArticle(entity, { kind }) {
-  for (const lang of LANGS) {
+async function getArticle(entity, { kind, langs }) {
+  if (!entity) return null;
+  for (const lang of langs ?? wikiLangsOf(entity)) {
     const title = entity.sitelinks?.[`${lang}wiki`]?.title;
     if (!title) continue;
     const data = await wp(lang, {
@@ -549,19 +576,37 @@ GROUP BY ?w`;
 }
 
 // ---------- Open Library ----------
-async function openLibraryCover(book) {
-  const titles = [book.originalTitle, book.title].filter(Boolean);
-  for (const title of titles) {
+// A work's default cover can be any edition (e.g. a Russian one): prefer Hungarian, then English.
+async function preferredEditionCover(workKey) {
+  try {
+    const data = await getJson(`https://openlibrary.org${workKey}/editions.json`, { limit: '100' });
+    const withCover = (data.entries ?? []).filter((e) => e.covers?.some((c) => c > 0));
+    for (const lang of ['hun', 'eng']) {
+      const ed = withCover.find((e) => e.languages?.some((l) => l.key === `/languages/${lang}`));
+      if (ed) return ed.covers.find((c) => c > 0);
+    }
+  } catch {}
+  return null;
+}
+
+async function openLibraryCover(book, entity) {
+  // Hungarian editions are rare on Open Library; translated editions (en/de/fr) often have covers.
+  const strip = (t) => t?.replace(/\s*\(.*\)$/, '');
+  const titles = [...new Set([book.englishTitle, book.originalTitle, book.title, strip(entity?.labels?.en?.value), strip(entity?.labels?.de?.value), strip(entity?.labels?.fr?.value)].filter(Boolean))];
+  const folded = book.author.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const authors = [...new Set([book.author, folded])];
+  for (const title of titles) for (const author of authors) {
     const data = await getJson('https://openlibrary.org/search.json', {
       title,
-      author: book.author,
+      author,
       limit: '10',
       fields: 'key,title,cover_i',
     });
     const doc = (data.docs ?? []).find((d) => d.cover_i);
     if (doc) {
+      const coverId = (await preferredEditionCover(doc.key)) ?? doc.cover_i;
       return {
-        url: `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg?default=false`,
+        url: `https://covers.openlibrary.org/b/id/${coverId}-L.jpg?default=false`,
         credit: {
           artist: null,
           license: null,
@@ -593,7 +638,7 @@ async function bookCover(book, slug, article, entity) {
   if (article?.pageImage) candidates.push(() => imageInfo(article.pageImage.lang, article.pageImage.file));
   const p18 = claimValues(entity, 'P18')[0];
   if (p18) candidates.push(() => imageInfo('commons', p18));
-  candidates.push(() => openLibraryCover(book));
+  candidates.push(() => openLibraryCover(book, entity));
   for (const get of candidates) {
     try {
       const info = await get();
@@ -629,16 +674,25 @@ async function authorPortrait(entity, article) {
 async function fetchBook(book) {
   const slug = slugify(book.title);
   const authorQid = await findHuman(book.author);
-  const bookQid = book.wiki ? await resolveWikiOverride(book.wiki) : await findBook(book, authorQid);
-  const [bookEnt, authorEnt] = await getEntities([bookQid, authorQid]);
+  let bookQid = null;
+  try {
+    bookQid = book.wiki ? await resolveWikiOverride(book.wiki) : await findBook(book, authorQid);
+  } catch (err) {
+    console.warn(`  ! ${err.message} – a szerző adatai így is megjelennek`);
+  }
+  const [authorEnt] = await getEntities([authorQid]);
+  const [bookEnt] = bookQid ? await getEntities([bookQid]) : [null];
 
   // Keep titles consistent in machine translation: original title → Hungarian title.
   const origTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle;
   const glossary = [...(origTitle && origTitle !== book.title ? [[origTitle, book.title]] : []), ...GLOBAL_GLOSSARY];
   const bookArticle = linkifyArticle(await translateArticle(await getArticle(bookEnt, { kind: 'book' }), glossary));
   const authorArticle = linkifyArticle(await translateArticle(await getArticle(authorEnt, { kind: 'author' }), glossary));
+  const bioArticle = await richerBiography(authorEnt, authorArticle, glossary);
 
   const originalTitle = claimValues(bookEnt, 'P1476')[0]?.text ?? book.originalTitle ?? null;
+  // No article about the book: use the author's article paragraphs that discuss it.
+  const fromAuthor = bookArticle?.intro?.length ? null : mentionsOf(authorArticle, book.title);
   const published = formatWdTime(claimValues(bookEnt, 'P577').sort((a, b) => a.time.localeCompare(b.time))[0]);
 
   const authorText = blocksText(authorArticle?.intro);
@@ -653,7 +707,8 @@ async function fetchBook(book) {
     book: {
       wikidataId: bookQid,
       article: bookArticle && { lang: bookArticle.lang, title: bookArticle.title, url: bookArticle.url, translated: !!bookArticle.translated },
-      intro: bookArticle?.intro ?? [],
+      intro: bookArticle?.intro?.length ? bookArticle.intro : fromAuthor ?? [],
+      introFromAuthor: !!(fromAuthor && !bookArticle?.intro?.length),
       plot: bookArticle?.plot ?? null,
       facts: {
         originalTitle,
@@ -669,7 +724,8 @@ async function fetchBook(book) {
       name: label(authorEnt) ?? book.author,
       article: authorArticle && { lang: authorArticle.lang, title: authorArticle.title, url: authorArticle.url, translated: !!authorArticle.translated },
       intro: authorArticle?.intro ?? [],
-      biography: authorArticle?.biography ?? [],
+      biography: (bioArticle ?? authorArticle)?.biography ?? [],
+      biographyArticle: bioArticle && { lang: bioArticle.lang, title: bioArticle.title, url: bioArticle.url, translated: !!bioArticle.translated },
       huEditions: authorArticle?.huEditions ?? null,
       works: await authorWorks(authorQid),
       facts: {
@@ -701,11 +757,16 @@ async function translate(text, from, glossary = []) {
   if (translationFailures >= 3) return null; // endpoint looks down/blocked: stop trying this run
   try {
     const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from}&tl=hu&dt=t`;
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-      body: new URLSearchParams({ q: src }),
-    });
+    let res;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      res = await fetch(url, {
+        method: 'POST',
+        headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: new URLSearchParams({ q: src }),
+      });
+      if (res.ok || (res.status < 500 && res.status !== 429)) break;
+      await new Promise((r) => setTimeout(r, 2000 * attempt)); // transient 5xx / rate limit
+    }
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     const out = (data[0] ?? []).map((seg) => seg[0] ?? '').join('').trim();
@@ -749,7 +810,7 @@ async function translateBlocks(blocks, from, glossary) {
 // Translates a non-Hungarian article in place. Marks article.translated = true only if all parts succeeded.
 async function translateArticle(article, glossary) {
   if (!article || article.lang === 'hu') return article;
-  const from = article.lang;
+  const from = GT_LANG[article.lang] ?? article.lang;
   const intro = await translateBlocks(article.intro, from, glossary);
   const plot = await translateBlocks(article.plot, from, glossary);
   let biography = article.biography;
@@ -818,6 +879,31 @@ function linkifyArticle(article) {
     plot: linkifyBlocks(article.plot, link),
     biography: article.biography?.map((s) => ({ ...s, paras: linkifyBlocks(s.paras, link) })) ?? null,
   };
+}
+
+// Short Hungarian biography (e.g. Jon Fosse: intro + works list only): use a substantially longer
+// biography from another language edition, machine-translated. Tries at most two languages.
+const MIN_BIO_BLOCKS = 4;
+const bioSize = (a) => (a?.biography ?? []).reduce((n, s) => n + s.paras.length, 0);
+async function richerBiography(entity, article, glossary) {
+  if (!article || bioSize(article) >= MIN_BIO_BLOCKS) return null;
+  const others = wikiLangsOf(entity).filter((l) => l !== article.lang).slice(0, 2);
+  for (const lang of others) {
+    const alt = await getArticle(entity, { kind: 'author', langs: [lang] });
+    if (bioSize(alt) >= Math.max(MIN_BIO_BLOCKS, bioSize(article) * 2)) {
+      console.log(`  · részletesebb életrajz: ${lang}: ${alt.title} (${bioSize(alt)} bekezdés)`);
+      return linkifyArticle(await translateArticle(alt, glossary));
+    }
+  }
+  return null;
+}
+
+// Paragraphs of the author's article that mention the book title (rich paragraphs only, no lists).
+function mentionsOf(article, title) {
+  if (!article) return null;
+  const blocks = [...(article.intro ?? []), ...(article.biography ?? []).flatMap((s) => s.paras)];
+  const hits = blocks.filter((b) => b.type === 'rich' && blocksText([b]).includes(title)).slice(0, 4);
+  return hits.length ? hits : null;
 }
 
 // Plain text of (rich) blocks, for consistency checks.

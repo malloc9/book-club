@@ -60,7 +60,16 @@ const died = place(af?.death, af?.deathPlace);
     {
       book && book.intro.length > 0 ? (
         <section class="prose">
-          <h2>A könyvről <EnBadge article={book.article} /></h2>
+          <h2>
+            A könyvről
+            {book.introFromAuthor ? (
+              <span class="badge" title="Erről a könyvről nincs külön Wikipédia-szócikk; ezek a szerző szócikkének a könyvet említő bekezdései.">
+                a szerző szócikkéből
+              </span>
+            ) : (
+              <EnBadge article={book.article} />
+            )}
+          </h2>
           <Blocks blocks={book.intro} />
           {book.plot && (
             <details class="spoiler">
@@ -68,11 +77,15 @@ const died = place(af?.death, af?.deathPlace);
               <div class="spoiler-body"><Blocks blocks={book.plot} /></div>
             </details>
           )}
-          <Source article={book.article} />
+          <Source article={book.introFromAuthor ? author?.article : book.article} />
         </section>
       ) : (
         <section class="prose">
-          <p class="muted">Ehhez a könyvhöz nem találtunk Wikipédia-szócikket.</p>
+          <h2>A könyvről</h2>
+          <p class="muted">
+            Erről a könyvről még nincs Wikipédia-szócikk, és a szerző szócikke sem ír róla részletesebben.
+            A szerzőről alább olvashatsz.
+          </p>
         </section>
       )
     }
@@ -112,13 +125,14 @@ const died = place(af?.death, af?.deathPlace);
 
           {author.biography?.length > 0 && (
             <div class="prose bio">
-              <h3 class="sub">Életrajz</h3>
+              <h3 class="sub">Életrajz <EnBadge article={author.biographyArticle} /></h3>
               {author.biography.map((s) => (
                 <>
                   {s.level <= 1 ? <h4>{s.heading}</h4> : <h5>{s.heading}</h5>}
                   <Blocks blocks={s.paras} />
                 </>
               ))}
+              {author.biographyArticle && <Source article={author.biographyArticle} />}
             </div>
           )}
 

@@ -306,3 +306,4 @@ a.wl {
   text-underline-offset: 0.18em;
 }
 a.wl:hover, a.wl:focus-visible { color: var(--accent); text-decoration-color: var(--accent); }
+h3.sub { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
