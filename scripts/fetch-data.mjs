@@ -723,7 +723,7 @@ async function fetchBook(book) {
   // is no Wikipedia article about the book, or instead of a poor machine translation of one.
   // Names are linked using the author article's links.
   const manual = book.description?.length
-    ? linkifyBlocks(book.description, makeLinker(authorArticle?.links ?? []) ?? ((t) => [t]))
+    ? linkifyBlocks(book.description, makeLinker([...(bookArticle?.links ?? []), ...(authorArticle?.links ?? [])].filter((l) => l.url !== bookArticle?.url)) ?? ((t) => [t]))
     : null;
   const fromAuthor = hasArticle || manual ? null : mentionsOf(authorArticle, book.title);
   const yf = book.facts ?? {};

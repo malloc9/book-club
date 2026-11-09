@@ -224,3 +224,38 @@
   facts:
     country: Magyarország
     genres: [regény]
+    publisher: Magvető
+  # The Wikipedia intro is a single paragraph; this summary adds the premise, themes and reception
+  # (from the article's "Kritikai fogadtatás" section). The plot stays behind the spoiler toggle.
+  description:
+    - >-
+      A Sinistra körzet – Egy regény fejezetei a kolozsvári születésű, Kossuth-díjas Bodor Ádám első
+      regénye, 1992-ben jelent meg a Magvetőnél. Bodort addig elsősorban novellistaként és tárcaíróként
+      ismerték; ez a könyv hozta meg számára az egyöntetű kritikai és közönségsikert. 2013-ig tizenhat
+      nyelvre fordították le, többek között németre (Schutzgebiet Sinistra, 1994), franciára (La vallée de
+      la Sinistra, 1996) és angolra (The Sinistra Zone, 2013).
+    - >-
+      A regény egy kitalált, zárt határvidéken, valahol az Északkeleti-Kárpátokban, a román–ukrán határ
+      közelében játszódik, ahol a „hegyivadászok” katonai parancsnoksága mindenható. Ide érkezik a névtelen
+      elbeszélő. Mivel iratai elvesztek, a parancsnokságtól új nevet kap – Andrej Bodor –, amelyet
+      dögcédulán a nyakába akasztanak. Az erdeigyümölcs-begyűjtő központ vezetője lesz, ahonnan a
+      rezervátum medvéit etetik, és lassan a hatalom bizalmi emberévé válik. Valódi célját titkolja:
+      fogadott fiát, Béla Bundasiant akarja kiszabadítani, aki évek óta internáltként él a körzetben.
+    - >-
+      Az alcím is jelzi, hogy a könyv lazán összefüggő fejezetekből áll. Márton László szerint a táj itt
+      szó szoros értelmében címszereplő: nem díszlet, hanem a szereplők sorsát irányító erő. A kritika
+      egybehangzóan a totalitárius diktatúra világát látja benne, ahol a valóság a hatóságok koholmánya,
+      és mivel más nincs, ez a koholmány válik az egyetlen valósággá. Bengi László a visszatérő
+      ismétléseket a mitikus elbeszélésekkel rokonítja, és a deszakralizálás jeleként említi, hogy a
+      medverezervátum egy lerombolt kápolna helyén van. H. Nagy Péter bibliai motívumokat, a Paradicsomból
+      való kiűzetés történetét ismeri fel benne. A gyakran groteszkül brutális világot Bán Zoltán András
+      szerint a humor ellensúlyozza, amely nevetségessé és ezzel érvénytelenné teszi a rémisztő álvilágot.
+    - >-
+      Bán Zoltán András a Kritika 1992-es számában „főműnek” nevezte, amely egy nagy életmű eredményeit
+      foglalja végleges formába. A kritikusok Gabriel García Márquezt, Iszaak Babelt, Franz Kafkát és
+      Tamási Áront, Tarján Tamás pedig Danilo Kišt és Milorad Pavićot említette lehetséges előképként.
+      Bodor későbbi regényei, Az érsek látogatása (1999) és a Verhovina madarai (2011) hasonló kelet-európai
+      peremvidékre vezetnek vissza.
+  sources:
+    - { name: "Wikipédia – Sinistra körzet (cselekmény, kritikai fogadtatás, fordítások)", url: "https://hu.wikipedia.org/wiki/Sinistra_k%C3%B6rzet" }
+    - { name: "Wikipédia – Bodor Ádám", url: "https://hu.wikipedia.org/wiki/Bodor_%C3%81d%C3%A1m" }
