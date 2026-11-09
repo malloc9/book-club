@@ -549,7 +549,7 @@ async function imageInfo(lang, file) {
 // Literary works by the author that have at least one Wikipedia/Wikisource page (keeps the list notable).
 async function authorWorks(authorQid) {
   const query = `
-SELECT ?w (SAMPLE(?huL) AS ?hu) (SAMPLE(?enL) AS ?en) (SAMPLE(?origT) AS ?orig) (MIN(?date) AS ?d)
+SELECT ?w (SAMPLE(?huL) AS ?hu) (SAMPLE(?enL) AS ?en) (SAMPLE(?origT) AS ?orig) (SAMPLE(?origL) AS ?origLabel) (MIN(COALESCE(?date, ?inc)) AS ?d)
        (SAMPLE(?typeHu) AS ?type) (SAMPLE(?typeEn) AS ?typeEnL) (SAMPLE(?huWiki) AS ?huUrl) (SAMPLE(?enWiki) AS ?enUrl) (MAX(?links) AS ?n)
 WHERE {
   ?w wdt:P50 wd:${authorQid};
@@ -557,9 +557,11 @@ WHERE {
      wikibase:sitelinks ?links.
   FILTER(?links > 0)
   OPTIONAL { ?w wdt:P577 ?date }
+  OPTIONAL { ?w wdt:P571 ?inc }
   OPTIONAL { ?w rdfs:label ?huL FILTER(LANG(?huL) = "hu") }
   OPTIONAL { ?w rdfs:label ?enL FILTER(LANG(?enL) = "en") }
   OPTIONAL { ?w wdt:P1476 ?origT }
+  OPTIONAL { ?w wdt:P407 ?wlang. ?wlang wdt:P424 ?code. ?w rdfs:label ?origL FILTER(LANG(?origL) = ?code) }
   FILTER NOT EXISTS { ?w wdt:P31 wd:Q3331189 }
   OPTIONAL {
     ?w wdt:P7937 ?form.
@@ -574,7 +576,7 @@ GROUP BY ?w`;
     const data = await getJson('https://query.wikidata.org/sparql', { query, format: 'json' });
     const works = data.results.bindings
       .map((b) => {
-        const original = b.orig?.value ?? b.en?.value ?? null;
+        const original = b.orig?.value ?? b.origLabel?.value ?? b.en?.value ?? null;
         const hu = b.hu?.value ?? null;
         return {
           wikidataId: b.w.value.split('/').pop(),
@@ -583,6 +585,8 @@ GROUP BY ?w`;
           year: b.d?.value ? Number(b.d.value.slice(0, 4)) || null : null,
           type: b.type?.value ?? (b.typeEnL ? huLabel({ labels: { en: { value: b.typeEnL.value } } }) : null),
           url: b.huUrl?.value ?? b.enUrl?.value ?? null,
+          urls: [b.huUrl?.value, b.enUrl?.value].filter(Boolean),
+          hasHuTitle: !!hu,
           urlLang: b.huUrl ? 'hu' : b.enUrl ? 'en' : null,
         };
       })
@@ -762,7 +766,7 @@ async function fetchBook(book) {
       biography: (bioArticle ?? authorArticle)?.biography ?? [],
       biographyArticle: bioArticle && { lang: bioArticle.lang, title: bioArticle.title, url: bioArticle.url, translated: !!bioArticle.translated },
       huEditions: authorArticle?.huEditions ?? null,
-      works: withClubBook(mergeWorks(authorArticle?.works ?? [], await authorWorks(authorQid)), book, bookQid, yf.published ?? published, bookArticle),
+      works: withClubBook(mergeWorks(await articleWorks(authorEnt, authorArticle), await authorWorks(authorQid)), book, bookQid, yf.published ?? published, bookArticle),
       facts: {
         birth,
         birthPlace: await placeMatchingText(itemIds(authorEnt, 'P19')[0], authorText),
@@ -918,8 +922,21 @@ function linkifyArticle(article) {
 
 // Short Hungarian biography (e.g. Jon Fosse: intro + works list only): use a substantially longer
 // biography from another language edition, machine-translated. Tries at most two languages.
-const MIN_BIO_BLOCKS = 4;
+const MIN_BIO_BLOCKS = 6;
 const bioSize = (a) => (a?.biography ?? []).reduce((n, s) => n + s.paras.length, 0);
+// Works list from the article; when the Hungarian article has hardly any (Jon Fosse's lists only
+// Hungarian editions), add the English article's bibliography.
+const MIN_ARTICLE_WORKS = 8;
+async function articleWorks(entity, article) {
+  const works = article?.works ?? [];
+  const title = entity?.sitelinks?.enwiki?.title;
+  if (works.length >= MIN_ARTICLE_WORKS || article?.lang === 'en' || !title) return works;
+  const parsed = await wp('en', { action: 'parse', page: title, prop: 'text', disableeditsection: '1', disablelimitreport: '1', disabletoc: '1', redirects: '1' });
+  const en = parsed.parse?.text ? worksFromHtml(parsed.parse.text, 'en', SKIP_SEL) : [];
+  if (en.length > works.length) console.log(`  · művek az angol szócikkből: ${en.length}`);
+  return en.length > works.length ? mergeWorks(works, en) : works;
+}
+
 async function richerBiography(entity, article, glossary) {
   if (!article || bioSize(article) >= MIN_BIO_BLOCKS) return null;
   const others = wikiLangsOf(entity).filter((l) => l !== article.lang).slice(0, 2);
@@ -950,6 +967,10 @@ function withClubBook(works, book, bookQid, published, bookArticle) {
     entry.originalTitle ??= entry.title;
     entry.title = book.title;
   }
+  // Our original title is checked; list text can carry publisher noise ("… J. B. Lippincott & Co. 1960").
+  if (book.originalTitle) entry.originalTitle = book.originalTitle;
+  // "Sinistra körzet. Egy regény fejezetei" is the same title with a subtitle, not an original title.
+  else if (normTitle(entry.originalTitle).startsWith(normTitle(book.title))) entry.originalTitle = null;
   const year = Number(String(published ?? '').slice(0, 4)) || null;
   if (year) entry.year = year;
   entry.type ??= book.facts?.genres?.[0] ?? 'regény';

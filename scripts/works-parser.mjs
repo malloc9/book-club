@@ -26,7 +26,7 @@ const typeOf = (word) => TYPES[word?.toLowerCase().replace(/[„”"'“]/g, '')
 function typeFromHeading(h) {
   const s = (h ?? '').toLowerCase();
   // Mixed headings ("Regények, elbeszélések") say nothing about a single item.
-  if (/[,;]| és | and /.test(s)) return null;
+  if (/[,;&]| és | and /.test(s)) return null;
   if (/regény|novel/.test(s)) return 'regény';
   if (/novell|elbeszél|short stor|stories/.test(s)) return 'novellák';
   if (/vers|költ|poe/.test(s)) return 'versek';
@@ -37,14 +37,21 @@ function typeFromHeading(h) {
 }
 
 // Marks a Hungarian translation (an edition of a foreign work), not a work of its own.
-const TRANSLATED_RE = /\bford(ította|ítás|\.)/i;
+const TRANSLATED_RE = /\bford(ította|ítás|\.)|\btranslat|\btrans\.|\bübersetz|\btraduit/i;
 const YEAR_RE =/\b(1[5-9]\d\d|20\d\d)\b/;
 const clean = (t) => t.replace(/\[\d+\]/g, '').replace(/\s+/g, ' ').trim();
 // Key for matching: main title without subtitle ("Herscht 07769. Florian Herscht Bach-regénye" → "herscht 07769").
 export const baseKey = (t) => normTitle((t ?? '').split(/\.\s+|\||\s+[–—-]\s+/)[0]);
 // "Journal of a Novel" vs "Journal of a Novel: The East of Eden Letters" (same year) are one work,
 // but "The Common Reader" (1925) and "The Common Reader: Second Series" (1932) are two.
-const colonBase = (t) => normTitle((t ?? '').split(/:\s+/)[0]);
+const decodeUrl = (u) => {
+  try {
+    return decodeURIComponent(u ?? '');
+  } catch {
+    return u ?? '';
+  }
+};
+const colonBase =(t) => normTitle((t ?? '').split(/:\s+/)[0]);
 export const normTitle = (t) =>
   (t ?? '')
     .toLowerCase()
@@ -97,6 +104,15 @@ function parseItem(li, ctx) {
   if (!titleEl) titleEl = nodes.find((n) => n.tagName === 'I' && clean(n.textContent)) ?? null;
 
   let title = titleEl ? clean(titleEl.textContent) : clean(ownText.replace(/^(1[5-9]\d\d|20\d\d)\s*/, '')).split(/\s*[.;(,–]\s/)[0];
+  // A note in parentheses is not part of the title ("(Folyóiratban megjelent fejezetei …").
+  if (/^\(/.test(title)) return {};
+  title = title
+    .replace(/[.,:;]$/, '')
+    .replace(/["”]\s+in\s+.*$/, '') // 'Crackling Bread" in The Artists' & Writers' Cookbook'
+    .replace(/^[^|]*\|/, '') // leaked link markup: "The Log from the Sea of Cortez|Sea of Cortez: …"
+    .replace(/["”]?\s*\((\d{4})?\)?\s*$/, '') // trailing "(", "(1983)" or a stray quote: 'Recitatif" (1983)'
+    .replace(/\s*\(([^()]+)\)$/, (m, inner) => (typeOf(inner) || /regény|novella/i.test(inner) ? '' : m)) // "A részleg (novella)"
+    .trim();
   title = title.replace(/^[„"']|[”"']$/g, '').replace(/[.,:;]$/, '');
   // Reissues ("Esszék; 2. bővített, javított kiadás; …") repeat a work listed earlier.
   if (/\b\d\.\s*(bővített|javított|átdolgozott|változatlan)?[,\s]*(bővített|javított|átdolgozott)?\s*kiadás/i.test(ownText)) return {};
@@ -157,7 +173,7 @@ function parseItem(li, ctx) {
   const href = a && !a.classList.contains('new') ? a.getAttribute('href') : null;
   const url = href?.startsWith('/wiki/') && !href.slice(6).includes(':') ? `https://${ctx.lang}.wikipedia.org${href.split('#')[0]}` : null;
 
-  return { volumes, work: { title, originalTitle, year: y ?? null, type, url, urlLang: url ? ctx.lang : null, wikidataId: null } };
+  return { volumes, work: { title, originalTitle, year: y ?? null, type, url, urlLang: url ? ctx.lang : null, wikidataId: null, srcLang: ctx.lang } };
 }
 
 function walkList(listEl, ctx, out) {
@@ -165,11 +181,13 @@ function walkList(listEl, ctx, out) {
     const { work, yearOnly, volumes } = parseItem(li, ctx);
     if (work) out.push(work);
     const nested = li.childNodes.filter((n) => n.tagName === 'UL' || n.tagName === 'OL');
-    // Sub-items of a work with its own year are its (Hungarian) editions, not separate works:
+    // Sub-items naming a translator are translations of the work, not separate works:
     // "Cup of Gold (1929)" → "** Egy marék arany; fordította …, 1958". Their years are edition
-    // years, so they would put books after the author's death. Use the first one as the title.
+    // years, so they would put books after the author's death. In a Hungarian list the first
+    // one gives the Hungarian title; in other languages they are simply skipped.
     if (volumes) continue;
-    if (work && nested.length && ctx.lang === 'hu' && work.year && nested.some((n) => TRANSLATED_RE.test(n.textContent))) {
+    if (work && nested.length && work.year && nested.some((n) => TRANSLATED_RE.test(n.textContent))) {
+      if (ctx.lang !== 'hu') continue;
       const editions = [];
       for (const n of nested) walkList(n, { ...ctx, yearBullet: null, year: null }, editions);
       const hu = editions[0];
@@ -242,9 +260,16 @@ export function mergeWorks(wikiWorks, wdWorks) {
     const keys = keysOf(wd);
     const match =
       out.find((w) => keysOf(w).some((k) => keys.includes(k))) ??
+      // Same Wikipedia article: "Melancholia I" (Norwegian list) ↔ "Melankólia" (Wikidata).
+      out.find((w) => w.url && (wd.urls ?? [wd.url]).map(decodeUrl).includes(decodeUrl(w.url))) ??
       out.find((w) => w.year && w.year === wd.year && [w.title, w.originalTitle].some((t) => t && colonBase(t) === colonBase(wd.title) && (!t.includes(':') || !wd.title.includes(':'))));
     if (match) {
       match.wikidataId ??= wd.wikidataId;
+      // Works from a foreign-language list get the Hungarian title when Wikidata has one.
+      if (match.srcLang && match.srcLang !== 'hu' && wd.hasHuTitle && normTitle(wd.title) !== normTitle(match.title)) {
+        match.originalTitle = match.title;
+        match.title = wd.title;
+      }
       // Wikidata's publication date (P577) is more reliable than years parsed from list text.
       if (wd.year) match.year = wd.year;
       match.type ??= wd.type;
@@ -253,10 +278,15 @@ export function mergeWorks(wikiWorks, wdWorks) {
         match.url = wd.url;
         match.urlLang = wd.urlLang;
       }
-    } else {
+    } else if (wd.year || !/^(vers|novella|elbeszélés)$/.test(wd.type ?? '')) {
+      // Undated single poems or stories (Plath's "Tulips", Steinbeck's "Flight") are parts of
+      // collections, not books of their own.
       out.push({ ...wd });
     }
   }
+  // Announced books dated in the future are not published yet.
+  const thisYear = new Date().getFullYear();
+  for (let i = out.length - 1; i >= 0; i--) if (out[i].year > thisYear) out.splice(i, 1);
   out.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.title.localeCompare(b.title, 'hu'));
   return out;
 }

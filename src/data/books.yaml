@@ -13,7 +13,7 @@
 #   description    – saját összefoglaló bekezdések (csak ha nincs Wikipédia-szócikk a könyvről)
 #   sources        – az összefoglaló forrásai: [{ name, url }]
 #   facts          – kiegészítő adatok, ha a Wikidatán hiányoznak:
-#                    published, publisher, pages, genres, language, awards
+#                    published, publisher, pages, genres, language, country, awards
 #
 # Új könyv után futtasd: npm run fetch
 
@@ -43,6 +43,7 @@
     published: "1917"
     publisher: Nyugat, Budapest
     language: magyar
+    country: Magyarország
     genres: [regény]
   description:
     - >-
@@ -74,6 +75,7 @@
     publisher: Magvető
     pages: 240
     language: magyar
+    country: Magyarország
     genres: [regény, szatíra]
   description:
     - >-
@@ -109,6 +111,7 @@
     published: "1993"
     publisher: Magvető
     language: magyar
+    country: Magyarország
     genres: [regény]
   description:
     - >-
@@ -137,6 +140,7 @@
   author: Jon Fosse
   originalTitle: Trilogien
   facts:
+    country: Norvégia
     genres: [regény, kisregény-trilógia]
 
 - title: Rémtörténetek
@@ -148,6 +152,7 @@
     publisher: Jelenkor
     pages: 464
     language: magyar
+    country: Magyarország
     genres: [regény]
     awards: [Merítés-díj (2023)]
   description:
@@ -177,10 +182,12 @@
 - title: A fehér király
   author: Dragomán György
   facts:
+    country: Magyarország
     genres: [regény]
 
 - title: Sinistra körzet
   author: Bodor Ádám
   englishTitle: The Sinistra Zone
   facts:
+    country: Magyarország
     genres: [regény]
