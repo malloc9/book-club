@@ -4,7 +4,7 @@
 import { parse } from 'node-html-parser';
 
 const WORKS_HEAD_RE =
-  /^(művei|főbb művei|művek|munkái|művei \(válogatás\)|bibliográfia|regényei|könyvei|works|bibliography|selected works|selected bibliography|novels|publications|werke|werke \(auswahl\)|œuvres)$/i;
+  /^(művei|főbb művei|főbb munkái|művek|munkái|művei \(válogatás\)|bibliográfia|regényei|könyvei|works|bibliography|selected works|selected bibliography|novels|publications|werke|werke \(auswahl\)|œuvres)$/i;
 // Subsections that are not the author's own books.
 const WORKS_SKIP_RE =
   /(film|cd|hangoskönyv|idegen nyelv|fordít|interjú|róla|folyóirat|média|díj|magyarul|adaptation|translat|about|on |forgatókönyv|szerkesztett|levelezés)/i;
@@ -98,6 +98,14 @@ function parseItem(li, ctx) {
 
   let title = titleEl ? clean(titleEl.textContent) : clean(ownText.replace(/^(1[5-9]\d\d|20\d\d)\s*/, '')).split(/\s*[.;(,–]\s/)[0];
   title = title.replace(/^[„"']|[”"']$/g, '').replace(/[.,:;]$/, '');
+  // Reissues ("Esszék; 2. bővített, javított kiadás; …") repeat a work listed earlier.
+  if (/\b\d\.\s*(bővített|javított|átdolgozott|változatlan)?[,\s]*(bővített|javított|átdolgozott)?\s*kiadás/i.test(ownText)) return {};
+  // Volume range: "Párhuzamos történetek, 1-3." → the work; its sub-items are the volumes.
+  let volumes = false;
+  title = title.replace(/,\s*\d+\s*[-–]\s*\d+\.?$/, () => {
+    volumes = true;
+    return '';
+  });
   if (!title || title.length > 120) return {};
 
   // Subtitle type: "Színek és évek. Regény" → title "Színek és évek", type "regény"
@@ -149,17 +157,18 @@ function parseItem(li, ctx) {
   const href = a && !a.classList.contains('new') ? a.getAttribute('href') : null;
   const url = href?.startsWith('/wiki/') && !href.slice(6).includes(':') ? `https://${ctx.lang}.wikipedia.org${href.split('#')[0]}` : null;
 
-  return { work: { title, originalTitle, year: y ?? null, type, url, urlLang: url ? ctx.lang : null, wikidataId: null } };
+  return { volumes, work: { title, originalTitle, year: y ?? null, type, url, urlLang: url ? ctx.lang : null, wikidataId: null } };
 }
 
 function walkList(listEl, ctx, out) {
   for (const li of listEl.childNodes.filter((n) => n.tagName === 'LI')) {
-    const { work, yearOnly } = parseItem(li, ctx);
+    const { work, yearOnly, volumes } = parseItem(li, ctx);
     if (work) out.push(work);
     const nested = li.childNodes.filter((n) => n.tagName === 'UL' || n.tagName === 'OL');
     // Sub-items of a work with its own year are its (Hungarian) editions, not separate works:
     // "Cup of Gold (1929)" → "** Egy marék arany; fordította …, 1958". Their years are edition
     // years, so they would put books after the author's death. Use the first one as the title.
+    if (volumes) continue;
     if (work && nested.length && ctx.lang === 'hu' && work.year && nested.some((n) => TRANSLATED_RE.test(n.textContent))) {
       const editions = [];
       for (const n of nested) walkList(n, { ...ctx, yearBullet: null, year: null }, editions);

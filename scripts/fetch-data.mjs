@@ -255,7 +255,7 @@ const PLOT_RE = /^(cselekmény|történet|a regény cselekménye|tartalom|tartal
 
 // Biography stops at the first top-level section that is bibliography / references / etc.
 const BIO_STOP_RE =
-  /^(bibliográfia|művei|műveinek|főbb művei|magyarul|fordítás|források|jegyzetek|hivatkozások|irodalom|további információk|kapcsolódó szócikkek|lásd még|díjai|works|bibliography|selected works|notes|references|sources|further reading|external links|see also|citations|awards|honou?rs|werke|schriften|publikationen|auszeichnungen|preise|literatur|weblinks|einzelnachweise|anmerkungen|siehe auch|œuvres|oeuvres|bibliographie|publications|distinctions|prix|notes|liens externes|voir aussi|références)/i;
+  /^(bibliográfia|művei|műveinek|főbb művei|főbb munkái|munkái$|magyarul|fordítás|források|jegyzetek|hivatkozások|irodalom|további információk|kapcsolódó szócikkek|lásd még|díjai|works|bibliography|selected works|notes|references|sources|further reading|external links|see also|citations|awards|honou?rs|werke|schriften|publikationen|auszeichnungen|preise|literatur|weblinks|einzelnachweise|anmerkungen|siehe auch|œuvres|oeuvres|bibliographie|publications|distinctions|prix|notes|liens externes|voir aussi|références)/i;
 const HU_EDITIONS_RE = /^magyarul/i;
 const MAX_BIO_PARAS = 40;
 
