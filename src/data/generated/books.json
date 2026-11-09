@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T14:39:31.173Z",
+    "fetchedAt": "2026-11-09T14:50:39.026Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -853,7 +853,7 @@
         "width": 480,
         "height": 701,
         "credit": {
-          "artist": "Unknown author",
+          "artist": null,
           "license": "Public domain",
           "licenseUrl": null,
           "source": "https://commons.wikimedia.org/wiki/File:Virginia_Woolf_1927.jpg",
@@ -866,7 +866,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T14:39:59.688Z",
+    "fetchedAt": "2026-11-09T14:50:49.974Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -1535,7 +1535,7 @@
     "slug": "a-kedves",
     "title": "A kedves",
     "authorName": "Toni Morrison",
-    "fetchedAt": "2026-11-09T14:40:12.844Z",
+    "fetchedAt": "2026-11-09T14:51:03.498Z",
     "book": {
       "wikidataId": "Q971767",
       "article": {
@@ -1648,7 +1648,7 @@
         "width": 600,
         "height": 887,
         "credit": {
-          "artist": "Jacket design by R. D. Scudellari. Published by Alfred A. Knopf.",
+          "artist": "R. D. Scudellari",
           "license": "Public domain",
           "licenseUrl": null,
           "source": "https://commons.wikimedia.org/wiki/File:Beloved_(1987_1st_ed_dust_jacket_cover).jpg",
@@ -2078,7 +2078,7 @@
         "width": 480,
         "height": 684,
         "credit": {
-          "artist": "John Mathew Smith (celebrity-photos.com)",
+          "artist": "John Mathew Smith",
           "license": "CC BY-SA 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
           "source": "https://commons.wikimedia.org/wiki/File:Toni_Morrison.jpg",
@@ -2091,7 +2091,7 @@
     "slug": "ne-bantsatok-a-feketerigot",
     "title": "Ne bántsátok a feketerigót!",
     "authorName": "Harper Lee",
-    "fetchedAt": "2026-11-09T14:40:21.501Z",
+    "fetchedAt": "2026-11-09T14:51:17.457Z",
     "book": {
       "wikidataId": "Q212340",
       "article": {
@@ -2301,7 +2301,7 @@
         "width": 600,
         "height": 742,
         "credit": {
-          "artist": "The credit \"Jacket design by Shirley Smith\" is found on the left jacket flap. (There is very little information online about Shirley Smith; this presents a possible problem for use of the image in countries that do not recognize the rule of the shorter term. It is not known whether Smith is living or dead, which would be needed to measure a copyright term of the author's life plus a set number of years.)",
+          "artist": "Shirley Smith",
           "license": "Public domain",
           "licenseUrl": null,
           "source": "https://commons.wikimedia.org/wiki/File:To_Kill_a_Mockingbird_(first_edition_cover).jpg",
@@ -2598,7 +2598,7 @@
     "slug": "evek",
     "title": "Évek",
     "authorName": "Annie Ernaux",
-    "fetchedAt": "2026-11-09T14:40:29.631Z",
+    "fetchedAt": "2026-11-09T14:51:24.988Z",
     "book": {
       "wikidataId": "Q3230588",
       "article": {
@@ -3189,7 +3189,7 @@
     "slug": "hangyaboly",
     "title": "Hangyaboly",
     "authorName": "Kaffka Margit",
-    "fetchedAt": "2026-11-09T14:40:38.642Z",
+    "fetchedAt": "2026-11-09T14:51:32.157Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -3755,7 +3755,7 @@
     "slug": "zsomle-odavan",
     "title": "Zsömle odavan",
     "authorName": "Krasznahorkai László",
-    "fetchedAt": "2026-11-09T14:40:48.027Z",
+    "fetchedAt": "2026-11-09T14:51:41.398Z",
     "book": {
       "wikidataId": "Q139899382",
       "article": null,
@@ -4434,7 +4434,7 @@
     "slug": "edentol-keletre",
     "title": "Édentől keletre",
     "authorName": "John Steinbeck",
-    "fetchedAt": "2026-11-09T14:40:54.418Z",
+    "fetchedAt": "2026-11-09T14:51:46.818Z",
     "book": {
       "wikidataId": "Q849701",
       "article": {
@@ -4612,7 +4612,7 @@
         "width": 600,
         "height": 871,
         "credit": {
-          "artist": "Published by Viking Press. Dust jacket designer not credited.",
+          "artist": null,
           "license": "Public domain",
           "licenseUrl": null,
           "source": "https://commons.wikimedia.org/wiki/File:East_of_Eden_(1952_1st_ed_dust_jacket).jpg",
@@ -5546,7 +5546,7 @@
         "width": 480,
         "height": 576,
         "credit": {
-          "artist": "McFadden Publications, Inc.; no photographer credited; photo likely the work of Sonya Noskowiak, as Steinbeck is wearing the same clothes from her 1935 studio session that produced the work shown here: https://www.si.edu/object/npg_NPG.2006.74",
+          "artist": null,
           "license": "Public domain",
           "licenseUrl": null,
           "source": "https://commons.wikimedia.org/wiki/File:John_Steinbeck_1939_(cropped).jpg",
@@ -5559,7 +5559,7 @@
     "slug": "egy-no",
     "title": "Egy nő",
     "authorName": "Esterházy Péter",
-    "fetchedAt": "2026-11-09T14:40:59.679Z",
+    "fetchedAt": "2026-11-09T14:51:51.011Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -6375,7 +6375,7 @@
         "width": 360,
         "height": 480,
         "credit": {
-          "artist": "Mariusz Kubik, http://www.mariuszkubik.pl",
+          "artist": "Mariusz Kubik",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
           "source": "https://commons.wikimedia.org/wiki/File:Peter_Esterhazy_by_Kubik_02.jpg",
@@ -6388,7 +6388,7 @@
     "slug": "vad-lovak",
     "title": "Vad lovak",
     "authorName": "Cormac McCarthy",
-    "fetchedAt": "2026-11-09T14:41:08.363Z",
+    "fetchedAt": "2026-11-09T14:51:59.831Z",
     "book": {
       "wikidataId": "Q264519",
       "article": {
@@ -7092,7 +7092,7 @@
         "width": 480,
         "height": 720,
         "credit": {
-          "artist": "From dust jacket: \"Photograph of Cormac McCarthy by David Styles\"",
+          "artist": "David Styles",
           "license": "Public domain",
           "licenseUrl": null,
           "source": "https://commons.wikimedia.org/wiki/File:Cormac_McCarthy_(Child_of_God_author_portrait_-_high-res).jpg",
@@ -7105,7 +7105,7 @@
     "slug": "trilogia",
     "title": "Trilógia",
     "authorName": "Jon Fosse",
-    "fetchedAt": "2026-11-09T14:41:18.116Z",
+    "fetchedAt": "2026-11-09T14:52:19.869Z",
     "book": {
       "wikidataId": "Q131179124",
       "article": {
@@ -7773,7 +7773,7 @@
         "width": 480,
         "height": 564,
         "credit": {
-          "artist": "Tom A. Kolstad/Det norske samlaget.",
+          "artist": "Tom A. Kolstad/Det norske samlaget",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
           "source": "https://commons.wikimedia.org/wiki/File:Writer_Jon_Fosse_(cropped).jpg",
@@ -7786,7 +7786,7 @@
     "slug": "remtortenetek",
     "title": "Rémtörténetek",
     "authorName": "Nádas Péter",
-    "fetchedAt": "2026-11-09T14:41:27.129Z",
+    "fetchedAt": "2026-11-09T14:52:36.334Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -8359,7 +8359,7 @@
     "slug": "az-otos-szamu-vagohid",
     "title": "Az ötös számú vágóhíd",
     "authorName": "Kurt Vonnegut",
-    "fetchedAt": "2026-11-09T14:41:33.875Z",
+    "fetchedAt": "2026-11-09T14:52:44.245Z",
     "book": {
       "wikidataId": "Q265954",
       "article": {
@@ -8499,7 +8499,7 @@
         "width": 600,
         "height": 874,
         "credit": {
-          "artist": "The credit \"Jacket design by Paul Bacon\" is found on the left jacket flap. (For jurisdictions that define copyright term on the date of the author's death: according to this article, Bacon died in 2015.)",
+          "artist": "Paul Bacon",
           "license": "Public domain",
           "licenseUrl": null,
           "source": "https://commons.wikimedia.org/wiki/File:Slaughterhouse-Five_(first_edition)_-_Kurt_Vonnegut.jpg",
@@ -9470,7 +9470,7 @@
     "slug": "a-feher-kiraly",
     "title": "A fehér király",
     "authorName": "Dragomán György",
-    "fetchedAt": "2026-11-09T14:41:42.095Z",
+    "fetchedAt": "2026-11-09T14:52:52.479Z",
     "book": {
       "wikidataId": "Q56641079",
       "article": {
@@ -9851,7 +9851,7 @@
     "slug": "sinistra-korzet",
     "title": "Sinistra körzet",
     "authorName": "Bodor Ádám",
-    "fetchedAt": "2026-11-09T14:41:51.583Z",
+    "fetchedAt": "2026-11-09T14:53:02.328Z",
     "book": {
       "wikidataId": "Q16522756",
       "article": {

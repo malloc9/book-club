@@ -500,6 +500,24 @@ async function resolveLinks(lang, links, selfTitle) {
   });
 }
 
+// Commons "Artist" is sometimes a whole note ("The credit "Jacket design by X" is found on the
+// left jacket flap. (There is very little information…"). Keep only a short name; otherwise none
+// (the credit line still shows the licence and links to the source page).
+export function shortArtist(raw) {
+  let s = (raw ?? '').trim();
+  if (!s) return null;
+  const by = /\b(?:design(?:ed)?|photograph(?:ed)?(?: of [^"”]+?)?|photo|illustrat(?:ed|ion)|painted|drawn)\s+by\s+(.+?)(?=["”;,(]|(?<!\b[A-Z])\.\s+[A-Z][a-z]|\.?$|\s+(?:is|was|for|and)\b)/i.exec(s);
+  if (by) s = by[1];
+  s = s
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/\([^)]*\)/g, '')
+    .replace(/^[\s"„”'(]+|[\s"„”',;.)]+$/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  if (!s || s.length > 50 || /[.;:]\s+\S/.test(s.replace(/\b[A-Z]\.\s/g, '')) || /\b(credited|published|unknown|from )\b/i.test(s)) return null;
+  return s;
+}
+
 async function imageInfo(lang, file) {
   // Query via the wiki itself so both local and Commons files resolve.
   const api = lang === 'commons' ? 'https://commons.wikimedia.org/w/api.php' : `https://${lang}.wikipedia.org/w/api.php`;
@@ -518,7 +536,7 @@ async function imageInfo(lang, file) {
   return {
     url: ii.thumburl ?? ii.url,
     credit: {
-      artist: dedupeRepeat(stripHtml(md.Artist?.value)) || null,
+      artist: shortArtist(dedupeRepeat(stripHtml(md.Artist?.value))),
       license: stripHtml(md.LicenseShortName?.value) || null,
       licenseUrl: md.LicenseUrl?.value ?? null,
       source: ii.descriptionurl,
