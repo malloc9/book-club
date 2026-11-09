@@ -267,6 +267,7 @@ a.w-title:hover { color: var(--accent); text-decoration: underline; }
 }
 .works li.ours .w-title { color: var(--accent); }
 .works li.ours .tag { border-color: var(--accent); }
+.tag-post { font-style: italic; opacity: 0.8; }
 @media (max-width: 30rem) {
   .works li { grid-template-columns: 2.8rem 1fr; }
   .w-tags { grid-column: 2; justify-content: flex-start; }

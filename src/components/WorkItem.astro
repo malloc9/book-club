@@ -4,8 +4,9 @@ import type { Work } from '../data/types';
 interface Props {
   w: Work;
   ours: string | null; // URL of our own book page when the club has read this work
+  posthumous?: boolean; // published after the author's death
 }
-const { w, ours } = Astro.props;
+const { w, ours, posthumous = false } = Astro.props;
 ---
 <li class:list={{ ours: !!ours }} title={ours ? 'Ezt a könyvet olvastuk' : undefined}>
   <span class="w-year">{w.year ?? '–'}</span>
@@ -21,5 +22,8 @@ const { w, ours } = Astro.props;
     }
     {w.originalTitle && <span class="w-orig">{w.originalTitle}</span>}
   </span>
-  <span class="w-tags">{w.type && <span class="tag">{w.type}</span>}</span>
+  <span class="w-tags">
+    {w.type && <span class="tag">{w.type}</span>}
+    {posthumous && <span class="tag tag-post" title="A szerző halála után jelent meg">posztumusz</span>}
+  </span>
 </li>

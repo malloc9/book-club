@@ -3,7 +3,7 @@
     "slug": "a-vilagitotorony",
     "title": "A világítótorony",
     "authorName": "Virginia Woolf",
-    "fetchedAt": "2026-11-09T14:50:39.026Z",
+    "fetchedAt": "2026-11-09T16:37:54.234Z",
     "book": {
       "wikidataId": "Q478016",
       "article": {
@@ -866,7 +866,7 @@
     "slug": "az-uvegbura",
     "title": "Az üvegbúra",
     "authorName": "Sylvia Plath",
-    "fetchedAt": "2026-11-09T14:50:49.974Z",
+    "fetchedAt": "2026-11-09T16:38:03.505Z",
     "book": {
       "wikidataId": "Q1213085",
       "article": {
@@ -1535,7 +1535,7 @@
     "slug": "a-kedves",
     "title": "A kedves",
     "authorName": "Toni Morrison",
-    "fetchedAt": "2026-11-09T14:51:03.498Z",
+    "fetchedAt": "2026-11-09T16:38:14.486Z",
     "book": {
       "wikidataId": "Q971767",
       "article": {
@@ -2091,7 +2091,7 @@
     "slug": "ne-bantsatok-a-feketerigot",
     "title": "Ne bántsátok a feketerigót!",
     "authorName": "Harper Lee",
-    "fetchedAt": "2026-11-09T14:51:17.457Z",
+    "fetchedAt": "2026-11-09T16:38:22.812Z",
     "book": {
       "wikidataId": "Q212340",
       "article": {
@@ -2598,7 +2598,7 @@
     "slug": "evek",
     "title": "Évek",
     "authorName": "Annie Ernaux",
-    "fetchedAt": "2026-11-09T14:51:24.988Z",
+    "fetchedAt": "2026-11-09T16:38:28.709Z",
     "book": {
       "wikidataId": "Q3230588",
       "article": {
@@ -3189,7 +3189,7 @@
     "slug": "hangyaboly",
     "title": "Hangyaboly",
     "authorName": "Kaffka Margit",
-    "fetchedAt": "2026-11-09T14:51:32.157Z",
+    "fetchedAt": "2026-11-09T16:38:33.894Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -3755,7 +3755,7 @@
     "slug": "zsomle-odavan",
     "title": "Zsömle odavan",
     "authorName": "Krasznahorkai László",
-    "fetchedAt": "2026-11-09T14:51:41.398Z",
+    "fetchedAt": "2026-11-09T16:38:42.550Z",
     "book": {
       "wikidataId": "Q139899382",
       "article": null,
@@ -4434,7 +4434,7 @@
     "slug": "edentol-keletre",
     "title": "Édentől keletre",
     "authorName": "John Steinbeck",
-    "fetchedAt": "2026-11-09T14:51:46.818Z",
+    "fetchedAt": "2026-11-09T16:38:46.997Z",
     "book": {
       "wikidataId": "Q849701",
       "article": {
@@ -5066,8 +5066,8 @@
       "huEditions": null,
       "works": [
         {
-          "title": "Cup of Gold",
-          "originalTitle": null,
+          "title": "Egy marék arany",
+          "originalTitle": "Cup of Gold",
           "year": 1929,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Cup_of_Gold",
@@ -5084,8 +5084,8 @@
           "wikidataId": "Q257144"
         },
         {
-          "title": "To a God Unknown",
-          "originalTitle": null,
+          "title": "A mohos szikla",
+          "originalTitle": "To a God Unknown",
           "year": 1933,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/To_a_God_Unknown",
@@ -5102,8 +5102,8 @@
           "urlLang": "en"
         },
         {
-          "title": "Tortilla Flat",
-          "originalTitle": null,
+          "title": "Kedves csirkefogók",
+          "originalTitle": "Tortilla Flat",
           "year": 1935,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Tortilla_Flat",
@@ -5111,8 +5111,8 @@
           "wikidataId": "Q606720"
         },
         {
-          "title": "In Dubious Battle",
-          "originalTitle": null,
+          "title": "Késik a szüret",
+          "originalTitle": "In Dubious Battle",
           "year": 1936,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/In_Dubious_Battle",
@@ -5120,10 +5120,10 @@
           "wikidataId": "Q582472"
         },
         {
-          "title": "Of Mice and Men",
-          "originalTitle": null,
+          "title": "Egerek és emberek",
+          "originalTitle": "Of Mice and Men",
           "year": 1937,
-          "type": "kisregény",
+          "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/Egerek_%C3%A9s_emberek_(kisreg%C3%A9ny)",
           "urlLang": "hu",
           "wikidataId": "Q457977"
@@ -5147,31 +5147,13 @@
           "wikidataId": "Q673452"
         },
         {
-          "title": "The Grapes of Wrath",
-          "originalTitle": null,
+          "title": "Érik a gyümölcs",
+          "originalTitle": "The Grapes of Wrath",
           "year": 1939,
           "type": "regény",
           "url": "https://hu.wikipedia.org/wiki/%C3%89rik_a_gy%C3%BCm%C3%B6lcs_(reg%C3%A9ny)",
           "urlLang": "hu",
           "wikidataId": "Q215983"
-        },
-        {
-          "title": "Érik a gyümölcs",
-          "originalTitle": null,
-          "year": 1940,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "A mohos szikla",
-          "originalTitle": null,
-          "year": 1941,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
         },
         {
           "title": "Forgotten Village",
@@ -5201,8 +5183,8 @@
           "wikidataId": null
         },
         {
-          "title": "The Moon Is Down",
-          "originalTitle": null,
+          "title": "Lement a hold",
+          "originalTitle": "The Moon Is Down",
           "year": 1942,
           "type": "kisregény",
           "url": "https://en.wikipedia.org/wiki/The_Moon_Is_Down",
@@ -5210,17 +5192,8 @@
           "wikidataId": "Q1195848"
         },
         {
-          "title": "Egerek és emberek",
-          "originalTitle": null,
-          "year": 1943,
-          "type": "regény",
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "Cannery Row",
-          "originalTitle": null,
+          "title": "A kék öböl",
+          "originalTitle": "Cannery Row",
           "year": 1945,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Cannery_Row_(novel)",
@@ -5228,26 +5201,8 @@
           "wikidataId": "Q1216542"
         },
         {
-          "title": "A kék öböl",
-          "originalTitle": null,
-          "year": 1947,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "A szeszélyes autóbusz",
-          "originalTitle": null,
-          "year": 1947,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "The Pearl",
-          "originalTitle": null,
+          "title": "A gyöngyszem",
+          "originalTitle": "The Pearl",
           "year": 1947,
           "type": "kisregény",
           "url": "https://en.wikipedia.org/wiki/The_Pearl_(novella)",
@@ -5255,8 +5210,8 @@
           "wikidataId": "Q1215393"
         },
         {
-          "title": "The Wayward Bus",
-          "originalTitle": null,
+          "title": "A szeszélyes autóbusz",
+          "originalTitle": "The Wayward Bus",
           "year": 1947,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Wayward_Bus",
@@ -5264,8 +5219,8 @@
           "wikidataId": "Q1115676"
         },
         {
-          "title": "A Russian Journal",
-          "originalTitle": null,
+          "title": "Orosz napló. Robert Capa 70 fotójával",
+          "originalTitle": "A Russian Journal",
           "year": 1948,
           "type": null,
           "url": "https://en.wikipedia.org/wiki/A_Russian_Journal",
@@ -5273,40 +5228,13 @@
           "wikidataId": "Q4400753"
         },
         {
-          "title": "A gyöngyszem",
-          "originalTitle": null,
-          "year": 1949,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "Burning Bright",
-          "originalTitle": null,
+          "title": "Fényes tűz",
+          "originalTitle": "Burning Bright",
           "year": 1950,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/Burning_Bright",
           "urlLang": "en",
           "wikidataId": "Q4999822"
-        },
-        {
-          "title": "Fényes tűz",
-          "originalTitle": null,
-          "year": 1950,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "The Log from the Sea of Cortez",
-          "originalTitle": null,
-          "year": 1951,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
         },
         {
           "title": "Édentől keletre",
@@ -5328,26 +5256,17 @@
           "wikidataId": "Q1416875"
         },
         {
-          "wikidataId": "Q2378518",
-          "title": "The Short Reign of Pippin IV",
+          "title": "The Short Reign of Pippin IV: A Fabrication",
           "originalTitle": null,
           "year": 1957,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Short_Reign_of_Pippin_IV",
-          "urlLang": "en"
+          "urlLang": "en",
+          "wikidataId": "Q2378518"
         },
         {
-          "title": "The Short Reign of Pippin IV: A Fabrication",
-          "originalTitle": null,
-          "year": 1957,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "Egy marék arany",
-          "originalTitle": null,
+          "title": "Volt egyszer egy háború. Haditudósítások",
+          "originalTitle": "Once There Was A War",
           "year": 1958,
           "type": null,
           "url": null,
@@ -5355,17 +5274,8 @@
           "wikidataId": null
         },
         {
-          "title": "Once There Was A War",
-          "originalTitle": null,
-          "year": 1958,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "The Winter of Our Discontent",
-          "originalTitle": null,
+          "title": "Rosszkedvünk tele",
+          "originalTitle": "The Winter of Our Discontent",
           "year": 1961,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Winter_of_Our_Discontent",
@@ -5373,8 +5283,8 @@
           "wikidataId": "Q2063426"
         },
         {
-          "title": "Travels with Charley: In Search of America",
-          "originalTitle": null,
+          "title": "Csatangolások Charleyval. Amerika nyomában",
+          "originalTitle": "Travels with Charley: In Search of America",
           "year": 1962,
           "type": null,
           "url": null,
@@ -5391,31 +5301,13 @@
           "wikidataId": null
         },
         {
-          "title": "Kék öböl",
-          "originalTitle": null,
-          "year": 1966,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "wikidataId": "Q6296070",
-          "title": "Journal of a Novel",
-          "originalTitle": null,
-          "year": 1969,
-          "type": null,
-          "url": "https://en.wikipedia.org/wiki/Journal_of_a_Novel",
-          "urlLang": "en"
-        },
-        {
           "title": "Journal of a Novel: The East of Eden Letters",
           "originalTitle": null,
           "year": 1969,
           "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
+          "url": "https://en.wikipedia.org/wiki/Journal_of_a_Novel",
+          "urlLang": "en",
+          "wikidataId": "Q6296070"
         },
         {
           "title": "Viva Zapata!",
@@ -5427,8 +5319,8 @@
           "wikidataId": null
         },
         {
-          "title": "The Acts of King Arthur and His Noble Knights",
-          "originalTitle": null,
+          "title": "Arthur király",
+          "originalTitle": "The Acts of King Arthur and His Noble Knights",
           "year": 1976,
           "type": "regény",
           "url": "https://en.wikipedia.org/wiki/The_Acts_of_King_Arthur_and_His_Noble_Knights",
@@ -5439,51 +5331,6 @@
           "title": "Workings Days: The Journals of The Grapes of Wrath",
           "originalTitle": null,
           "year": 1989,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "Életben maradni",
-          "originalTitle": null,
-          "year": 1994,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "Szeszélyes autóbusz",
-          "originalTitle": null,
-          "year": 1994,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "Lángolás",
-          "originalTitle": null,
-          "year": 1997,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "A gyöngy",
-          "originalTitle": null,
-          "year": 2000,
-          "type": null,
-          "url": null,
-          "urlLang": null,
-          "wikidataId": null
-        },
-        {
-          "title": "Az aranyserleg. A Karib-tenger leghíresebb kalóza, Morgan kapitány élettörténete",
-          "originalTitle": null,
-          "year": 2001,
           "type": null,
           "url": null,
           "urlLang": null,
@@ -5559,7 +5406,7 @@
     "slug": "egy-no",
     "title": "Egy nő",
     "authorName": "Esterházy Péter",
-    "fetchedAt": "2026-11-09T14:51:51.011Z",
+    "fetchedAt": "2026-11-09T16:38:50.548Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -6388,7 +6235,7 @@
     "slug": "vad-lovak",
     "title": "Vad lovak",
     "authorName": "Cormac McCarthy",
-    "fetchedAt": "2026-11-09T14:51:59.831Z",
+    "fetchedAt": "2026-11-09T16:38:58.158Z",
     "book": {
       "wikidataId": "Q264519",
       "article": {
@@ -7105,7 +6952,7 @@
     "slug": "trilogia",
     "title": "Trilógia",
     "authorName": "Jon Fosse",
-    "fetchedAt": "2026-11-09T14:52:19.869Z",
+    "fetchedAt": "2026-11-09T16:39:08.254Z",
     "book": {
       "wikidataId": "Q131179124",
       "article": {
@@ -7786,7 +7633,7 @@
     "slug": "remtortenetek",
     "title": "Rémtörténetek",
     "authorName": "Nádas Péter",
-    "fetchedAt": "2026-11-09T14:52:36.334Z",
+    "fetchedAt": "2026-11-09T16:39:15.870Z",
     "book": {
       "wikidataId": null,
       "article": null,
@@ -8359,7 +8206,7 @@
     "slug": "az-otos-szamu-vagohid",
     "title": "Az ötös számú vágóhíd",
     "authorName": "Kurt Vonnegut",
-    "fetchedAt": "2026-11-09T14:52:44.245Z",
+    "fetchedAt": "2026-11-09T16:39:20.453Z",
     "book": {
       "wikidataId": "Q265954",
       "article": {
@@ -9470,7 +9317,7 @@
     "slug": "a-feher-kiraly",
     "title": "A fehér király",
     "authorName": "Dragomán György",
-    "fetchedAt": "2026-11-09T14:52:52.479Z",
+    "fetchedAt": "2026-11-09T16:39:25.244Z",
     "book": {
       "wikidataId": "Q56641079",
       "article": {
@@ -9851,7 +9698,7 @@
     "slug": "sinistra-korzet",
     "title": "Sinistra körzet",
     "authorName": "Bodor Ádám",
-    "fetchedAt": "2026-11-09T14:53:02.328Z",
+    "fetchedAt": "2026-11-09T16:39:32.106Z",
     "book": {
       "wikidataId": "Q16522756",
       "article": {

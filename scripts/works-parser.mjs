@@ -36,10 +36,15 @@ function typeFromHeading(h) {
   return null;
 }
 
-const YEAR_RE = /\b(1[5-9]\d\d|20\d\d)\b/;
+// Marks a Hungarian translation (an edition of a foreign work), not a work of its own.
+const TRANSLATED_RE = /\bford(ította|ítás|\.)/i;
+const YEAR_RE =/\b(1[5-9]\d\d|20\d\d)\b/;
 const clean = (t) => t.replace(/\[\d+\]/g, '').replace(/\s+/g, ' ').trim();
 // Key for matching: main title without subtitle ("Herscht 07769. Florian Herscht Bach-regénye" → "herscht 07769").
-export const baseKey = (t) => normTitle((t ?? '').split(/\.\s+|\s+[–—-]\s+/)[0]);
+export const baseKey = (t) => normTitle((t ?? '').split(/\.\s+|\||\s+[–—-]\s+/)[0]);
+// "Journal of a Novel" vs "Journal of a Novel: The East of Eden Letters" (same year) are one work,
+// but "The Common Reader" (1925) and "The Common Reader: Second Series" (1932) are two.
+const colonBase = (t) => normTitle((t ?? '').split(/:\s+/)[0]);
 export const normTitle = (t) =>
   (t ?? '')
     .toLowerCase()
@@ -125,6 +130,17 @@ function parseItem(li, ctx) {
     }
   }
 
+  // Inline translation: "Tortilla Flat (1935) – Kedves csirkefogók; fordította: …" → Hungarian title.
+  if (ctx.lang === 'hu' && titleEl?.tagName === 'I' && TRANSLATED_RE.test(ownText)) {
+    const rest = nodes.slice(nodes.indexOf(titleEl) + 1);
+    const huEl = rest.find((n) => n.tagName === 'I' && clean(n.textContent));
+    const between = rest.slice(0, rest.indexOf(huEl)).map((n) => n.textContent).join('');
+    if (huEl && /^\s*(\([^)]*\))?\s*[–—-]\s*$/.test(between)) {
+      originalTitle = title;
+      title = clean(huEl.textContent).replace(/[.,:;]$/, '');
+    }
+  }
+
   const withoutIsbn = ownText.replace(/ISBN[\s:]*[\d\-X ]+/gi, '');
   // A parent year bullet ("* 1985" → nested items) beats later edition years in the text.
   const y = leadingYear ?? ctx.yearBullet ?? (YEAR_RE.exec(withoutIsbn) ? Number(YEAR_RE.exec(withoutIsbn)[1]) : null) ?? ctx.year;
@@ -141,6 +157,24 @@ function walkList(listEl, ctx, out) {
     const { work, yearOnly } = parseItem(li, ctx);
     if (work) out.push(work);
     const nested = li.childNodes.filter((n) => n.tagName === 'UL' || n.tagName === 'OL');
+    // Sub-items of a work with its own year are its (Hungarian) editions, not separate works:
+    // "Cup of Gold (1929)" → "** Egy marék arany; fordította …, 1958". Their years are edition
+    // years, so they would put books after the author's death. Use the first one as the title.
+    if (work && nested.length && ctx.lang === 'hu' && work.year && nested.some((n) => TRANSLATED_RE.test(n.textContent))) {
+      const editions = [];
+      for (const n of nested) walkList(n, { ...ctx, yearBullet: null, year: null }, editions);
+      const hu = editions[0];
+      if (hu && normTitle(hu.title) !== normTitle(work.title)) {
+        work.originalTitle ??= work.title;
+        work.title = hu.title;
+        work.type ??= hu.type;
+        if (hu.url) {
+          work.url = hu.url;
+          work.urlLang = hu.urlLang;
+        }
+      }
+      continue;
+    }
     for (const n of nested) walkList(n, { ...ctx, yearBullet: yearOnly ?? ctx.yearBullet ?? null, year: work?.year ?? ctx.year }, out);
   }
 }
@@ -197,7 +231,9 @@ export function mergeWorks(wikiWorks, wdWorks) {
   const keysOf = (w) => [w.title, w.originalTitle].filter(Boolean).flatMap((t) => [normTitle(t), baseKey(t)]);
   for (const wd of wdWorks) {
     const keys = keysOf(wd);
-    const match = out.find((w) => keysOf(w).some((k) => keys.includes(k)));
+    const match =
+      out.find((w) => keysOf(w).some((k) => keys.includes(k))) ??
+      out.find((w) => w.year && w.year === wd.year && [w.title, w.originalTitle].some((t) => t && colonBase(t) === colonBase(wd.title) && (!t.includes(':') || !wd.title.includes(':'))));
     if (match) {
       match.wikidataId ??= wd.wikidataId;
       // Wikidata's publication date (P577) is more reliable than years parsed from list text.

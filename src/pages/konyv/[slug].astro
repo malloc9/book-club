@@ -39,6 +39,8 @@ const description = (typeof firstPara === 'string'
 )?.slice(0, 160);
 const born = place(af?.birth, af?.birthPlace);
 const died = place(af?.death, af?.deathPlace);
+const deathYear = Number(/\d{4}/.exec(af?.death ?? '')?.[0]) || null;
+const posthumous = (w: { year: number | null }) => !!(deathYear && w.year && w.year > deathYear);
 ---
 <Base title={b.title} description={description}>
   <a class="back" href={asset('')}>← Vissza a könyvekhez</a>
@@ -168,13 +170,13 @@ const died = place(af?.death, af?.deathPlace);
             <div class="works-block">
               <h3 class="sub">Művei</h3>
               <ol class="works">
-                {author.works.slice(0, WORKS_SHOWN).map((w) => <WorkItem w={w} ours={oursOf(w)} />)}
+                {author.works.slice(0, WORKS_SHOWN).map((w) => <WorkItem w={w} ours={oursOf(w)} posthumous={posthumous(w)} />)}
               </ol>
               {author.works.length > WORKS_SHOWN && (
                 <details class="more-works">
                   <summary>További {author.works.length - WORKS_SHOWN} mű megjelenítése</summary>
                   <ol class="works">
-                    {author.works.slice(WORKS_SHOWN).map((w) => <WorkItem w={w} ours={oursOf(w)} />)}
+                    {author.works.slice(WORKS_SHOWN).map((w) => <WorkItem w={w} ours={oursOf(w)} posthumous={posthumous(w)} />)}
                   </ol>
                 </details>
               )}
